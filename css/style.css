@@ -1,0 +1,34 @@
+/* index page */
+.nav-font {
+	color: #999;
+}
+
+.username {
+	background: url(../images/login-locked-icon.png) no-repeat 15px center;
+	margin-bottom: 0;
+}
+
+.pwd {
+	background: url(../images/login-key-icon.png) no-repeat 15px center;
+	margin-bottom: 0;
+}
+
+.username, .pwd {
+	padding: 8px 0;
+	border: 2px solid #e1e1e1;
+	margin-bottom: 20px;
+	font-weight: normal;
+	text-indent: 43px;
+	outline: 0;
+	font-size: 1.25em;
+}
+
+/*login page*/
+.login-part {
+	margin: 0 auto;
+	width: 50%;
+}
+
+.login-info {
+	width: 50%;
+}
