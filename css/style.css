@@ -1,3 +1,11 @@
+body {
+  margin: 0;
+  font-family: Verdana,"Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  background-color: #ffffff;
+}
 /* index page */
 .nav-font {
 	color: #999;
@@ -31,4 +39,87 @@
 
 .login-info {
 	width: 50%;
+}
+
+/*species page*/
+.img-border {
+	border-radius: 5%;
+	box-shadow: 0px 0px 8px #f00;
+	text-align: center;
+}
+
+/*manage page*/
+.main-left,
+.main-middle,
+.main-right {
+	width: 30%;
+	padding: 10px;
+	float: left;
+}
+
+.main-middle {
+	margin-left: 2.5%;
+	margin-right: 2.5%;
+}
+
+.row-clear {
+	margin-right: 0!important;
+	margin-left: 0!important;
+	clear: both;
+}
+
+.blue-border {
+	border-radius: 5%;
+	box-shadow: 0px 0px 8px #00f;
+}
+
+.btn-wd {
+	width: 100px;
+	margin-bottom: 5px;
+}
+
+.prev-thumbnail {
+	clear: both;
+}
+
+.small-pic {
+	width: 64px;
+	height: 64px;
+}
+
+.small-filed {
+	padding: 2px;
+}
+
+.new-update {
+	margin-top: 10px;
+}
+
+.create-new {
+	float: left;
+}
+
+.update {
+	float: right;
+	margin-right: 60px;
+}
+
+
+/*modiy page*/
+.row-margin {
+	margin-top: 10px;
+}
+
+.page-no {
+	clear: both;
+	margin-top: 10px;
+}
+
+#page {
+	float: left;
+}
+/*flower page*/
+.preview {
+	width: 80px;
+	height: 64px;
 }
