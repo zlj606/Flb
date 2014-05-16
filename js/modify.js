@@ -1,17 +1,13 @@
 $(function(){
 	
-    
 
     function addFlower(url, name, fid) {
-        var html = '<div class="col-sm-3 col-lg-3">
-                  <img src="' + url + '" name="' + name + '" fid="' + fid + '">
-                  <p><a class="btn btn-default btn-detail" href="update.html" role="button">View details &raquo;</a></p>
-                </div>';
+        var html = '<div class="col-sm-3 col-lg-3"><img src="' + url + '" name="' + name + '" fid="' + fid + '"><p><a class="btn btn-default btn-detail" href="update.html" role="button">View details &raquo;</a></p></div>';
         $('.row').append(html);
     }
 
     function callBack(jData) {
-        if ("true" != jData.ret) {
+        if ("1" != jData.ret) {
             alert("暂无花种数据！");
             return;
         }
@@ -24,7 +20,6 @@ $(function(){
     }
     var breed = "1",
         series = "1",
-        color = "bred",
         page = "1";
 
     var data = {
@@ -32,9 +27,9 @@ $(function(){
         "action": "query_flower_list",
         "breed": breed,
         "series": series,
-        "color" : color,
         "page" : page
     };
+    var url = "./../flower/index.php";
     Util.get(url, data, callBack);
 
     $('.btn-detail').on('click', function(e) {

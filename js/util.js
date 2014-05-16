@@ -1,5 +1,7 @@
 Util = {
-    baseurl: 'http://localhost/flb',    
+    //baseurl: 'http://localhost/flb',    
+    //baseurl = "./../flower/index.php";
+    baseurl: 'http://127.0.0.1:8080/flower/index.php',    
     post:function(url, data, success){              //一个基本的post请求封装
         $.ajax({
             url:url,
@@ -23,11 +25,13 @@ Util = {
     },
     get:function(url, reqdata, success){              //一个基本的get请求封装
         $.ajax({
-            url: Util.baseurl + url,
+            url: Util.baseurl,
+            //url: Util.baseurl + url,
             type:"get",
             data:reqdata,
             dataType:"json",
-            error:function(){
+            error:function(xhr, info, obj){
+                console.log(info);
                 console.log('error request!');
             },
             success:function(data){ 
