@@ -14,9 +14,10 @@ $(function(){
         $('.show-field').html('');
 
         var fArray = jData.res;
+        console.log(fArray);
         Util.showPage(fArray.total, 20);
         for (var i = 0; i < fArray.record.length; ++i) {
-            addFlower(fArray[i].url, fArray[i].name, fArray[i].fid);
+            addFlower(fArray.record[i].url, fArray.record[i].name, fArray.record[i].fid);
         }
 
     }
@@ -28,7 +29,7 @@ $(function(){
 
     var data = {
         "controller": "flower",
-        "action": "query_flower_list",
+        "action": "query_flower_list_admin",
         "breed_id": breed_id,
         "series_id": series_id,
         "color_id" : color_id,
