@@ -48,7 +48,7 @@
 	    </div>
 	    <div class="container">
 	    	<div class="row">
-	    		<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+	    		<div class="col-xs-4 col-sm-4 sidebar-offcanvas" id="sidebar" role="navigation">
 		          <div class="list-group">
 		            <img src="images/product/01.jpg" class="list-group-item preview"></img>
 		            <img src="images/product/02.jpg" class="list-group-item preview"></img>
@@ -57,11 +57,40 @@
 		            <img src="images/product/05.jpg" class="list-group-item preview"></img>
 		            <img src="images/product/06.jpg" class="list-group-item preview"></img>
 		          </div>
-	    		<div class="">
 	    		</div>
-	    		<div class="">
+	    		<div class="col-sm-4">
+	    			<div class="list-group">
+	    				<ul>
+    						<li class="list-group-item">
+    							<label>系类</label>
+    							<label class="breed"></label>
+    						</li>
+    						<li class="list-group-item">
+    							<label>颜色</label>
+    							<label class="u-color"></label>
+    						</li>
+    						<li class="list-group-item">
+    							<label>品种</label>
+    							<label class="u-spe"></label>
+    						</li>
+    					</ul>
+	    			</div>
+	    		</div>
+	    		<div class="col-sm-4">
+	    			<p>
+	    				<button type="button" class="btn btn-primary vote">投票</button>
+	    			</p>
+	    			<p>
+	    				当前剩余投票数
+	    			</p>
+	    			<p>
+	    				<label class="vote-chance"></label>
+	    			</p>
 	    		</div>
 	    	</div>
 	    </div>
+	    <script src="js/jquery-1.10.2.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/util.js"></script>
 	</body>
 </html>
