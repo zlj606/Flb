@@ -99,6 +99,7 @@ $(function() {
     	for (var i = 0 ; i < arr.length ; ++i) {
     		$('.thumbnail-' + i + 1).attr('src', arr[i]);
     	}
+    	$('.QRCode').attr('src', jData.code_url);
     }
 
     controller = 'flower',
