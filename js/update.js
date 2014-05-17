@@ -54,28 +54,28 @@ $(function() {
 			return;
 		}
 		var html = '<option value=""></option>';
-		for (var i = 0; i < jData.series.length; ++i) {
+		for (var i = 0; i < jData.res.series.length; ++i) {
 			html += '<option value="' 
-				 +  jData.series[i].series_id + '">' 
-				 +  jData.series[i].series_name + '</option>';
+				 +  jData.res.series[i].series_id + '">' 
+				 +  jData.res.series[i].series_name + '</option>';
 		}
 
 		$('.sel-series').html('');
 		$('.sel-series').append(html);
 
-		for (var i = 0; i < jData.breed.length; ++i) {
+		for (var i = 0; i < jData.res.breed.length; ++i) {
 			html += '<option value="' 
-				 + jData.breed[i].breed_id + '">' 
-				 + jData.breed[i].breed_name + '</option>';
+				 + jData.res.breed[i].breed_id + '">' 
+				 + jData.res.breed[i].breed_name + '</option>';
 		}
 
 		$('.sel-breed').html('');
 		$('.sel-breed').append(html);
 
-		for (var i = 0; i < jData.color.length; ++i) {
+		for (var i = 0; i < jData.res.color.length; ++i) {
 			html += '<option value="' 
-				 + jData.color[i].color_id  + '">' 
-				 + jData.color[i].color_name  + '</option>';
+				 + jData.res.color[i].color_id  + '">' 
+				 + jData.res.color[i].color_name  + '</option>';
 		}
 
 		$('.sel-color').html('');
@@ -88,18 +88,18 @@ $(function() {
     		return;
     	}
 
-    	$('.in-series').val(jData.series_name);
-    	$('.in-color').val(jData.color_name);
-    	$('.in-breed').val(jData.breed_name);
-    	$('.pContent').val(jData.attr);
-    	$('.cContent').val(jData.cult);
-    	$('.sContent').val(jData.story);
-    	var arr = jData.flower_url.split(',');
+    	$('.in-series').val(jData.res.series_name);
+    	$('.in-color').val(jData.res.color_name);
+    	$('.in-breed').val(jData.res.breed_name);
+    	$('.pContent').val(jData.res.attr);
+    	$('.cContent').val(jData.res.cult);
+    	$('.sContent').val(jData.res.story);
+    	var arr = jData.res.flower_url.split(',');
 
     	for (var i = 0 ; i < arr.length ; ++i) {
     		$('.thumbnail-' + i + 1).attr('src', arr[i]);
     	}
-    	$('.QRCode').attr('src', jData.code_url);
+    	$('.QRCode').attr('src', jData.res.code_url);
     }
 
     controller = 'flower',
