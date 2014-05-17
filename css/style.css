@@ -104,11 +104,15 @@ body {
 	height: 100px;
 }
 
-.update {
+.update-info {
 	float: right;
 	margin-right: 60px;
 }
 
+.list-group-item input {
+	width: 50%;
+	margin-bottom: 5px;
+}
 
 /*modiy page*/
 .row-margin {
