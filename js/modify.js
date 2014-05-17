@@ -84,7 +84,7 @@ $(function(){
 
     $('.btn-detail').on('click', function(e) {
         e.preventDefault();
-        sessionStorage.setItem("fid", $(this).attr("fid"));
+        sessionStorage.setItem("fid", $(this).parent().find('img').attr("fid"));
         //sessionStorage.setItem("name", $(this).attr("name"));
         //sessionStorage.setItem("url", $(this).attr("url"));
 
