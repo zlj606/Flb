@@ -38,15 +38,57 @@ $(function(){
     
     Util.get("index.php", data, callBack);
 
+    function bscCallBack(jData) {
+        if ("1" != jData.ret) {
+            console.log("暂无数据!");
+            return;
+        }
+        var html = '<option value=""></option>';
+        for (var i = 0; i < jData.series.length; ++i) {
+            html += '<option value="' 
+                 +  jData.series[i].series_id + '">' 
+                 +  jData.series[i].series_name + '</option>';
+        }
+
+        $('.sel-series').html('');
+        $('.sel-series').append(html);
+
+        for (var i = 0; i < jData.breed.length; ++i) {
+            html += '<option value="' 
+                 + jData.breed[i].breed_id + '">' 
+                 + jData.breed[i].breed_name + '</option>';
+        }
+
+        $('.sel-breed').html('');
+        $('.sel-breed').append(html);
+
+        for (var i = 0; i < jData.color.length; ++i) {
+            html += '<option value="' 
+                 + jData.color[i].color_id  + '">' 
+                 + jData.color[i].color_name  + '</option>';
+        }
+
+        $('.sel-color').html('');
+        $('.sel-color').append(html);
+    }
+    controller = "flower";
+    action = "query_conditions";
+    var tData = {
+        "controller" : controller,
+        "action" : action
+    };
+    //获取数据库的种类，品种，颜色信息
+    Util.get("index.php", tData, bscCallBack);
+
     $('.btn-detail').on('click', function(e) {
         e.preventDefault();
         sessionStorage.setItem("fid", $(this).attr("fid"));
-        sessionStorage.setItem("name", $(this).attr("name"));
-        sessionStorage.setItem("url", $(this).attr("url"));
+        //sessionStorage.setItem("name", $(this).attr("name"));
+        //sessionStorage.setItem("url", $(this).attr("url"));
 
         window.location.href = $(this).attr('href');
     });
-
+   
     //手工输入检索处理
     $('.hand-search').on('click', function() {
         var breed = $('.hand-breed').val().trim(),

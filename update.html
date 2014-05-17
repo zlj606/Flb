@@ -55,23 +55,145 @@
 	    </div>
 	    <div class="container">
 	    	<div class="row">
-		    	<div class="col-lg-3 col-sm-3">
+	    		<div class="col-lg-3 col-sm-3">
+	    			<div class="list-group">
+	    			   <div class="list-group-item">
+			    	   		<img src="" class="thumbnail-1" alt="图片预览区域1">
+			    	   		<form id="fileupload">
+			    				<div class="btn-field">
+				    				<span class="btn btn-success fileinput-button btn-wd">
+					                    <span>更新图片</span>
+					                    <!--<input type="file" name="files[]" multiple>-->
+					                    <input type="file" name="files[]" multiple accept="image/*" capture="camera">
+					                </span>
 
-		    	</div>
-		    	<div class="col-lg-9 col-sm-9">
-		    		<div class="row">
-			    		<div class="col-lg-3 col-sm-3">
-			    		</div>
-			    		<div class="col-lg-5 col-sm-5">
-			    		</div>
-			    		<div class="col-lg-3 col-sm-3">
-			    		</div>
+		            			</div>
+		            		</form>
+			    	   </div>
+			    	   <div class="list-group-item">
+					    	<img src="" class="thumbnail-2" alt="图片预览区域2">
+					    	<form id="fileupload">
+			    				<div class="btn-field">
+				    				<span class="btn btn-success fileinput-button btn-wd">
+					                    <span>更新图片</span>
+					                    <!--<input type="file" name="files[]" multiple>-->
+					                    <input type="file" name="files[]" multiple accept="image/*" capture="camera">
+					                </span>
+
+		            			</div>
+		            		</form>
+					    </div>
+					    	<div class="list-group-item">
+					    	<img src="" class="thumbnail-3" alt="图片预览区域3">
+					    	<form id="fileupload">
+			    				<div class="btn-field">
+				    				<span class="btn btn-success fileinput-button btn-wd">
+					                    <span>更新图片</span>
+					                    <!--<input type="file" name="files[]" multiple>-->
+					                    <input type="file" name="files[]" multiple accept="image/*" capture="camera">
+					                </span>
+
+		            			</div>
+		            		</form>
+					    </div>
+					    	<div class="list-group-item">
+					    	<img src="" class="thumbnail-4" alt="图片预览区域4">
+					    	<form id="fileupload">
+			    				<div class="btn-field">
+				    				<span class="btn btn-success fileinput-button btn-wd">
+					                    <span>更新图片</span>
+					                    <!--<input type="file" name="files[]" multiple>-->
+					                    <input type="file" name="files[]" multiple accept="image/*" capture="camera">
+					                </span>
+
+		            			</div>
+		            		</form>
+					    </div>
+					    <div class="list-group-item">
+					    	<img src="" class="thumbnail-5" alt="图片预览区域5">
+					    	<form id="fileupload">
+			    				<div class="btn-field">
+				    				<span class="btn btn-success fileinput-button btn-wd">
+					                    <span>更新图片</span>
+					                    <!--<input type="file" name="files[]" multiple>-->
+					                    <input type="file" name="files[]" multiple accept="image/*" capture="camera">
+					                </span>
+
+		            			</div>
+		            		</form>
+					    </div>
 			    	</div>
-		    	</div>
+				</div>
+				<div class="col-lg-9 col-sm-9">
+		    		<div class="col-lg-5 col-sm-5">
+		    			<div class="list-group">
+	    					<ul>
+	    						<li class="list-group-item">
+	    							<label>系类</label>
+	    							<input type="text" class="in-series">
+	    						</li>
+	    						<li class="list-group-item">
+	    							<label>颜色</label>
+	    							<input type="text" class="in-color">
+	    						</li>
+	    						<li class="list-group-item">
+	    							<label>品种</label>
+	    							<input type="text" class="in-breed">
+	    						</li>
+	    					</ul>
+	    				</div>
+		    		</div>
+		    		<div class="col-lg-5 col-sm-5">
+		    			<ul>
+    						<li class="list-group-item series-field">
+    							<label>系类</label>
+    							<select class="sel-series">
+    							</select>
+    						</li>
+    						<li class="list-group-item color-field">
+    							<label>颜色</label>
+    							<select class="sel-color">
+    							</select>
+    						</li>
+    						<li class="list-group-item breed-field">
+    							<label>品种</label>
+    							<select class="sel-breed">
+    							</select>
+    						</li>
+    					</ul>
+		    		</div>
+		    		<div class="row">
+		    			<button class="btn btn-primary btn-para">更新参数</button>
+		    		</div>
+			    </div>
 		    </div>
+		    <div class="row row-clear">
+	    		<div class="main-left blue-border">
+	    			<h2 class="title1">参数</h2>
+				    <textarea class="pContent">
+				    	参数内容
+				    </textarea>
+				    <button class="btn btn-primary btn-one">更新</button>
+	    		</div>
+	    		<div class="main-middle blue-border">
+	    			<h2 class="title2">种植感悟</h2>
+				    <textarea class="cContent">
+				    	感悟内容
+				    </textarea>
+				    <button class="btn btn-primary btn-two">更新</button>
+	    		</div>
+	    		<div class="main-right blue-border">
+	    			<h2 class="title3">花品故事</h2>
+				    <textarea class="sContent">
+				    	故事
+				    </textarea>
+				    <button class="btn btn-primary btn-three">更新</button>
+	    		</div>
+	    	</div>
 	    </div>
 	    <script src="js/jquery-1.10.2.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script src="js/util.js"></script>
 		<script src="js/update.js"></script>
 	</body>
 </html>
