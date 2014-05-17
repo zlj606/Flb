@@ -20,6 +20,14 @@ $(function(){
             addFlower(fArray.record[i].url, fArray.record[i].name, fArray.record[i].fid);
         }
 
+        $('.btn-detail').on('click', function(e) {
+            e.preventDefault();
+            sessionStorage.setItem("fid", $(this).parent().find('img').attr("fid"));
+            //sessionStorage.setItem("name", $(this).attr("name"));
+            //sessionStorage.setItem("url", $(this).attr("url"));
+
+            window.location.href = $(this).attr('href');
+        });
     }
 
     var breed_id = 1,
@@ -82,14 +90,7 @@ $(function(){
     //获取数据库的种类，品种，颜色信息
     Util.get("index.php", tData, bscCallBack);
 
-    $('.btn-detail').on('click', function(e) {
-        e.preventDefault();
-        sessionStorage.setItem("fid", $(this).parent().find('img').attr("fid"));
-        //sessionStorage.setItem("name", $(this).attr("name"));
-        //sessionStorage.setItem("url", $(this).attr("url"));
-
-        window.location.href = $(this).attr('href');
-    });
+    
    
     //手工输入检索处理
     $('.hand-search').on('click', function() {
