@@ -99,6 +99,11 @@ body {
 	float: left;
 }
 
+.area {
+	width: 90%;
+	height: 100px;
+}
+
 .update {
 	float: right;
 	margin-right: 60px;

@@ -2,6 +2,9 @@ $(function() {
 	
 	fid = sessionStorage.getItem('fid');
 
+	pic_path = Util.baseurl + 'photo/flower/';
+	code_path = Util.baseurl + 'photo/code/'
+    
 	$('.series-field').hide();
 	$('.color-field').hide();
 	$('.breed-field').hide();
@@ -97,9 +100,9 @@ $(function() {
     	var arr = jData.res.flower_url.split(',');
 
     	for (var i = 0 ; i < arr.length ; ++i) {
-    		$('.thumbnail-' + i + 1).attr('src', arr[i]);
+    		$('.thumbnail-' + i + 1).attr('src', pic_path + arr[i]);
     	}
-    	$('.QRCode').attr('src', jData.res.code_url);
+    	$('.QRCode').attr('src', jData.res.code_url + code_path);
     }
 
     controller = 'flower',

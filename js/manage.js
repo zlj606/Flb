@@ -34,4 +34,8 @@ $(function () {
                 .call(this, $.Event('done'), {result: result});
         });
 
+    $('.update').on('click', function() {
+        Util.get();
+    });
+
 });
