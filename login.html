@@ -51,7 +51,9 @@
 	    				alert('failed');
 	    				return;
 	    			}
-
+	    			//将用户标识存储到sessionStorage中
+	    			sessionStorage.setItem('uid', jData.res.uid);
+	    			window.location.href = jData.res.jump_url;
 	    			alert('success！');
 	    		}
 

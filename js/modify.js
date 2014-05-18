@@ -5,6 +5,27 @@ $(function(){
         $('.show-field').append(html);
     }
 
+    function pageCallBack(jData) {
+        if ("1" != jData.ret) {
+            alert("暂无花种数据！");
+            return;
+        }
+
+        $('.show-field').html('');
+        
+        for (var i = 0; i < fArray.record.length; ++i) {
+            addFlower(fArray.record[i].url, fArray.record[i].name, fArray.record[i].fid);
+        }
+
+        $('.btn-detail').on('click', function(e) {
+            e.preventDefault();
+            sessionStorage.setItem("fid", $(this).parent().find('img').attr("fid"));
+            //sessionStorage.setItem("name", $(this).attr("name"));
+            //sessionStorage.setItem("url", $(this).attr("url"));
+
+            window.location.href = $(this).attr('href');
+        });
+    }
     function callBack(jData) {
         if ("1" != jData.ret) {
             alert("暂无花种数据！");
@@ -15,7 +36,7 @@ $(function(){
 
         var fArray = jData.res;
         console.log(fArray);
-        Util.showPage(fArray.total, 20);
+        Util.showPage(fArray.total, 20, pageCallBack);
         for (var i = 0; i < fArray.record.length; ++i) {
             addFlower(fArray.record[i].url, fArray.record[i].name, fArray.record[i].fid);
         }

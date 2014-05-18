@@ -6,7 +6,7 @@ var detailData = {
 	//分发请求的php
 	actionPhp = "index.php",
 	//登录成功后，返回的用户标识
-	uerId = sessionStorage.getItem('user_id');
+	userId = sessionStorage.getItem('user_id');
 var errorInfo = ["OK",
 			    "ERROR"	
 			    ];

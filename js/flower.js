@@ -1,10 +1,16 @@
-﻿$(function() {
+$(function() {
 	$('.preview').on('click', function() {
 		$('.whole-img').attr('src', $(this).attr('src'));
 	});
 
+	fid = Util.getPara('fid');
 
-	//$('.ac>a').text(userId);
+	//alert(fid);
+	if (typeof(userId) == 'undefined') {
+		userId = '';
+	}
+
+	$('.ac>a').text(userId);
 	//获取花的详细信息
 	function callBack(jData) {
 		if ("1" != jData.ret) {
@@ -25,7 +31,7 @@
 		$('.u-color').html(jData.res.color_name);
 	}
 
-	Util.get(actionPhp, {"controller":"flower", "action":"query_flower", "fid": 1}, callBack);
+	Util.get(actionPhp, {"controller":"flower", "action":"query_flower", "fid": parseInt(fid)}, callBack);
 
 	function voteCallBack(jData) {
 		if ("1" != jData.ret) {
@@ -45,7 +51,7 @@
 			"uid" : userId
 		};
 
-		Util.post('index.php', data, voteCallBack);
+		Util.get('index.php', data, voteCallBack);
 
 	});
 
@@ -57,6 +63,17 @@
 			"uid" : userId
 		};
 
-		Util.post('index.php', data, voteCallBack);
+		Util.get('index.php', data, voteCallBack);
+	}
+
+	//获取投票余额
+	if ('' != userId) {
+		var data = {
+			"controller" : "user",
+			"action" : "query_vote_rest",
+			"fid" : fid,
+			"uid" : userId
+		};
+		Util.get('index.php', data, voteCallBack);
 	}
 });
