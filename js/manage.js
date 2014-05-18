@@ -114,13 +114,13 @@ $(function () {
             return;
         }
 
-        Util.post("index.php", {"fid" : fid} genQRCode);
+        Util.post("index.php", {"fid" : fid}, genQRCode);
     });
 
     $('.submit').on('click', function() {
         var data = {
             "controller" :"flower",
-            "action" : "upload_flowr_img",
+            "action" : "upload_flower_img",
             "photoname" : $('.file-path').val()
         };
 

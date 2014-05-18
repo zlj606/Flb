@@ -47,7 +47,7 @@
 				
 
 				function callBack(jData) {
-					if("1" == jData.ret) {
+					if("1" != jData.ret) {
 						alert("注册失败！");
 						return;
 					}
@@ -63,6 +63,7 @@
 					var data = {
 						"controller" : "user",
 						"action" : "sign",
+                        "phone" : phone,
 						"authnum" : pwd1
 					};
 					Util.post("index.php", data, callBack);
