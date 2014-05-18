@@ -117,24 +117,6 @@ $(function () {
         Util.post("index.php", {"fid" : fid}, genQRCode);
     });
 
-    $('.submit').on('click', function() {
-        var data = {
-            "controller" :"flower",
-            "action" : "upload_flower_img",
-            "photoname" : $('.file-path').val()
-        };
-
-        function submit(jData) {
-            if ("1" != jData.ret) {
-                alert("submit error");
-                return;
-            }
-        }
-
-        Util.post("index.php", data, submit);
-
-    });
-
   
     $('.update').on('click', function() {
         Util.get();

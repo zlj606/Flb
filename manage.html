@@ -104,11 +104,15 @@
 		    				<span class="btn btn-success fileinput-button btn-wd">
 			                    <span>上传图片</span>
 			                    <!--<input type="file" name="files[]" multiple>-->
-			                    <input type="file" name="files[]" multiple accept="image/*" capture="camera" class="file-path">
+			                    <input type="file" name="file" multiple accept="image/*" capture="camera" class="file-path">
 			                </span>
 			            </div>
+			            <div hidden>
+			            	<input type="text" name="controller" value="flower">
+			            	<input type="text" name="action" value="upload_flower_img">
+			            </div>
 			            <div class="btn-field">
-			            	<button type="button" class="btn btn-warning submit">提交</button>
+			            	<button type="submit" class="btn btn-warning submit">提交</button>
 			            </div>
 			            <div class="btn-field">
 			                <button type="button" class="btn btn-primary btn-wd gen-code">
