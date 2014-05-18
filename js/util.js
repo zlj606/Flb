@@ -11,7 +11,7 @@ Util = {
                 //ajax错误提示
             },
             success:function(data){  
-                if(data && data.ret != "true"){
+                if(data && data.ret != "1"){
                     //Common.showError(data);
                     //错误处理code转换成文字提示给用户
                     alert("error");

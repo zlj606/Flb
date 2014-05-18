@@ -32,13 +32,17 @@ body {
 }
 
 /*login page*/
-.login-part {
-	margin: 0 auto;
-	width: 50%;
+.forget {
+	text-align: right;
 }
 
-.login-info {
-	width: 50%;
+.login {
+	margin-bottom: 10px;
+}
+
+/*register page*/
+.user-register label {
+	width: 40%;
 }
 
 /*species page*/

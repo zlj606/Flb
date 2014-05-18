@@ -16,18 +16,30 @@
 	</head>
 	<body>
 		<div class="container">
-		    <div class="login-part">		
+			<div class="col-lg-4 col-sm-4">
+			</div>
+		    <div class="col-lg-4 col-sm-4">		
 		      <form class="form-signin" role="form">
 		        <h2 class="form-signin-heading">帐号登陆</h2>
-		        <input type="text" class="username form-control login-info" placeholder="请输入手机号" required autofocus>
-		        <input type="password" class="pwd form-control login-info" placeholder="请输入密码" required>
-		        <label class="checkbox">
-		          <input type="checkbox" value="remember-me"> 下次自动登录
-		        </label>
-		        <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+		        <input type="text" class="username form-control" placeholder="请输入手机号" required autofocus>
+		        <input type="password" class="pwd form-control" placeholder="请输入密码" required>
+		        <div class="row forget-pwd">
+			        <span class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    	<input type="checkbox" name="rememberMe" id="rememberMe" value="true" class="auto-login" tabindex="3">
+                    	<label for="rememberMe">下次自动登录</label>
+                    </span>
+                    <span class="col-xs-6 col-sm-6 col-md-6 col-lg-6 forget">
+                    	<a href="" tabindex="4">忘记密码</a>
+                    </span>
+		    	</div>
+		    	<button class="btn btn-lg btn-primary btn-block login" type="submit">登录</button>
 		      </form>
-		    </div>  
-
+		      <div class="row row-clear">
+		    	<a class="register" role="navigation" href="">如果您没有账号，请点击这里</a>
+		      </div>  
+		    </div>
+		    <div class="col-lg-4 col-sm-4">
+		    </div>
 	    </div> <!-- /container -->
 	    <script src="js/jquery-1.10.2.min.js"></script>
 	    <script src="js/bootstrap.min.js"></script>

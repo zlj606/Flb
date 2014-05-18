@@ -1,7 +1,6 @@
 $(function() {
 	
 	fid = sessionStorage.getItem('fid');
-    fid = parseInt(fid);
 
 	pic_path = Util.baseurl + 'photo/flower/';
 	code_path = Util.baseurl + 'photo/code/'
