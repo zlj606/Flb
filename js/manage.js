@@ -103,7 +103,9 @@ $(function () {
         if ("1" != jData.ret) {
             alert("生成失败!");
             return;
-        } 
+        }
+
+        $('#QRCode').attr('src', Util.baseurl + 'photos/code/'+ jData.res.code_url); 
     }
     
     $('#QRCode').on('click', function() {
