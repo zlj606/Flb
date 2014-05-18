@@ -99,10 +99,39 @@ $(function () {
 
     //生成二维码
     function genQRCode(jData) {
-
+        
+        if ("1" != jData.ret) {
+            alert("生成失败!");
+            return;
+        } 
     }
     
     $('#QRCode').on('click', function() {
+
+        var fid = sessionStroge.getItem('fid');
+        if (typeof(fid) == 'undefined' || '' == fid) {
+            alert("请先上传！");
+            return;
+        }
+
+        Util.post("index.php", {"fid" : fid} genQRCode);
+    });
+
+    $('.submit').on('click', function() {
+        var data = {
+            "controller" :"flower",
+            "action" : "upload_flowr_img",
+            "photoname" : $('.file-path').val()
+        };
+
+        function submit(jData) {
+            if ("1" != jData.ret) {
+                alert("submit error");
+                return;
+            }
+        }
+
+        Util.post("index.php", data, submit);
 
     });
 
