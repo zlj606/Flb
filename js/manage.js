@@ -119,9 +119,9 @@ $(function () {
         Util.post("index.php", {"fid" : fid}, genQRCode);
     });
 
-  
-    $('.update').on('click', function() {
-        Util.get();
+    $('.btn-submit').on('click', function() {
+        var option = 
+        $()
     });
 
 });

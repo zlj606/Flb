@@ -55,6 +55,7 @@ $(function() {
 	var data = {
     	"controller" : "flower",
     	"action" : "query_series",
+    	"bid" : bid,
     	"page" : 1
     }
     Util.get(actionPhp, data, callBack);
@@ -64,8 +65,8 @@ $(function() {
     	var cData = {
     		"controller" : "flower",
     		"action" : "query_flower",
-    		"series_id" : $,
-    		"color_name" : $('.sel-color').val()
+    		"series_id" : sid,
+    		"color_id" : cid
     	};
     	Util.get("index.php", cData, callBack);
     });

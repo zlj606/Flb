@@ -1,9 +1,11 @@
 $(function() {
 
-	function addBreed(fname, url, detail, series_id) {
+	function addBreed(fname, url, detail, series_id, bid, cid) {
 		var html = 'div class="col-6 col-sm-6 col-lg-3 img-border"><h2>'
 				   + fname + '</h2><img src="'
-				   + Util.flowerurl + url + '" series_id="' + series_id + '"></img><p><a class="btn btn-default" href="'
+				   + Util.flowerurl + url + '" series_id="' + series_id 
+                   + '" breed_id="' + bid + '"color_id="'
+                   + cid +'"></img><p><a class="btn btn-default btn-detail" href="'
 				   + detail + '" role="button">View details &raquo;</a></p></div>';
 		$('.row-breed').append(html);
 	}
@@ -16,7 +18,7 @@ $(function() {
         $('.row-breed').html('');
         var arr = jData.res;
         for (var i = 0; i < arr.length; ++i) {
-            addBreed(arr[i].fname, arr[i].url, arr[i].series_id,'series.html');
+            addBreed(arr[i].fname, arr[i].url, arr[i].sid, arr[i].bid, arr[i].cid,'series.html');
         }
     }
 
@@ -87,4 +89,10 @@ $(function() {
     }
 
     Util.get('index.php', data, sliderCallBack);
+
+    $('.btn-detail').on('click', function() {
+        sessionStorage.setItem('bid',$(this).parent().parent().find('img').attr('breed_id'));
+        sessionStorage.setItem('cid', $(this).parent().parent().find('img').attr('color_id'));
+        sessionStorage.setItem('sid', $(this).parent().parent().find('img').attr('series_id'));
+    });
 }); 
