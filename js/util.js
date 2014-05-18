@@ -2,7 +2,7 @@ Util = {
     baseurl: 'http://127.0.0.1:8080/flower/',    
     post:function(url, data, success){              //一个基本的post请求封装
         $.ajax({
-            url:url,
+            url:Util.baseurl + url,
             type:"post",
             data:data,
             dataType:"json",

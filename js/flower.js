@@ -24,4 +24,7 @@ $(function() {
 	}
 
 	Util.get(actionPhp, detailData, callBack);
+
+	//投票按钮处理
+	
 });

@@ -59,7 +59,9 @@
 						return;
 					}
 				}
-				Util.post("index.php", data, callBack);
+				$('.btn-register').on('click', function() {
+					Util.post("index.php", data, callBack);
+				});
 
 				function checkCode(jData) {
 					if("1" == jData.ret) {
@@ -68,8 +70,11 @@
 					}
 
 				}
-
-				Util.get("index.php", {"controller": "user","action" : "send_authnum"}, checkCode);
+				$('.btn-check').on('click', function() {
+					Util.get("index.php", {"controller": "user","action" : "send_authnum"},
+				 checkCode);
+				});
+				
 			});
 		</script>
 	</body>
