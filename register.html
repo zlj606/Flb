@@ -44,14 +44,7 @@
 		<script src="js/util.js"></script>
 		<script>
 			$(function() {
-				var pwd1 = $('.check-code').val(),
-					phone = $('.phone').val();
 				
-				var data = {
-					"controller" : "user",
-					"action" : "sign",
-					"authnum" : pwd1
-				};
 
 				function callBack(jData) {
 					if("1" == jData.ret) {
@@ -60,6 +53,18 @@
 					}
 				}
 				$('.btn-register').on('click', function() {
+					var pwd1 = $('.check-code').val(),
+					phone = $('.phone').val();
+					
+					if ('' == pwd1 || '' == phone) {
+						alert("请输入手机号和验证码");
+						return;
+					}
+					var data = {
+						"controller" : "user",
+						"action" : "sign",
+						"authnum" : pwd1
+					};
 					Util.post("index.php", data, callBack);
 				});
 
@@ -71,8 +76,13 @@
 
 				}
 				$('.btn-check').on('click', function() {
-					Util.get("index.php", {"controller": "user","action" : "send_authnum"},
-				 checkCode);
+					var ph = $('.phone').val();
+					if('' == ph) {
+						alert('请输入手机号');
+						return;
+					}
+					Util.get("index.php", {"controller": "user","action" : "send_authnum",
+							"phone": ph},checkCode);
 				});
 				
 			});
