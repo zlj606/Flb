@@ -32,7 +32,7 @@
                     	<a href="" tabindex="4">忘记密码</a>
                     </span>
 		    	</div>
-		    	<button class="btn btn-lg btn-primary btn-block login" type="submit">登录</button>
+		    	<button class="btn btn-lg btn-primary btn-block login" type="button">登录</button>
 		      </form>
 		      <div class="row row-clear">
 		    	<a class="register" role="navigation" href="register.html">如果您没有账号，请点击这里</a>
@@ -43,5 +43,36 @@
 	    </div> <!-- /container -->
 	    <script src="js/jquery-1.10.2.min.js"></script>
 	    <script src="js/bootstrap.min.js"></script>
+	    <script src="js/util.js"></script>
+	    <script>
+	    	$(function() {
+	    		function callBack(jData) {
+	    			if ("1" != jData.ret) {
+	    				alert('failed');
+	    				return;
+	    			}
+
+	    			alert('success！');
+	    		}
+
+	    		$('.login').on('click', function() {
+	    			var usrName = $('.username').val(),
+	    				pwd = $('.pwd').val(),
+	    				auto = $('.auto-login:checked').val() == "true"? "true" : "false";
+	    			if ('' == usrName || '' == pwd) {
+	    				alert("请输入账号和密码");
+	    				return;
+	    			}
+	    			var data = {
+	    				"controller" : "user",
+	    				"action" : "login",
+	    				"phone" : usrName,
+	    				"pwd" : pwd
+	    			};
+
+	    			Util.post('index.php', data, callBack);
+	    		});
+	    	});
+	    </script>
 	</body>
 </html>
