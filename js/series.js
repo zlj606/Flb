@@ -1,8 +1,24 @@
 $(function() {
-	function addSeries(fname, url, detail) {
+
+	function bscCallBack(jData) {
+		var html = '';
+		 for (var i = 0; i < jData.res.color.length; ++i) {
+            html += '<option value="' 
+                 + jData.res.color[i].color_id  + '">' 
+                 + jData.res.color[i].color_name  + '</option>';
+        }
+
+        $('.sel-color').html('');
+        $('.sel-color').append(html);
+	}
+
+	 //获取数据库的种类，品种，颜色信息
+    Util.get("index.php", detailData, bscCallBack);
+
+	function addSeries(fname, url, detail, sId) {
 		var html = 'div class="col-6 col-sm-6 col-lg-3"><h2>'
 				   + fname + '</h2><img src="'
-				   + url + '"></img><p><a class="btn btn-default" href="'
+				   + url + '"series_id="' + sId + '"></img><p><a class="btn btn-default" href="'
 				   + detail + '" role="button">View details &raquo;</a></p></div>';
 		$('.row-series').append(html);
 	}
@@ -15,7 +31,7 @@ $(function() {
 		$('.row-series').html('');
 		var arr = jData.res;
 		for (var i = 0; i < arr.length; ++i) {
-			addSeries(arr[i].fname, arr[i].url, 'flower.html');
+			addSeries(arr[i].fname, arr[i].url, arr[i].series_id,'flower.html');
 		}
 	}
 
@@ -42,4 +58,15 @@ $(function() {
     	"page" : 1
     }
     Util.get(actionPhp, data, callBack);
+
+    //搜索按钮处理
+    $('.btn-search').on('click', function() {
+    	var cData = {
+    		"controller" : "flower",
+    		"action" : "query_flower",
+    		"series_id" : $,
+    		"color_name" : $('.sel-color').val()
+    	};
+    	Util.get("index.php", cData, callBack);
+    });
 });

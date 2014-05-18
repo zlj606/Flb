@@ -1,9 +1,9 @@
 $(function() {
 
-	function addBreed(fname, url, detail) {
+	function addBreed(fname, url, detail, series_id) {
 		var html = 'div class="col-6 col-sm-6 col-lg-3 img-border"><h2>'
 				   + fname + '</h2><img src="'
-				   + url + '"></img><p><a class="btn btn-default" href="'
+				   + url + '" series_id="' + series_id + '"></img><p><a class="btn btn-default" href="'
 				   + detail + '" role="button">View details &raquo;</a></p></div>';
 		$('.row-breed').append(html);
 	}
@@ -16,7 +16,7 @@ $(function() {
         $('.row-breed').html('');
         var arr = jData.res;
         for (var i = 0; i < arr.length; ++i) {
-            addBreed(arr[i].fname, arr[i].url, 'series.html');
+            addBreed(arr[i].fname, arr[i].url, arr[i].series_id,'series.html');
         }
     }
 
@@ -52,7 +52,7 @@ $(function() {
 
     //获取历史记录
     data = {
-    	"controller" : "flower",
+    	"controller" : "user",
     	"action" : "query_browse_history",
     	"uid" : userId
     }
