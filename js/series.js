@@ -18,7 +18,7 @@ $(function() {
 	function addSeries(fname, url, detail, sId) {
 		var html = 'div class="col-6 col-sm-6 col-lg-3"><h2>'
 				   + fname + '</h2><img src="'
-				   + url + '"series_id="' + sId + '"></img><p><a class="btn btn-default" href="'
+				   + Util.flowerurl + url + '"series_id="' + sId + '"></img><p><a class="btn btn-default" href="'
 				   + detail + '" role="button">View details &raquo;</a></p></div>';
 		$('.row-series').append(html);
 	}
@@ -30,8 +30,8 @@ $(function() {
 		}
 		$('.row-series').html('');
 		var arr = jData.res;
-		for (var i = 0; i < arr.length; ++i) {
-			addSeries(arr[i].fname, arr[i].url, arr[i].series_id,'flower.html');
+		for (var i = 0; i < arr.record.length; ++i) {
+			addSeries(arr.record[i].fname, arr.record[i].url, arr.record[i].series_id,'flower.html');
 		}
 	}
 

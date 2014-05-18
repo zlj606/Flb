@@ -3,7 +3,7 @@ $(function() {
 	function addBreed(fname, url, detail, series_id) {
 		var html = 'div class="col-6 col-sm-6 col-lg-3 img-border"><h2>'
 				   + fname + '</h2><img src="'
-				   + url + '" series_id="' + series_id + '"></img><p><a class="btn btn-default" href="'
+				   + Util.flowerurl + url + '" series_id="' + series_id + '"></img><p><a class="btn btn-default" href="'
 				   + detail + '" role="button">View details &raquo;</a></p></div>';
 		$('.row-breed').append(html);
 	}

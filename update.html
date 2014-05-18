@@ -59,67 +59,33 @@
 	    			<div class="list-group">
 	    			   <div class="list-group-item">
 			    	   		<img src="" class="thumbnail-1" alt="图片预览区域1">
-			    	   		<form id="fileupload">
-			    				<div class="btn-field">
-				    				<span class="btn btn-success fileinput-button btn-wd">
-					                    <span>更新图片</span>
-					                    <!--<input type="file" name="files[]" multiple>-->
-					                    <input type="file" name="files[]" multiple accept="image/*" capture="camera">
-					                </span>
-
-		            			</div>
-		            		</form>
 			    	   </div>
 			    	   <div class="list-group-item">
 					    	<img src="" class="thumbnail-2" alt="图片预览区域2">
-					    	<form id="fileupload">
-			    				<div class="btn-field">
-				    				<span class="btn btn-success fileinput-button btn-wd">
-					                    <span>更新图片</span>
-					                    <!--<input type="file" name="files[]" multiple>-->
-					                    <input type="file" name="files[]" multiple accept="image/*" capture="camera">
-					                </span>
-
-		            			</div>
-		            		</form>
 					    </div>
 					    	<div class="list-group-item">
 					    	<img src="" class="thumbnail-3" alt="图片预览区域3">
-					    	<form id="fileupload">
-			    				<div class="btn-field">
-				    				<span class="btn btn-success fileinput-button btn-wd">
-					                    <span>更新图片</span>
-					                    <!--<input type="file" name="files[]" multiple>-->
-					                    <input type="file" name="files[]" multiple accept="image/*" capture="camera">
-					                </span>
-
-		            			</div>
-		            		</form>
 					    </div>
 					    <div class="list-group-item">
 					    	<img src="" class="thumbnail-4" alt="图片预览区域4">
-					    	<form id="fileupload">
-			    				<div class="btn-field">
-				    				<span class="btn btn-success fileinput-button btn-wd">
-					                    <span>更新图片</span>
-					                    <!--<input type="file" name="files[]" multiple>-->
-					                    <input type="file" name="files[]" multiple accept="image/*" capture="camera">
-					                </span>
-
-		            			</div>
-		            		</form>
 					    </div>
 					    <div class="list-group-item">
 					    	<img src="" class="thumbnail-5" alt="图片预览区域5">
-					    	<form id="fileupload">
+					    </div>
+					    <div class="list-group-item">
+					    	<form id="fileupload" aaction="http://127.0.0.1:8080/flower/index.php" method="post" enctype="multipart/form-data">
 			    				<div class="btn-field">
 				    				<span class="btn btn-success fileinput-button btn-wd">
-					                    <span>更新图片</span>
+					                    <span>上传图片</span>
 					                    <!--<input type="file" name="files[]" multiple>-->
 					                    <input type="file" name="files[]" multiple accept="image/*" capture="camera">
 					                </span>
-
+					                <button type="button" class="btn btn-warning btn-submit">提交</button>
 		            			</div>
+		            			 <div hidden>
+					            	<input type="text" name="controller" value="flower">
+					            	<input type="text" name="action" value="upload_flower_img">
+					            </div>
 		            		</form>
 					    </div>
 					    <div class="list-group-item">
