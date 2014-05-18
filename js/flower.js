@@ -25,7 +25,7 @@ $(function() {
 		$('.u-color').html(jData.res.color_name);
 	}
 
-	Util.get(actionPhp, detailData, callBack);
+	Util.get(actionPhp, {"controller":"flower", "action":"query_flower", "fid": 1}, callBack);
 
 	function voteCallBack(jData) {
 		if ("1" != jData.ret) {
