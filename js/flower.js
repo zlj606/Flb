@@ -1,10 +1,10 @@
-$(function() {
+﻿$(function() {
 	$('.preview').on('click', function() {
 		$('.whole-img').attr('src', $(this).attr('src'));
 	});
 
 
-	$('.ac>a').text(userId);
+	//$('.ac>a').text(userId);
 	//获取花的详细信息
 	function callBack(jData) {
 		if ("1" != jData.ret) {
