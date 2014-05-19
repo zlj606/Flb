@@ -108,7 +108,7 @@ $(function () {
         $('#QRCode').attr('src', Util.baseurl + 'photos/code/'+ jData.res.code_url); 
     }
     
-    $('#QRCode').on('click', function() {
+    $('.gen-code').on('click', function() {
 
         var fid = sessionStroge.getItem('fid');
         if (typeof(fid) == 'undefined' || '' == fid) {
