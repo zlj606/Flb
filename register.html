@@ -78,8 +78,8 @@
 				}
 				$('.btn-check').on('click', function() {
 					var ph = $('.phone').val();
-					if('' == ph) {
-						alert('请输入手机号');
+					if('' == ph || false == Util.isPhone(ph)) {
+						alert('请输入有效的手机号');
 						return;
 					}
 					Util.get("index.php", {"controller": "user","action" : "send_authnum",

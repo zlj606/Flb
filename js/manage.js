@@ -58,20 +58,20 @@ $(function () {
 
     $('.sel-series').on('blur', function() {
         if ('' != $(this).val()) {
-            $('.flbspecies').val()
+            $('.flbspecies').val($(this).val());
         }
 
     });
 
     $('.sel-breed').on('blur', function() {
         if ('' != $(this).val()) {
-            $('.flbbreed').val()
+            $('.flbbreed').val($(this).val());
         }
     });
 
     $('.sel-color').on('blur', function() {
         if ('' != $(this).val()) {
-            $('.flbcolor').val()
+            $('.flbcolor').val($(this).val());
         }  
     });
 
@@ -98,7 +98,7 @@ $(function () {
         var html = '';
         for (var i = 0; i < jData.res.series.length; ++i) {
             html += '<option value="' 
-                 +  jData.res.series[i].series_id + '">' 
+                 +  jData.res.series[i].series_name + '">' 
                  +  jData.res.series[i].series_name + '</option>';
         }
 
