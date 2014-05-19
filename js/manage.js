@@ -110,8 +110,11 @@ $(function () {
     
     $('.gen-code').on('click', function() {
 
-        var fid = sessionStroge.getItem('fid');
-        if (typeof(fid) == 'undefined' || '' == fid) {
+        var fid = sessionStorage.getItem('fid');
+        if (null == fid) {
+            fid = Util.getPara('fid');
+        }
+        if (typeof(fid) == 'undefined' || '' == fid || null == fid) {
             alert("请先上传！");
             return;
         }
