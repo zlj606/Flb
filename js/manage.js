@@ -124,6 +124,7 @@ $(function () {
             url : 'http://127.0.0.1:8080/flower/index.php',
             type: 'post',
             success : function(jData) {
+                jData = eval("(" + jData + ")");
                 if ("1" != jData.ret) {
                     alert("上传图片回调失败");
                     return;
