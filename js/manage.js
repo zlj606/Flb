@@ -5,8 +5,8 @@ $(function () {
             console.log('提交信息失败！');
             return;
         }
-        if ('' != jData.fid) {
-            sessionStorage.setItem('fid', fid);
+        if ('' != jData.res.fid) {
+            sessionStorage.setItem('fid', jData.res.fid);
         }
     }
 
