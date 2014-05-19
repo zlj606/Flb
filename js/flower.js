@@ -3,10 +3,14 @@ $(function() {
 		$('.whole-img').attr('src', $(this).attr('src'));
 	});
 
-	fid = Util.getPara('fid');
+	fid = sessionStorage.getItem('fid');
+	if (null == fid || typeof(fid) == 'undefined') {
+		fid = Util.getPara('fid');
+	}
+	
 
 	//alert(fid);
-	if (typeof(userId) == 'undefined') {
+	if (typeof(userId) == 'undefined' || null == userId) {
 		userId = '';
 	}
 

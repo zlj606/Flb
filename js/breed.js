@@ -3,9 +3,7 @@ $(function() {
 	function addBreed(fname, url, detail, series_id, bid, cid) {
 		var html = 'div class="col-6 col-sm-6 col-lg-3 img-border"><h2>'
 				   + fname + '</h2><img src="'
-				   + Util.flowerurl + url + '" series_id="' + series_id 
-                   + '" breed_id="' + bid + '"color_id="'
-                   + cid +'"></img><p><a class="btn btn-default btn-detail" href="'
+				   + Util.flowerurl + url + '" breed_id="' + bid + '"></img><p><a class="btn btn-default btn-detail" href="'
 				   + detail + '" role="button">View details &raquo;</a></p></div>';
 		$('.row-breed').append(html);
 	}
@@ -17,8 +15,8 @@ $(function() {
         }
         $('.row-breed').html('');
         var arr = jData.res;
-        for (var i = 0; i < arr.length; ++i) {
-            addBreed(arr.record[i].fname, arr.record[i].url, arr.record[i].sid, arr.record[i].bid, arr.record[i].cid,'series.html');
+        for (var i = 0; i < arr.record.length; ++i) {
+            addBreed(arr.record[i].fname, arr.record[i].url,  arr.record[i].bid, 'series.html');
         }
     }
 
@@ -30,10 +28,10 @@ $(function() {
 
 		var arr = jData.res;
 
-		Util.showPage(arr.total, 20, pageCallBack);
+		Util.showPage(arr.record.total, 20, pageCallBack);
 
         $('.row-breed').html('');
-		for (var i = 0; i < arr.length; ++i) {
+		for (var i = 0; i < arr.record.length; ++i) {
 			addBreed(arr.record[i].fname, arr.record[i].url, 'series.html');
 		}
 
@@ -92,7 +90,5 @@ $(function() {
 
     $('.btn-detail').on('click', function() {
         sessionStorage.setItem('bid',$(this).parent().parent().find('img').attr('breed_id'));
-        sessionStorage.setItem('cid', $(this).parent().parent().find('img').attr('color_id'));
-        sessionStorage.setItem('sid', $(this).parent().parent().find('img').attr('series_id'));
     });
 }); 

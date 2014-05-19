@@ -1,5 +1,14 @@
 $(function() {
 
+	if (null == bid) {
+		bid = Util.getPara('bid');
+	}
+
+	if (null == sid) {
+		sid = Util.getPara('sid');
+	}
+	
+
 	function bscCallBack(jData) {
 		var html = '';
 		 for (var i = 0; i < jData.res.color.length; ++i) {
