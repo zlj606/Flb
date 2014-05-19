@@ -6,7 +6,7 @@ $(function () {
             return;
         }
         if ('' != jData.fid) {
-            sessionStroge.setItem('fid', fid);
+            sessionStorage.setItem('fid', fid);
         }
     }
 
@@ -23,20 +23,56 @@ $(function () {
             cult = $('.cInfo').val(),
             story = $('.sInfo').val();
 
-        var fid = sessionStroge.getItem('fid');
-            
-        var data = {
-            "fid" : typeof(fid) == "undefined" ? -1 : fid,
-            "fname" : fname,
-            "breed_name" : fbreed,
-            "series_name" : fspecices,
-            "color_name" : fcolor,
-            "attr" : para,
-            "cult" : cult,
-            "story" : story
-        }
+        var fid = sessionStorage.getItem('fid');
+        
+        if ( null == fid ) {
+            var data = {
+                "controller": "flower",
+                "action": "create_flower",
+                "fname" : fname,
+                "breed_name" : fbreed,
+                "series_name" : fspecices,
+                "color_name" : fcolor,
+                "attr" : para,
+                "cult" : cult,
+                "story" : story
+            }
+        } else {
+            var data = {
+                "controller": "flower",
+                "action": "modify_flower",
+                "fid": fid,
+                "fname" : fname,
+                "breed_name" : fbreed,
+                "series_name" : fspecices,
+                "color_name" : fcolor,
+                "attr" : para,
+                "cult" : cult,
+                "story" : story
+            }
+        } 
+        
 
         Util.post('index.php', data, callBack);
+    });
+
+    $('.sel-series').on('blur', function() {
+        if ('' != $(this).val()) {
+            $('.flbspecies').val()
+        }
+
+    });
+
+    $('.sel-breed').on('blur', function() {
+        if ('' != $(this).val()) {
+            $('.flbbreed').val()
+        }
+    });
+
+    $('.sel-color').on('blur', function() {
+        if ('' != $(this).val()) {
+            $('.flbcolor').val()
+        }  
     });
 
     $('.create-new').on('click',function() {
@@ -135,17 +171,20 @@ $(function () {
                     return;
                 }
                 alert("上传图片回调成功！");
+
+                sessionStorage.setItem('fid', jData.res.fid);
+                $('#big-pic').attr('src', Util.baseurl + jData.res.flower_url);
             }
         }
         $('#fileupload').ajaxSubmit(options);
     });
 
-    $('.file-path').on('change', function() {
+    /*$('.file-path').on('change', function() {
         var objUrl = Util.getObjectURL(this.files[0]);
         console.log("objUrl = "+objUrl);
         if (objUrl) {
             $(".submit-preview").attr("src", objUrl);
         }
-    });
+    });*/
 
 });
