@@ -88,7 +88,7 @@ $(function() {
 
     Util.get('index.php', data, sliderCallBack);
 
-    $('.btn-detail').on('click', function() {
+    $('.btn-detail').on('click', 'p', function() {
         sessionStorage.setItem('bid',$(this).parent().parent().find('img').attr('breed_id'));
     });
 }); 
