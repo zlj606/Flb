@@ -6,6 +6,10 @@ $(function() {
 				   + Util.flowerurl + url + '" breed_id="' + bid + '"></img><p><a class="btn btn-default btn-detail" href="'
 				   + detail + '" role="button">View details &raquo;</a></p></div>';
 		$('.row-breed').append(html);
+
+        $('.btn-detail').on('click', function() {
+            sessionStorage.setItem('bid',$(this).parent().parent().find('img').attr('breed_id'));
+        });
 	}
 
     function pageCallBack(jData) {
@@ -88,7 +92,5 @@ $(function() {
 
     Util.get('index.php', data, sliderCallBack);
 
-    $('.btn-detail').on('click', 'p', function() {
-        sessionStorage.setItem('bid',$(this).parent().parent().find('img').attr('breed_id'));
-    });
+    
 }); 

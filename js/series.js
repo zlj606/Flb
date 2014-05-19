@@ -27,9 +27,13 @@ $(function() {
 	function addSeries(fname, url, detail, sId) {
 		var html = 'div class="col-6 col-sm-6 col-lg-3"><h2>'
 				   + fname + '</h2><img src="'
-				   + Util.flowerurl + url + '"series_id="' + sId + '"></img><p><a class="btn btn-default" href="'
+				   + Util.flowerurl + url + '"series_id="' + sId + '"></img><p><a class="btn btn-default btn-detail" href="'
 				   + detail + '" role="button">View details &raquo;</a></p></div>';
 		$('.row-series').append(html);
+		//图片下的查看详细信息按钮处理
+	    $('.btn-detail').on('click', function() {
+	        sessionStorage.setItem('sid',$(this).parent().parent().find('img').attr('series_id'));
+	    });
 	}
 
 	function pageCallBack(jData) {
@@ -79,8 +83,5 @@ $(function() {
     	};
     	Util.get("index.php", cData, callBack);
     });
-    //图片下的查看详细信息按钮处理
-    $('.btn-detail').on('click', 'p', function() {
-        sessionStorage.setItem('bid',$(this).parent().parent().find('img').attr('breed_id'));
-    });
+    
 });
