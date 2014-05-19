@@ -56,7 +56,7 @@ $(function() {
 			console.log("暂无数据!");
 			return;
 		}
-		var html = '<option value=""></option>';
+		var html = '';
 		for (var i = 0; i < jData.res.series.length; ++i) {
 			html += '<option value="' 
 				 +  jData.res.series[i].series_id + '">' 
@@ -66,6 +66,7 @@ $(function() {
 		$('.sel-series').html('');
 		$('.sel-series').append(html);
 
+		html = '';
 		for (var i = 0; i < jData.res.breed.length; ++i) {
 			html += '<option value="' 
 				 + jData.res.breed[i].breed_id + '">' 
@@ -74,7 +75,8 @@ $(function() {
 
 		$('.sel-breed').html('');
 		$('.sel-breed').append(html);
-
+		
+		html = '';
 		for (var i = 0; i < jData.res.color.length; ++i) {
 			html += '<option value="' 
 				 + jData.res.color[i].color_id  + '">' 
