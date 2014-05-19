@@ -1,7 +1,7 @@
 Util = {
     baseurl: 'http://127.0.0.1:8080/flower/',
-    flowerurl: Util.baseurl + 'photos/flower/',
-    codeurl: Util.baseurl + 'photos/code/',    
+    flowerurl: 'http://127.0.0.1:8080/flower/photos/flower/',
+    codeurl: 'http://127.0.0.1:8080/flower/photos/code/',    
     post:function(url, data, success){              //一个基本的post请求封装
         $.ajax({
             url:Util.baseurl + url,

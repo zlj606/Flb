@@ -120,8 +120,18 @@ $(function () {
     });
 
     $('.btn-submit').on('click', function() {
-        var option = 
-        $()
+        var options = {
+            url : 'http://127.0.0.1:8080/flower/index.php',
+            type: 'post',
+            success : function(jData) {
+                if ("1" != jData.ret) {
+                    alert("上传图片回调失败");
+                    return;
+                }
+                alert("上传图片回调成功！");
+            }
+        }
+        $('#fileupload').ajaxSubmit(options);
     });
 
 });
