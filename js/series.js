@@ -43,11 +43,11 @@ $(function() {
 
 		var arr = jData.res;
 
-		Util.showPage(arr.total, 20, pageCallBack);
+		Util.showPage(arr.record.total, 20, pageCallBack);
 
 		$('.row-series').html('');
-		for (var i = 0; i < arr.length; ++i) {
-			addSeries(arr[i].fname, arr[i].url, 'flower.html');
+		for (var i = 0; i < arr.record.length; ++i) {
+			addSeries(arr.record[i].fname, arr.record[i].url, 'flower.html');
 		}
 
 	}

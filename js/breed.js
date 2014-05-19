@@ -18,7 +18,7 @@ $(function() {
         $('.row-breed').html('');
         var arr = jData.res;
         for (var i = 0; i < arr.length; ++i) {
-            addBreed(arr[i].fname, arr[i].url, arr[i].sid, arr[i].bid, arr[i].cid,'series.html');
+            addBreed(arr.record[i].fname, arr.record[i].url, arr.record[i].sid, arr.record[i].bid, arr.record[i].cid,'series.html');
         }
     }
 
@@ -34,7 +34,7 @@ $(function() {
 
         $('.row-breed').html('');
 		for (var i = 0; i < arr.length; ++i) {
-			addBreed(arr[i].fname, arr[i].url, 'series.html');
+			addBreed(arr.record[i].fname, arr.record[i].url, 'series.html');
 		}
 
 	}
