@@ -132,7 +132,19 @@ body {
 	float: left;
 }
 /*flower page*/
+.div-preview {
+	padding-left: 8%;
+	padding-right: 8%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.whole-img {
+	width: 262px;
+	height: 196px;
+}
+
 .preview {
-	width: 80px;
-	height: 64px;
+	width: 81px;
+	height: 61px;
 }
