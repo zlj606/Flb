@@ -116,7 +116,7 @@ $(function () {
             return;
         }
 
-        Util.post("index.php", {"fid" : fid}, genQRCode);
+        Util.post("index.php", {"controller": "flower","action": "create_code", "fid" : fid}, genQRCode);
     });
 
     $('.btn-submit').on('click', function() {
@@ -133,6 +133,14 @@ $(function () {
             }
         }
         $('#fileupload').ajaxSubmit(options);
+    });
+
+    $('.file-path').on('change', function() {
+        var objUrl = Util.getObjectURL(this.files[0]);
+        console.log("objUrl = "+objUrl);
+        if (objUrl) {
+            $(".submit-preview").attr("src", objUrl);
+        }
     });
 
 });
