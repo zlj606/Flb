@@ -1,0 +1,10 @@
+1.register 手机号验证，注册跳转（注册成功后跳转到jump_url）
+2.忘记密码（手机号）
+3.导航条
+4.注销调回到登陆页（发送一个请求到服务器controller：user，action：quit，uid: 返回"0" or 1）
+5.breed跳转到series bid未找到
+6.剩余票数undefined，投票成功与否
+7.提示信息（上传）
+8.注册时间计时器，删除图片（server）
+9.管理员管理账号页面
+10.统计投票
