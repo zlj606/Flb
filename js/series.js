@@ -79,4 +79,8 @@ $(function() {
     	};
     	Util.get("index.php", cData, callBack);
     });
+    //图片下的查看详细信息按钮处理
+    $('.btn-detail').on('click', 'p', function() {
+        sessionStorage.setItem('bid',$(this).parent().parent().find('img').attr('breed_id'));
+    });
 });
