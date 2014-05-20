@@ -25,7 +25,7 @@ $(function() {
     Util.get("index.php", detailData, bscCallBack);
 
 	function addSeries(fname, url, detail, sId) {
-		var html = 'div class="col-6 col-sm-6 col-lg-3"><h2>'
+		var html = '<div class="col-6 col-sm-6 col-lg-3"><h2>'
 				   + fname + '</h2><img src="'
 				   + Util.flowerurl + url + '"series_id="' + sId + '"></img><p><a class="btn btn-default btn-detail" href="'
 				   + detail + '" role="button">View details &raquo;</a></p></div>';
