@@ -4,7 +4,7 @@ body {
   font-size: 13px;
   line-height: 18px;
   color: #333333;
-  background-color: #ffffff;
+  background-color: #BBD9EE;
 }
 /* index page */
 .nav-font {
@@ -140,8 +140,8 @@ body {
 }
 
 .whole-img {
-	width: 262px;
-	height: 196px;
+	width: 524px;
+	height: 391px;
 }
 
 .preview {
@@ -152,4 +152,19 @@ body {
 .row-margin {
 	margin-top: 10px;
 	margin-bottom: 10px;
+}
+
+/*account page*/
+.add-user {
+	border-top: 2px solid #f70;
+	border-bottom: 2px solid #f70;
+	margin-bottom: 5px;
+}
+
+.add-user input {
+	width: 100%;
+}
+
+.new-user {
+	float: right;
 }

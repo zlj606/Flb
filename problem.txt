@@ -8,3 +8,8 @@
 8.注册时间计时器，删除图片（server）
 9.管理员管理账号页面
 10.统计投票
+11.flower二维码不显示
+12.投票提示
+
+
+手机号（phone） name姓名 user_type_name身份 grow_unit scale(规模) shop_name(花店名称)  sex(性别) age income plant_base 

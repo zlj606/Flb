@@ -36,7 +36,6 @@ $(function() {
 		$('.attr').html(jData.res.attr);
 		$('.cult').html(jData.res.cult);
 		$('.story').html(jData.res.story);
-		$('.show-qrcode').attr('src', Util.codeurl + jData.res.code_url);
 	}
 
 	Util.get(actionPhp, {"controller":"flower", "action":"query_flower", "fid": parseInt(fid)}, callBack);
@@ -52,27 +51,22 @@ $(function() {
 
 	//投票按钮处理 
 	$('.vote').on('click', function() {
-		var data = {
-			"controller" : "user",
-			"action" : "vote",
-			"fid" : fid,
-			"uid" : userId
-		};
+
+		if (typeof(userId) != 'undefined' && '' != userId && null != userId) {
+			var data = {
+				"controller" : "user",
+				"action" : "query_vote_rest",
+				"fid" : fid,
+				"uid" : userId
+			};
+		} else {
+			alert("请您先登录后，再进行投票！");
+			return;
+		}	
 
 		Util.get('index.php', data, voteCallBack);
 
 	});
-
-	if (typeof(userId) != 'undefined' && '' != userId) {
-		var data = {
-			"controller" : "user",
-			"action" : "query_vote_rest",
-			"fid" : fid,
-			"uid" : userId
-		};
-
-		Util.get('index.php', data, voteCallBack);
-	}
 
 	function restCallBack(jData) {
 		if ("1" != jData.ret) {
