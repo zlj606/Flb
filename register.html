@@ -58,7 +58,7 @@
 					var pwd1 = $('.check-code').val(),
 					phone = $('.phone').val();
 					
-					if ('' == pwd1 || '' == phone || false == Util.isPhone(ph)) {
+					if ('' == pwd1 || '' == phone || false == Util.isPhone(phone)) {
 						alert("请输入有效的手机号和验证码");
 						return;
 					}

@@ -25,9 +25,9 @@ $(function() {
 		var flb_arr = jData.res.flower_url.split(',');
 
 		for (var i = 0; i < flb_arr.length; ++i) {
-			$('.thumbnail-' + i + 1).attr('src', flb_arr[i]);
+			$('.thumbnail-' + (i + 1)).attr('src', Util.flowerurl +flb_arr[i]);
 		}
-		$('.whole-img').attr('src', flb_arr[0]);
+		$('.whole-img').attr('src', Util.flowerurl + flb_arr[0]);
 
 		$('.u-name').html(jData.res.fname);
 		$('.u-breed').html(jData.res.breed_name);
@@ -36,7 +36,7 @@ $(function() {
 		$('.attr').html(jData.res.attr);
 		$('.cult').html(jData.res.cult);
 		$('.story').html(jData.res.story);
-		$('.show-qrcode').attr('src', jData.res.code_url);
+		$('.show-qrcode').attr('src', Util.codeurl + jData.res.code_url);
 	}
 
 	Util.get(actionPhp, {"controller":"flower", "action":"query_flower", "fid": parseInt(fid)}, callBack);
