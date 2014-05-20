@@ -33,6 +33,9 @@ $(function() {
 		$('.u-breed').html(jData.res.breed_name);
 		$('.u-spe').html(jData.res.series_name);
 		$('.u-color').html(jData.res.color_name);
+		$('.attr').html(jData.res.attr);
+		$('.cult').html(jData.res.cult);
+		$('.story').html(jData.res.story);
 	}
 
 	Util.get(actionPhp, {"controller":"flower", "action":"query_flower", "fid": parseInt(fid)}, callBack);
@@ -42,7 +45,7 @@ $(function() {
 			alert("投票失败!");
 			return;
 		}
-
+		alert("投票成功，感谢您的参与!");
 		$('.vote-chance').html(jData.res.vote_rest + '');
 	}
 
@@ -70,6 +73,13 @@ $(function() {
 		Util.get('index.php', data, voteCallBack);
 	}
 
+	function restCallBack(jData) {
+		if ("1" != jData.ret) {
+			alert("获取投票余额失败!");
+			return;
+		}
+		$('.vote-chance').html(jData.res.vote_rest + '');
+	}
 	//获取投票余额
 	if ('' != userId) {
 		var data = {
@@ -78,6 +88,6 @@ $(function() {
 			"fid" : fid,
 			"uid" : userId
 		};
-		Util.get('index.php', data, voteCallBack);
+		Util.get('index.php', data, restCallBack);
 	}
 });

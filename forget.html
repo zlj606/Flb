@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>投票系统</title>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    	<!--[if lt IE 9]>
+     		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    	<![endif]-->
+	</head>
+	<body>
+		<div calss="container">
+			<div class="col-xs-12 col-xs-4">
+			</div>
+			<div class="col-xs-12 col-xs-4">
+				<div class="row row-margin row-clear">
+					<div class="col-xs-6 col-lg-6">
+						<label>请输入手机号(*)</label>
+					</div>
+					<div class="col-xs-6 col-lg-6">
+						<input class="phone" type="text">
+					</div>
+				</div>
+				<div class="row row-margin row-clear">
+					<div class="col-xs-6 col-lg-6">
+						<label>请输入验证码(*)</label>
+					</div>
+					<div class="col-xs-6 col-lg-6">
+						<input class="phone" type="text">
+						<button type="button" class="btn btn-wanring check-code">获取验证码</button>
+					</div>
+				</div>
+				<div class="row row-margin row-clear">
+					<button class="btn btn-error find-pwd">找回密码</button>
+				</div>
+			</div>
+			<div class="col-xs-12 col-xs-4">
+			</div>
+		</div>
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<script src="js/util.js"></script>
+		<script>
+			
+			$(function() {
+
+				function checkCode(jData) {
+					if("1" == jData.ret) {
+						alert("获取失败！");
+						return;
+					}
+					alert('验证码发送成功，请查收！');
+
+				}
+
+				$('.check-code').on('click', function() {
+					var phone = $('.phone').val();
+					if ('' == phone || false == Util.isPhone(phone)) {
+						alert('请输入有效的手机号！');
+						return;
+					}
+					//调用发送验证码
+					Util.get("index.php", {"controller": "user","action" : "send_authnum",
+							"phone": phone},checkCode);
+				});
+				
+				function callBack(jData) {
+					if("1" == jData.ret) {
+						alert("改密失败！");
+						return;
+					}
+					alert('重置的密码已发送到您的手机，请查收！');
+				}
+
+				$('.check-code').on('click', function() {
+					var phone = $('.phone').val();
+					if ('' == phone || false == Util.isPhone(phone)) {
+						alert('请输入有效的手机号！');
+						return;
+					}
+					//调用发送验证码
+					Util.get("index.php", {"controller": "user","action" : "send_authnum",
+							"phone": phone},callBack);
+				});
+				
+			});		
+			 
+		</script>
+	</body>
+</html>

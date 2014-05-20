@@ -1,7 +1,7 @@
 $(function() {
 
-	function addBreed(fname, url, detail, series_id, bid, cid) {
-		var html = 'div class="col-6 col-sm-6 col-lg-3 img-border"><h2>'
+	function addBreed(fname, url, detail, bid) {
+		var html = '<div class="col-6 col-sm-6 col-lg-3 img-border"><h2>'
 				   + fname + '</h2><img src="'
 				   + Util.flowerurl + url + '" breed_id="' + bid + '"></img><p><a class="btn btn-default btn-detail" href="'
 				   + detail + '" role="button">View details &raquo;</a></p></div>';
@@ -11,6 +11,7 @@ $(function() {
             sessionStorage.setItem('bid',$(this).parent().parent().find('img').attr('breed_id'));
         });
 	}
+
 
     function pageCallBack(jData) {
         if ("1" != jData.ret) {

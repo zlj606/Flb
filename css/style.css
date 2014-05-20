@@ -148,3 +148,8 @@ body {
 	width: 81px;
 	height: 61px;
 }
+
+.row-margin {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
