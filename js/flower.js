@@ -14,7 +14,6 @@ $(function() {
 		userId = '';
 	}
 
-	$('.ac>a').text(userId);
 	//获取花的详细信息
 	function callBack(jData) {
 		if ("1" != jData.ret) {

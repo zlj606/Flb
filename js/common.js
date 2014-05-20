@@ -7,6 +7,7 @@
 		actionPhp = "index.php",
 		//登录成功后，返回的用户标识
 		userId = sessionStorage.getItem('user_id'),
+		displayName = sessionStorage.getItem('display_name'),
 		sid = sessionStorage.getItem('sid')
 		cid = sessionStorage.getItem('cid'),
 		bid = sessionStorage.getItem('bid');
@@ -14,10 +15,16 @@
 				    "ERROR"	
 				    ];
 
+	if (null != displayName && '' != displayName) {
+		$('.ac>a').text(displayName);
+		$('.logout').text('注销');
+	}
 
 	function logoutCallBack(jData) {
 		//清空本地存储
 		sessionStorage.clear();
+		$('.ac>a').text('登录');
+		$('.logout').text('注册');
 		window.location.href = "index.html";
 	}
 

@@ -53,8 +53,11 @@
 	    			}
 	    			//将用户标识存储到sessionStorage中
 	    			sessionStorage.setItem('user_id', jData.res.uid);
+					sessionStorage.setItem('display_name', jData.res.uid);
 	    			if (jData.res.jump_url != '') {
 	    				window.location.href = jData.res.jump_url;
+	    			} else {
+	    				window.location.href = "index.html";
 	    			}
 	    			 
 	    			alert('success！');

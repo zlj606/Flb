@@ -36,4 +36,14 @@ $(document).ready(function() {
             [ "Webkit", "Safari 3.0", "OSX.4+", 522.1, "A" ,'']  
         ]
 	});
+	
+	//新增用户处理
+	function callBack(jData) {
+		if ("1" != jData.ret) {
+			alert(jData.ret.err);
+			return;		}
+	}
+	$('.add-user').on('click', function() {
+
+	});
 });
