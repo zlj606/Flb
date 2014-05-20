@@ -44,7 +44,7 @@ $(function() {
 		$('.row-series').html('');
 		var arr = jData.res;
 		for (var i = 0; i < arr.record.length; ++i) {
-			addSeries(arr.record[i].fname, arr.record[i].url, arr.record[i].series_id,'flower.html');
+			addSeries(arr.record[i].fname, arr.record[i].url, arr.record[i].series_id,'color.html');
 		}
 	}
 
@@ -60,7 +60,7 @@ $(function() {
 
 		$('.row-series').html('');
 		for (var i = 0; i < arr.record.length; ++i) {
-			addSeries(arr.record[i].fname, arr.record[i].url, 'flower.html');
+			addSeries(arr.record[i].fname, arr.record[i].url, 'color.html');
 		}
 
 	}

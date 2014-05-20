@@ -40,10 +40,38 @@ $(document).ready(function() {
 	//新增用户处理
 	function callBack(jData) {
 		if ("1" != jData.ret) {
+			if (null == jData.ret.err || 'undefined' == typeof(jData.ret.err)) {
+				alert("新增用户失败!");
+				return;
+			}	
 			alert(jData.ret.err);
-			return;		}
+			return;
+		}
+		alert("新增用户成功!");
 	}
 	$('.add-user').on('click', function() {
+		var data = {	
+			"controller": "",
+			"action": ,
+			"phone": $('.phone').val(),
+			"name" : $('.name').val(),
+			"sex" : $('.sex').val(),
+			"user_type_name" : $('.identify').val(),
+			"age" : $('.age').val(),
+			"scale" : $('.scale').val(),
+			"shop-name" : $('.shop-name').val(),
+			"income" : $('.income').val(),
+			"plant_base" : $('.plant_base').val()
+		};
+		Util.get('index.php', data, callBack);
+	});
 
+	//继续添加处理
+	$('.add-new').on('click', function() {
+		$('.phone').val('');
+		$('.name').val('');
+		$('.age').val('');
+		$('.plant_base').val('');
+		$('.shop-name').val('');
 	});
 });
