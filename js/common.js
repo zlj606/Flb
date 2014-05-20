@@ -25,7 +25,7 @@ $(function() {
 	//注销回调处理
 	$('.logout').on('click', function() {
 
-		Util.get(actionPhp,{"controller":"user", "action":"quit","uid",userId},
+		Util.get(actionPhp,{"controller":"user", "action":"quit","uid":userId},
 			logoutCallBack);
 	});	
 });
