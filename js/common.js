@@ -1,4 +1,3 @@
-$(function() {
 	//获取花的详细信息请求数据
 	var detailData = {
 			"controller" : "flower",
@@ -28,4 +27,3 @@ $(function() {
 		Util.get(actionPhp,{"controller":"user", "action":"quit","uid":userId},
 			logoutCallBack);
 	});	
-});
