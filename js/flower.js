@@ -36,6 +36,7 @@ $(function() {
 		$('.attr').html(jData.res.attr);
 		$('.cult').html(jData.res.cult);
 		$('.story').html(jData.res.story);
+		$('.show-qrcode').attr('src', jData.res.code_url);
 	}
 
 	Util.get(actionPhp, {"controller":"flower", "action":"query_flower", "fid": parseInt(fid)}, callBack);
