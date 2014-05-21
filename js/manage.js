@@ -1,5 +1,15 @@
 $(function () {
     
+    function addFid(fid) {
+        if ($('.action-info').has('.fid').length > 0) {
+            $('.fid').val(fid);
+        } else {
+           $('.action-info').append('<input type="password" name="fid" class="fid" value="' 
+            + fid + '">'); 
+        }
+        
+    }
+
     function callBack(jData) {
         if('1' != jData.ret) {
             console.log('提交信息失败！');
@@ -7,6 +17,7 @@ $(function () {
         }
         if ('' != jData.res.fid) {
             sessionStorage.setItem('fid', jData.res.fid);
+            addFid(jData.res.fid);
         }
     }
 
