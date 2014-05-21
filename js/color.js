@@ -50,7 +50,7 @@ $(function() {
 
 	var data = {
     	"controller" : "flower",
-    	"action" : "query_color",
+    	"action" : "query_flower_list",
     	"bid" : bid,
     	"sid" : sid,
     	"page" : 1
