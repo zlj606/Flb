@@ -11,97 +11,22 @@ body {
 	color: #999;
 }
 
-.username {
-	background: url(../images/login-locked-icon.png) no-repeat 15px center;
-	margin-bottom: 0;
-}
-
-.pwd {
-	background: url(../images/login-key-icon.png) no-repeat 15px center;
-	margin-bottom: 0;
-}
-
-.username, .pwd {
-	padding: 8px 0;
-	border: 2px solid #e1e1e1;
-	margin-bottom: 20px;
-	font-weight: normal;
-	text-indent: 43px;
-	outline: 0;
-	font-size: 1.25em;
-}
-
-/*login page*/
-.forget {
-	text-align: right;
-}
-
-.login {
-	margin-bottom: 10px;
-}
-body#login {  
-	width: 410px; 
-}
-body#login #wrappertop{
-	width: 370px;
-}
-
-body#login #wrapperbottom_branding_text a{
-        color: #C0C0C0; 
-}
-body#login #wrapper{
-	width: 370px;
-	padding: 0 20px 0 20px;
-}
-body#login #content{
-	width: 370px;
-}
-body#login #header {
-	width: 350px;
-}
-#wrapper {
-padding: 0 20px 0 20px;
-position: relative;
-}
-#content {
-background-color: #fff;
-text-align: left;
-}
-#header {
-background: #c5e6ea;
-padding: 25px 0 5px 20px;
-border-bottom: #b2ccd0 solid 1px;
-height: 42px;
-display: block;
-}
-#darkbanner {
-margin: 20px 0 0 -18px;
-padding: 8px 10px 10px 40px;
-background: #424242;
-position: relative;
-}
-
-.banner320 {
-width: 320px;
-}
-
-#darkbanner h2 {
-font: bold 24px helvetica, arial, sans-serif;
-color: #fff;
-display: inline;
-margin-left: 10px;
-}
-
-#header h1 {
-margin-top: 15px;
-display: inline;
-width: 201px;
-}
 /*register page*/
 .user-register label {
 	width: 40%;
 }
 
+.register-wrap {
+	margin-top: 50px;
+}
+
+.btn-register {
+	margin-left: 40px;
+}
+
+.user-register {
+	background: ;
+}
 /*species page*/
 .img-border {
 	border-radius: 5%;
