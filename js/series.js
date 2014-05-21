@@ -60,7 +60,7 @@ $(function() {
 
 		$('.row-series').html('');
 		for (var i = 0; i < arr.record.length; ++i) {
-			addSeries(arr.record[i].fname, arr.record[i].url, 'color.html');
+			addSeries(arr.record[i].fname, arr.record[i].url, 'color.html', arr.record[i].sid);
 		}
 
 	}
