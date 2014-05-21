@@ -1,9 +1,6 @@
 $(function() {
 	
 	fid = sessionStorage.getItem('fid');
-
-	pic_path = Util.baseurl + 'photo/flower/';
-	code_path = Util.baseurl + 'photo/code/'
     
 	$('.series-field').hide();
 	$('.color-field').hide();
@@ -102,10 +99,10 @@ $(function() {
     	var arr = jData.res.flower_url.split(',');
 
     	for (var i = 0 ; i < arr.length ; ++i) {
-    		$('.thumbnail-' + (i + 1)).attr('src', pic_path + arr[i]);
+    		$('.thumbnail-' + (i + 1)).attr('src', Util.flowerurl + arr[i]);
     		addFloatDel($('.thumbnail-' + (i + 1)).parent());
     	}
-    	$('.QRCode').attr('src', jData.res.code_url + code_path);
+    	$('.QRCode').attr('src', jData.res.code_url + Util.codeurl);
     }
 
     controller = 'flower',
@@ -179,7 +176,7 @@ $(function() {
                 alert("上传图片回调成功！");
 
                 sessionStorage.setItem('fid', jData.res.fid);
-                $('#big-pic').attr('src', Util.baseurl + jData.res.flower_url);
+                $('#big-pic').attr('src', Util.flowerurl + jData.res.flower_url);
             }
         }
         $('#fileupload').ajaxSubmit(options);
@@ -199,20 +196,7 @@ $(function() {
 		alert('删除图片成功！');
 	}
 
-    //处理所有图片删除
-    $('.btn-del').on('click', function() {
-    	var picName = $(this).parent().find('img').attr('src');
-    	var begin = picName.lastIndexOf('/');
-    		picName = picName.subString(begin + 1, picName.length);
-    	var delData = {
-    		"controller" : "flower",
-    		"action" : "remove_flower_img",
-    		"fid" : fid,
-    		"img" : picName
-    	};
-
-    	Util.get('index.php', delData, delCallBack);
-    });
+    
 
     //更新数据
     function updateCallBack(jData) {
@@ -268,7 +252,22 @@ $(function() {
     	var html = '';
     	html += '<button class="btn-del">删除</button>';
     	$(selector).append(html);
+
+    	//处理所有图片删除
+	    $('.btn-del').on('click', function() {
+	    	var picName = $(this).parent().find('img').attr('src');
+	    	var begin = picName.lastIndexOf('/');
+	    		picName = picName.substring(begin + 1, picName.length);
+	    	var delData = {
+	    		"controller" : "flower",
+	    		"action" : "remove_flower_img",
+	    		"fid" : fid,
+	    		"img" : picName
+	    	};
+
+	    	Util.get('index.php', delData, delCallBack);
+	    });
     }
 
-    //addFloatDel('a.thumbnail-1');
+    addFloatDel('a.thumbnail-1');
 });
