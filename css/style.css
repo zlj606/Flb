@@ -20,7 +20,7 @@ body {
 }
 
 .top-margin input {
-	width: 40%!important;
+	width: 30%!important;
 }
 
 .btn-register, .btn-pwd {
@@ -194,3 +194,4 @@ body {
 	top: -65px;
 	left: -170px;
 }
+
