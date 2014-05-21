@@ -23,3 +23,5 @@ controller: flower   modify_flower fname fid breed_name series_name color_name a
 
 É¾³ıÍ¼Æ¬
 flower remove_flower_img fid img(urlÍ¼Æ¬Ãû)
+
+ÕÒ»ØÃÜÂë

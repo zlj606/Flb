@@ -7,15 +7,18 @@ $(function() {
 		sid = Util.getPara('sid');
 	}
 
-	function addColor(fname, url, detail,cid) {
+
+	function addColor(fname, url, detail,cid, fid) {
 		var html = '<div class="col-6 col-sm-6 col-lg-3"><h2>'
 				   + fname + '</h2><img src="'
-				   + Util.flowerurl + url + '"color_id="' + cId + '"></img><p><a class="btn btn-default btn-detail" href="'
+				   + Util.flowerurl + url + '"color_id="' + cid + '"flower_id="' 
+				   + fid + '"></img><p><a class="btn btn-default btn-detail" href="'
 				   + detail + '" role="button">View details &raquo;</a></p></div>';
 		$('.row-color').append(html);
 		//图片下的查看详细信息按钮处理
 	    $('.btn-detail').on('click', function() {
 	        sessionStorage.setItem('cid',$(this).parent().parent().find('img').attr('color_id'));
+	        sessionStorage.setItem('fid',$(this).parent().parent().find('img').attr('flower_id'));
 	    });
 	}
 
@@ -27,7 +30,8 @@ $(function() {
 		$('.row-color').html('');
 		var arr = jData.res;
 		for (var i = 0; i < arr.record.length; ++i) {
-			addColor(arr.record[i].fname, arr.record[i].url, 'flower.html',arr.record[i].cid);
+			addColor(arr.record[i].fname, arr.record[i].url, 'flower.html',
+				arr.record[i].cid, arr.record[i].fid);
 		}
 	}
 
@@ -43,7 +47,8 @@ $(function() {
 
 		$('.row-color').html('');
 		for (var i = 0; i < arr.record.length; ++i) {
-			addColor(arr.record[i].fname, arr.record[i].url, 'flower.html', arr.record[i].cid);
+			addColor(arr.record[i].fname, arr.record[i].url, 'flower.html', 
+				arr.record[i].cid, arr.record[i].fid);
 		}
 
 	}

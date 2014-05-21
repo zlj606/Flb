@@ -198,9 +198,27 @@ $(function() {
 
 		alert('删除图片成功！');
 	}
+
+	var mData = {
+    		"controller" : "flower",
+    		"action" : "modify_flower",
+    		"fname" :,
+    		"fid" : ,
+    		"bid" : ,
+    		"sid" : ,
+    		"cid" : ,
+    		"attr" : ,
+    		"cult" : ,
+    		"story" :
+    	};
     //处理所有图片删除
     $('.btn-del').on('click', function() {
-
+    	var delData = {
+    		"controller" : "flower",
+    		"action" : "remove_flower_img",
+    		"fid" : fid,
+    		"img" : 
+    	};
     });
 
     $('img[class^="thumbnail"]').on({
