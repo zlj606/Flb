@@ -21,7 +21,7 @@ $(function() {
         $('.row-breed').html('');
         var arr = jData.res;
         for (var i = 0; i < arr.record.length; ++i) {
-            addBreed(arr.record[i].fname, arr.record[i].url, 'series.html',  arr.record[i].bid);
+            addBreed(arr.record[i].breed_name, arr.record[i].url, 'series.html',  arr.record[i].bid);
         }
     }
 

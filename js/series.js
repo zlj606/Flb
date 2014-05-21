@@ -44,7 +44,7 @@ $(function() {
 		$('.row-series').html('');
 		var arr = jData.res;
 		for (var i = 0; i < arr.record.length; ++i) {
-			addSeries(arr.record[i].fname, arr.record[i].url,'color.html', arr.record[i].sid);
+			addSeries(arr.record[i].series_name, arr.record[i].url,'color.html', arr.record[i].sid);
 		}
 	}
 

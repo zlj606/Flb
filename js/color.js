@@ -13,7 +13,7 @@ $(function() {
 				   + fname + '</h2><img src="'
 				   + Util.flowerurl + url + '"color_id="' + cid + '"flower_id="' 
 				   + fid + '"></img><p><a class="btn btn-default btn-detail" href="'
-				   + detail + '" role="button">View details &raquo;</a></p></div>';
+				   + detail + '" role="button">详情</a></p></div>';
 		$('.row-color').append(html);
 		//图片下的查看详细信息按钮处理
 	    $('.btn-detail').on('click', function() {
