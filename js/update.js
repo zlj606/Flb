@@ -199,23 +199,11 @@ $(function() {
 		alert('删除图片成功！');
 	}
 
-	/*var mData = {
-    		"controller" : "flower",
-    		"action" : "modify_flower",
-    		"fname" :,
-    		"fid" : ,
-    		"bid" : ,
-    		"sid" : ,
-    		"cid" : ,
-    		"attr" : ,
-    		"cult" : ,
-    		"story" :
-    	};*/
     //处理所有图片删除
     $('.btn-del').on('click', function() {
     	var picName = $(this).parent().find('img').attr('src');
     	var begin = picName.lastIndexOf('/');
-    		picName = picName.subString(begin.picName.length);
+    		picName = picName.subString(begin + 1, picName.length);
     	var delData = {
     		"controller" : "flower",
     		"action" : "remove_flower_img",
@@ -228,9 +216,36 @@ $(function() {
 
     //更新数据
     function updateCallBack(jData) {
+    	if ('1' != jData.ret) {
+			if (null != jData.res.err) {
+				console.log(jData.res.err);
+				return;
+			} else {
+				console.log('更新数据失败!');
+				return;
+			}
+		}
 
+		alert('更新数据成功！');
     }
-    
+
+    $('.btn-para').on('click', function() {
+    	var mData = {
+    		"controller" : "flower",
+    		"action" : "modify_flower",
+    		"fname" : $('.flbname').val(),
+    		"fid" : fid,
+    		"bid" : $('.in-breed').val(),
+    		"sid" : $('.in-series').val(),
+    		"cid" : $('.in-color').val(),
+    		"attr" : $('.pContent').val(),
+    		"cult" : $('.cContent').val(),
+    		"story" : $('.sContent').val()
+    	};
+
+    	Util.post('index.php', mData, updateCallBack);
+    });
+
     $('img[class^="thumbnail"]').on({
     	mouseenter: function() {
     		if ($(this).attr('src') == '') {

@@ -40,9 +40,14 @@ $(function() {
 	Util.get(actionPhp, {"controller":"flower", "action":"query_flower", "fid": parseInt(fid)}, callBack);
 
 	function voteCallBack(jData) {
-		if ("1" != jData.ret) {
-			alert("投票失败!");
-			return;
+		if ('1' != jData.ret) {
+			if (null != jData.res.err) {
+				alert(jData.res.err);
+				return;
+			} else {
+				console.log('投票失败!');
+				return;
+			}
 		}
 		alert("投票成功，感谢您的参与!");
 		$('.vote-chance').html(jData.res.vote_rest + '');

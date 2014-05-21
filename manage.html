@@ -77,6 +77,12 @@
 							<input type="text" class="flbname">
 						</li>
 						<li class="list-group-item">
+							<label>品种</label>
+							<input type="text" class="flbbreed">
+							<select class="sel-breed">
+							</select>
+						</li>
+						<li class="list-group-item">
 							<label>系类</label>
 							<input type="text" class="flbspecies">
 							<select class="sel-series">
@@ -86,12 +92,6 @@
 							<label>颜色</label>
 							<input type="text"  class="flbcolor">
 							<select class="sel-color">
-							</select>
-						</li>
-						<li class="list-group-item">
-							<label>品种</label>
-							<input type="text" class="flbbreed">
-							<select class="sel-breed">
 							</select>
 						</li>
 					</ul>
@@ -104,7 +104,7 @@
 		    				<span class="btn btn-success fileinput-button btn-wd">
 			                    <span>上传图片</span>
 			                    <!--<input type="file" name="files[]" multiple>-->
-			                    <input type="file" name="file0" multiple accept="image/*" capture="camera" class="file-path">
+			                    <input type="file" name="file" multiple accept="image/*" capture="camera" class="file-path">
 			                </span>
 			            </div>
 			            <div class="action-info" hidden>
@@ -139,17 +139,17 @@
 	    	<div class="row row-clear">
 	    		<div class="main-left blue-border">
 	    			<h2 class="title1">参数</h2>
-				    <textarea class="area">
+				    <textarea class="area pInfo">
 				    </textarea>
 	    		</div>
 	    		<div class="main-middle blue-border">
 	    			<h2 class="title2">种植感悟</h2>
-				    <textarea class="area">
+				    <textarea class="area cInfo">
 				    </textarea>
 	    		</div>
 	    		<div class="main-right blue-border">
 	    			<h2 class="title3">花品故事</h2>
-				    <textarea class="area">
+				    <textarea class="area sInfo">
 				    </textarea>
 	    		</div>
 	    	</div>
