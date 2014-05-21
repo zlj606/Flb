@@ -164,4 +164,23 @@ $(function() {
 			"sotry" : story
 		}
 	});
+
+	$('.btn-submit').on('click', function() {
+        var options = {
+            url : Util.baseurl + 'index.php',
+            type: 'post',
+            success : function(jData) {
+                jData = eval("(" + jData + ")");
+                if ("1" != jData.ret) {
+                    alert("上传图片回调失败");
+                    return;
+                }
+                alert("上传图片回调成功！");
+
+                sessionStorage.setItem('fid', jData.res.fid);
+                $('#big-pic').attr('src', Util.baseurl + jData.res.flower_url);
+            }
+        }
+        $('#fileupload').ajaxSubmit(options);
+    });
 });

@@ -154,3 +154,7 @@ body {
 .new-user {
 	float: right;
 }
+
+.btn-detail {
+	text-align: center;
+}

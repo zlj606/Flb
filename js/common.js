@@ -18,7 +18,14 @@
 	if (null != displayName && '' != displayName) {
 		$('.ac>a').text(displayName);
 		$('.logout').text('注销');
-	}
+
+		if ('管理员' == displayName) {
+			$('.man-plaft').show();
+		} 
+	} 
+	
+	$('.man-plaft').hide();
+
 
 	function logoutCallBack(jData) {
 		//清空本地存储
