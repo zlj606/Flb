@@ -103,6 +103,7 @@ $(function() {
 
     	for (var i = 0 ; i < arr.length ; ++i) {
     		$('.thumbnail-' + (i + 1)).attr('src', pic_path + arr[i]);
+    		addFloatDel($('.thumbnail-' + (i + 1)).parent());
     	}
     	$('.QRCode').attr('src', jData.res.code_url + code_path);
     }
@@ -184,7 +185,19 @@ $(function() {
         $('#fileupload').ajaxSubmit(options);
     });
 
+	function delCallBack(jData) {
+		if ('1' != jData.ret) {
+			if (null != jData.res.err) {
+				console.log(jData.res.err);
+				return;
+			} else {
+				console.log('删除图片失败!');
+				return;
+			}
+		}
 
+		alert('删除图片成功！');
+	}
     //处理所有图片删除
     $('.btn-del').on('click', function() {
 
@@ -214,5 +227,5 @@ $(function() {
     	$(selector).append(html);
     }
 
-    addFloatDel('a.thumbnail-1');
+    //addFloatDel('a.thumbnail-1');
 });

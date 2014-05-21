@@ -27,7 +27,7 @@ $(function() {
 		$('.row-color').html('');
 		var arr = jData.res;
 		for (var i = 0; i < arr.record.length; ++i) {
-			addSeries(arr.record[i].fname, arr.record[i].url, arr.record[i].series_id,'flower.html');
+			addColor(arr.record[i].fname, arr.record[i].url, 'flower.html',arr.record[i].cid);
 		}
 	}
 
@@ -43,7 +43,7 @@ $(function() {
 
 		$('.row-color').html('');
 		for (var i = 0; i < arr.record.length; ++i) {
-			addSeries(arr.record[i].fname, arr.record[i].url, 'flower.html');
+			addColor(arr.record[i].fname, arr.record[i].url, 'flower.html', arr.record[i].cid);
 		}
 
 	}

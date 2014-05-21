@@ -10,7 +10,7 @@ $(function() {
 	
 
 	function bscCallBack(jData) {
-		var html = '';
+		var html = '<option value="">请选择颜色</option>';
 		 for (var i = 0; i < jData.res.color.length; ++i) {
             html += '<option value="' 
                  + jData.res.color[i].color_id  + '">' 
@@ -44,7 +44,7 @@ $(function() {
 		$('.row-series').html('');
 		var arr = jData.res;
 		for (var i = 0; i < arr.record.length; ++i) {
-			addSeries(arr.record[i].fname, arr.record[i].url, arr.record[i].series_id,'color.html');
+			addSeries(arr.record[i].fname, arr.record[i].url,'color.html', arr.record[i].sid);
 		}
 	}
 
@@ -79,7 +79,7 @@ $(function() {
     		"controller" : "flower",
     		"action" : "query_flower",
     		"series_id" : sid,
-    		"color_id" : cid
+    		"color_id" : $('.sel-color').val()
     	};
     	Util.get("index.php", cData, callBack);
     });

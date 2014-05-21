@@ -14,3 +14,12 @@
 
 
 手机号（phone） name姓名 user_type_name身份 grow_unit scale(规模) shop_name(花店名称)  sex(性别) age income plant_base 
+
+
+
+修改花的接口
+controller: flower   modify_flower fname fid breed_name series_name color_name attr cult story
+
+
+删除图片
+flower remove_flower_img fid img(url图片名)
