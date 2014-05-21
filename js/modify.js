@@ -38,7 +38,8 @@ $(function(){
         console.log(fArray);
         Util.showPage(fArray.total, 20, pageCallBack);
         for (var i = 0; i < fArray.record.length; ++i) {
-            addFlower(fArray.record[i].url, fArray.record[i].name, fArray.record[i].fid);
+            addFlower(Util.flowerurl + fArray.record[i].url, 
+                fArray.record[i].name, fArray.record[i].fid);
         }
 
         $('.btn-detail').on('click', function(e) {
@@ -51,18 +52,10 @@ $(function(){
         });
     }
 
-    var breed_id = 1,
-        series_id = 1,
-        color_id = 1,
-        page = 1;
-
     var data = {
         "controller": "flower",
         "action": "query_flower_list_admin",
-        "breed_id": breed_id,
-        "series_id": series_id,
-        "color_id" : color_id,
-        "page" : page
+        "page" : 1
     };
     
     Util.get("index.php", data, callBack);
