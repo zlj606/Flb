@@ -119,7 +119,7 @@ $(function () {
         html = '';
         for (var i = 0; i < jData.res.breed.length; ++i) {
             html += '<option value="' 
-                 + jData.res.breed[i].breed_id + '">' 
+                 + jData.res.breed[i].breed_name + '">' 
                  + jData.res.breed[i].breed_name + '</option>';
         }
 
@@ -129,7 +129,7 @@ $(function () {
         html = '';
         for (var i = 0; i < jData.res.color.length; ++i) {
             html += '<option value="' 
-                 + jData.res.color[i].color_id  + '">' 
+                 + jData.res.color[i].color_name  + '">' 
                  + jData.res.color[i].color_name  + '</option>';
         }
 
