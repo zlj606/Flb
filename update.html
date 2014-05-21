@@ -24,7 +24,7 @@
 	            <span class="sr-only">Toggle navigation</span>
 	            <span class="nav-font">导航栏</span>
 	          </button>
-	          <a class="navbar-brand" href="#">管理后台</a>
+	          <a class="navbar-brand" href="#">易花官网</a>
 	        </div>
 	        <div class="collapse navbar-collapse">
 	          <ul class="nav navbar-nav">
@@ -44,11 +44,11 @@
 	                  <li><a href="#">信用体系详述</a></li>
 	                </ul>
 	              </li>
-	            <li><a href="#">投票系统</a></li>
+	            <li class="man-plaft"><a href="manage.html">管理后台</a></li>
 	          </ul>
 	          <ul class="nav navbar-nav navbar-right">
-                <li class="ac"><a></a></li>
-                <li><a href="index.html">注销</a></li>
+                <li class="ac"><a>登录</a></li>
+                <li><a href="index.html" class="logout">注册</a></li>
               </ul>
 	        </div><!--/.nav-collapse -->
 	      </div>
@@ -58,19 +58,24 @@
 	    		<div class="col-lg-3 col-sm-3">
 	    			<div class="list-group">
 	    			   <div class="list-group-item">
-			    	   		<img src="" class="thumbnail-1" alt="图片预览区域1">
+			    	   		<a class="thumbnail-1"><img src="images/product/01.jpg" class="thumbnail-1" alt="图片预览区域1">
+			    	   		</a>
 			    	   </div>
 			    	   <div class="list-group-item">
-					    	<img src="" class="thumbnail-2" alt="图片预览区域2">
+					    	<a><img src="" class="thumbnail-2" alt="图片预览区域2">
+					    	</a>
 					    </div>
 					    	<div class="list-group-item">
-					    	<img src="" class="thumbnail-3" alt="图片预览区域3">
+					    	<a><img src="" class="thumbnail-3" alt="图片预览区域3">
+					    	</a>
 					    </div>
 					    <div class="list-group-item">
-					    	<img src="" class="thumbnail-4" alt="图片预览区域4">
+					    	<a><img src="" class="thumbnail-4" alt="图片预览区域4">
+					    	</a>
 					    </div>
 					    <div class="list-group-item">
-					    	<img src="" class="thumbnail-5" alt="图片预览区域5">
+					    	<a><img src="" class="thumbnail-5" alt="图片预览区域5">
+					    	</a>
 					    </div>
 					    <div class="list-group-item">
 					    	<form id="fileupload" method="post" enctype="multipart/form-data">
@@ -102,9 +107,13 @@
 			    	</div>
 				</div>
 				<div class="col-lg-9 col-sm-9">
-		    		<div class="col-lg-5 col-sm-5">
+		    		<div class="col-xs-12 col-lg-6 col-sm-6">
 		    			<div class="list-group">
 	    					<ul>
+	    						<li class="list-group-item">
+	    							<label>名称</label>
+	    							<input type="text" class="flbname">
+	    						</li>
 	    						<li class="list-group-item">
 	    							<label>系类</label>
 	    							<input type="text" class="in-series">
@@ -118,10 +127,18 @@
 	    							<input type="text" class="in-breed">
 	    						</li>
 	    					</ul>
+	    					<div class="row row-clear row-padding">
+		    					<button class="btn btn-primary btn-para">更新参数</button>
+		    				</div>	
 	    				</div>
 		    		</div>
-		    		<div class="col-lg-5 col-sm-5">
+		    		<div class="col-lg-6 col-sm-6">
 		    			<ul>
+    						<li class="list-group-item breed-field">
+    							<label>品种</label>
+    							<select class="sel-breed">
+    							</select>
+    						</li>
     						<li class="list-group-item series-field">
     							<label>系类</label>
     							<select class="sel-series">
@@ -132,16 +149,9 @@
     							<select class="sel-color">
     							</select>
     						</li>
-    						<li class="list-group-item breed-field">
-    							<label>品种</label>
-    							<select class="sel-breed">
-    							</select>
-    						</li>
     					</ul>
 		    		</div>
-		    		<div class="row">
-		    			<button class="btn btn-primary btn-para">更新参数</button>
-		    		</div>
+		    		
 			    </div>
 		    </div>
 		    <div class="row row-clear">
@@ -171,6 +181,7 @@
 	    <script src="js/jquery-1.10.2.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/util.js"></script>
+		<script src="js/common.js"></script>
 		<script src="js/update.js"></script>
 	</body>
 </html>

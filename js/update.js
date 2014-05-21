@@ -102,7 +102,7 @@ $(function() {
     	var arr = jData.res.flower_url.split(',');
 
     	for (var i = 0 ; i < arr.length ; ++i) {
-    		$('.thumbnail-' + i + 1).attr('src', pic_path + arr[i]);
+    		$('.thumbnail-' + (i + 1)).attr('src', pic_path + arr[i]);
     	}
     	$('.QRCode').attr('src', jData.res.code_url + code_path);
     }
@@ -183,4 +183,36 @@ $(function() {
         }
         $('#fileupload').ajaxSubmit(options);
     });
+
+
+    //处理所有图片删除
+    $('.btn-del').on('click', function() {
+
+    });
+
+    $('img[class^="thumbnail"]').on({
+    	mouseenter: function() {
+    		if ($(this).attr('src') == '') {
+    			return;
+    		}
+    		//将一些属性值写到button
+    		$('.btn-del').show();
+
+    	},
+    	mouseleave: function() {
+    		if ($(this).attr('src') == '') {
+    			return;
+    		}
+
+    		$('.btn-del').hide();
+    	}
+    });
+
+    function addFloatDel(selector) {
+    	var html = '';
+    	html += '<button class="btn-del">删除</button>';
+    	$(selector).append(html);
+    }
+
+    addFloatDel('a.thumbnail-1');
 });

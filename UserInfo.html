@@ -37,53 +37,59 @@
 	                </ul>
 	              </li>
 	            <li><a href="#">品种资料</a></li>
-	            <li><a href="#">投票系统</a></li>
+	            <li class="man-plaft"><a href="manage.html">管理后台</a></li>
 	          </ul>
 	          <ul class="nav navbar-nav navbar-right">
-                <li class="ac"><a></a></li>
-                <li><a href="index.html">注销</a></li>
+                <li class="ac"><a>登录</a></li>
+                <li><a href="index.html" class="logout">注册</a></li>
               </ul>
 	        </div><!--/.nav-collapse -->
 	      </div>
 	    </div>
-	    <div class="container">
-	    	<div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3>用户账号信息</h3>
-                </div>
-                <div class="panel-body">
-                     <div class="input-group group-long">
-			    		<label>用户名</label>
-			    		<label class="label-usrname"></label>
-			    		<button type="button" class="btn edit">编辑</button>
-			    	</div>
-			    	<div class="input-group group-long">
-			    		<label>手机号</label>
-			    		<label class="label-phone"></label>
-			    		<button type="button" class="btn edit">编辑</button>
-			    	</div>
-			    	<button type="button" class="btn btn-warning mod-info">修改</button>
-                </div>
+	    <div class="container detail">
+	    	<div class="col-xs-12 col-lg-3">
+	    	</div>
+	    	<div class="col-xs-12 col-lg-6">
+		    	<div class="panel panel-default">
+	                <div class="panel-heading">
+	                    <h3>用户账号信息</h3>
+	                </div>
+	                <div class="panel-body">
+	                     <div class="magin-dis">
+				    		<label>用户名</label>
+				    		<label class="label-usrname"></label>
+				    		<button type="button" class="btn edit">编辑</button>
+				    	</div>
+				    	<div class="magin-dis">
+				    		<label>手机号</label>
+				    		<label class="label-phone"></label>
+				    		<button type="button" class="btn edit">编辑</button>
+				    	</div>
+				    	<button type="button" class="btn btn-warning mod-info">修改</button>
+	                </div>
+				</div>
+				<div class="panel panel-default">
+	                <div class="panel-heading">
+	                    <h3>用户密码修改</h3>
+	                </div>
+	                <div class="panel-body">
+	                    <div class="magin-dis">
+				    		<label class="info-pwd">请输入原始密码(*)</label>
+				    		<input type="password" class="old-pwd" required>
+				    	</div>
+				    	<div class="magin-dis">
+				    		<label class="info-pwd">请输入新密码(*)</label>
+				    		<input type="password" class="new-pwd1" required>
+				    	</div>
+				    	<div class="magin-dis">
+				    		<label class="info-pwd">请再次输入新密码(*)</label>
+				    		<input type="password" class="new-pwd2" required>
+				    	</div>
+				    	<button type="button" class="btn btn-warning mod-pwd">修改</button>
+	                </div>
+				</div>
 			</div>
-			<div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3>用户密码修改</h3>
-                </div>
-                <div class="panel-body">
-                    <div class="input-group group-long">
-			    		<label>请输入原始密码(*)</label>
-			    		<input type="password" class="old-pwd" required>
-			    	</div>
-			    	<div class="input-group group-long">
-			    		<label>请输入新密码(*)</label>
-			    		<input type="password" class="new-pwd1" required>
-			    	</div>
-			    	<div class="input-group group-long">
-			    		<label>请再次输入新密码(*)</label>
-			    		<input type="password" class="new-pwd2" required>
-			    	</div>
-			    	<button type="button" class="btn btn-warning mod-pwd">修改</button>
-                </div>
+			<div class="col-xs-12 col-lg-3">
 			</div>
 	    </div>
 	    <script src="js/jquery-1.10.2.min.js"></script>

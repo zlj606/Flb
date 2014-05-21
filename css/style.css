@@ -1,8 +1,6 @@
 body {
   margin: 0;
   font-family: Verdana,"Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
   color: #333333;
   background-color: #BBD9EE;
 }
@@ -12,16 +10,17 @@ body {
 }
 
 /*register page*/
-.user-register label {
-	width: 40%;
-}
 
 .top-margin {
 	margin-top: 50px;
 }
 
 .top-margin label {
-	width: 40%;
+	width: 30%;
+}
+
+.top-margin input {
+	width: 40%!important;
 }
 
 .btn-register, .btn-pwd {
@@ -157,4 +156,41 @@ body {
 
 .btn-detail {
 	text-align: center;
+}
+
+/*detail page*/
+.label-left {
+	width: 30%;
+	text-align: left;
+}
+
+.detail {
+	font-size: 20px;
+}
+
+.magin-dis {
+	margin-top: 20px;
+	margin-bottom: 20px
+} 
+
+.add-info {
+	margin-left: 30%;
+}
+
+.row-padding {
+	padding-left: 40px;
+}
+
+.info-pwd {
+	width: 50%;
+}
+
+.btn-del {
+	display: none;
+	position: relative;
+	z-index: 999;
+	background-color: transparent;
+	color: red;
+	top: -65px;
+	left: -170px;
 }
