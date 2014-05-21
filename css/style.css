@@ -16,11 +16,15 @@ body {
 	width: 40%;
 }
 
-.register-wrap {
+.top-margin {
 	margin-top: 50px;
 }
 
-.btn-register {
+.top-margin label {
+	width: 40%;
+}
+
+.btn-register, .btn-pwd {
 	margin-left: 40px;
 }
 
