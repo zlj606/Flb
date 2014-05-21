@@ -199,7 +199,7 @@ $(function() {
 		alert('删除图片成功！');
 	}
 
-	var mData = {
+	/*var mData = {
     		"controller" : "flower",
     		"action" : "modify_flower",
     		"fname" :,
@@ -210,17 +210,27 @@ $(function() {
     		"attr" : ,
     		"cult" : ,
     		"story" :
-    	};
+    	};*/
     //处理所有图片删除
     $('.btn-del').on('click', function() {
+    	var picName = $(this).parent().find('img').attr('src');
+    	var begin = picName.lastIndexOf('/');
+    		picName = picName.subString(begin.picName.length);
     	var delData = {
     		"controller" : "flower",
     		"action" : "remove_flower_img",
     		"fid" : fid,
-    		"img" : 
+    		"img" : picName
     	};
+
+    	Util.get('index.php', delData, delCallBack);
     });
 
+    //更新数据
+    function updateCallBack(jData) {
+
+    }
+    
     $('img[class^="thumbnail"]').on({
     	mouseenter: function() {
     		if ($(this).attr('src') == '') {

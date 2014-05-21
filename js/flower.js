@@ -54,7 +54,7 @@ $(function() {
 		if (typeof(userId) != 'undefined' && '' != userId && null != userId) {
 			var data = {
 				"controller" : "user",
-				"action" : "query_vote_rest",
+				"action" : "vote_flower",
 				"fid" : fid,
 				"uid" : userId
 			};
