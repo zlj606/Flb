@@ -1,7 +1,7 @@
 $(function(){ 
     function addFlower(url, name, fid) {
-        var html = '<div class="col-sm-3 col-lg-3"><img src="' + url + '" name="' + name + '" fid="' + fid + '"><h2>' + 
-                   name + '</h2><p><a class="btn btn-default btn-detail" href="update.html" role="button">View details &raquo;</a></p></div>';
+        var html = '<div class="col-sm-3 col-lg-3"><h3>' + 
+                   name + '</h3><img src="' + url + '" name="' + name + '" fid="' + fid + '"><p><a class="btn btn-default btn-detail" href="update.html" role="button">详情</a></p></div>';
         $('.show-field').append(html);
     }
 

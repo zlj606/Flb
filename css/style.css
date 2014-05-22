@@ -127,20 +127,17 @@ footer {
 }
 /*flower page*/
 .div-preview {
-	padding-left: 8%;
-	padding-right: 8%;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding: 5%;
 }
 
 .whole-img {
-	width: 524px;
-	height: 391px;
+	width: 90%;
+	padding:  5%;
 }
 
 .preview {
-	width: 81px;
-	height: 61px;
+	width: 100%;
+	text-align: center;
 }
 
 .row-margin {
@@ -222,3 +219,22 @@ textarea:focus {
     -moz-box-shadow: 0px 0px 5px #007eff;  
     box-shadow: 0px 0px 5px #007eff;  
 }  
+
+.btn-field {
+	text-align: center;
+	margin-top: 5px;
+	margin-bottom: 20px;
+}
+
+.padding3 {
+	padding: 3%;
+}
+
+.flower-name {
+	color: red;
+}
+
+.padding-leftright3 {
+	padding-left: 3%;
+	padding-right: 3%;
+}

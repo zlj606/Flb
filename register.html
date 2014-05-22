@@ -76,7 +76,7 @@
 					}
 
 					sessionStorage.setItem('user_id', jData.res.uid);
-					sessionStorage.setItem('display_name', jData.res.uid);
+					sessionStorage.setItem('display_name', jData.res.display);
 
 					if (jData.res.jump_url != '') {
 	    				window.location.href = jData.res.jump_url;

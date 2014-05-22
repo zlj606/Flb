@@ -39,15 +39,12 @@
 			                    <!--<input type="file" name="files[]" multiple>-->
 			                    <input type="file" name="file" multiple accept="image/*" capture="camera" class="file-path">
 			                </span>
+			                <button type="button" class="btn btn-warning btn-submit">提交图片</button>
 			            </div>
 			            <div class="action-info" hidden>
 			            	<input type="text" name="controller" value="flower">
 			            	<input type="text" name="action" value="upload_flower_img">
 			            </div>
-			            <div class="btn-field">
-			            	<button type="button" class="btn btn-warning btn-submit">提交</button>
-			            </div>
-						
 		    	    </div>	
 	    		</form>
 	    	</div>
@@ -92,20 +89,38 @@
 				</div>
 	    	</div>
 	    	<div class="row row-clear">
-	    		<div class="main-left blue-border">
-	    			<h2 class="title1">参数</h2>
-				    <textarea class="area pInfo">
-				    </textarea>
+	    		<div class="main-left">
+	    			<div class="panel panel-default">
+		                <div class="panel-heading">
+		                    <h4>参数</h4>
+		                </div>
+		                <div class="panel-body">
+		                    <textarea class="area pInfo">
+			    			</textarea> 
+		                </div>
+					</div>
 	    		</div>
-	    		<div class="main-middle blue-border">
-	    			<h2 class="title2">种植感悟</h2>
-				    <textarea class="area cInfo">
-				    </textarea>
+	    		<div class="main-middle">
+				    <div class="panel panel-default">
+		                <div class="panel-heading">
+		                    <h4>种植感悟</h4>
+		                </div>
+		                <div class="panel-body">
+		                    <textarea class="area pInfo">
+			    			</textarea> 
+		                </div>
+					</div>
 	    		</div>
-	    		<div class="main-right blue-border">
-	    			<h2 class="title3">花品故事</h2>
-				    <textarea class="area sInfo">
-				    </textarea>
+	    		<div class="main-right">
+				    <div class="panel panel-default">
+		                <div class="panel-heading">
+		                    <h4>花品故事</h4>
+		                </div>
+		                <div class="panel-body">
+		                    <textarea class="area pInfo">
+			    			</textarea> 
+		                </div>
+					</div>
 	    		</div>
 	    	</div>
 	    	<div class="new-update">
@@ -119,6 +134,7 @@
 	    </div>
 	    
 	    <script src="js/jquery-1.10.2.min.js"></script>
+	    <script src="js/jquery.cookie.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/util.js"></script>
 		<script src="js/common.js"></script>
