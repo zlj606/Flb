@@ -53,16 +53,7 @@
 	    <script>
 	    	$(function() {
 
-	    		//自动登录
-	    		var account = $.cookie('flr_uid'),
-	    			password = $.cookie('flr_pwd');
-
-	    		if ('' != account && '' != password) {
-	    			$('#user_name').val(account);
-	    			$('#user_password').val(password);
-
-	    			$('.login').trigger('click');
-	    		}
+	    		
 	    		function callBack(jData) {
 	    			if ("1" != jData.ret) {
 	    				alert('failed');
@@ -98,6 +89,17 @@
 
 	    			Util.post('index.php', data, callBack);
 	    		});
+
+	    		//自动登录
+	    		var account = $.cookie('flr_phone'),
+	    			password = $.cookie('flr_pwd');
+
+	    		if ('' != account && '' != password) {
+	    			$('#user_name').val(account);
+	    			$('#user_password').val(password);
+	    			$('.auto-login').attr('checked',true);
+	    			$('.login').trigger('click');
+	    		}
 	    	});
 	    </script>
 	</body>
