@@ -1,9 +1,9 @@
 body {
   margin: 0;
-  font-family: "Microsoft YaHei",Verdana,"Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Microsoft YaHei", STSong, Verdana,"Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333333;
   background-color: #e9e9e9;/*#BBD9EE;*/
-  font-weight: bold!important;
+  font-weight: normal!important;
 }
 
 footer {

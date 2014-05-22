@@ -26,7 +26,7 @@
 	            + '</div>'
 	            + '<div class="collapse navbar-collapse">'
 	            + '<ul class="nav navbar-nav">'
-		        +    '<li><a href="index.html">公司简介</a></li>'
+		        +    '<li><a href="company.html">公司简介</a></li>'
 		        +    '<li>'
 		        +        '<a href="breed.html" >花种资料</a>'
 		        +      '</li>'
@@ -47,8 +47,8 @@
 		        +      '</li>' 
 		        +  '</ul>'
 		        +  '<ul class="nav navbar-nav navbar-right">'
-	            +    '<li class="ac"><a>登录</a></li>'
-	            +    '<li><a href="index.html" class="logout">注册</a></li>'
+	            +    '<li class="ac"><a href="login.html">登录</a></li>'
+	            +    '<li><a href="register.html" class="logout">注册</a></li>'
 	            +  '</ul>'
 		        +'</div>';
 	$('.navbar-fixed-top').append(navBar);
@@ -70,11 +70,14 @@
 		sessionStorage.clear();
 		$('.ac>a').text('登录');
 		$('.logout').text('注册');
+		$('.ac>a').attr('href', 'login.html');
+		$('.logout').attr('href', 'register.html');
 		window.location.href = "index.html";
 	}
 
 	//注销回调处理
-	$('.logout').on('click', function() {
+	$('.logout').on('click', function(e) {
+		e.preventDefault();
 		if ('注销' == $(this).text()) {
 			Util.get(actionPhp,{"controller":"user", "action":"quit","uid":userId},
 			logoutCallBack);	

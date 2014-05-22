@@ -51,6 +51,9 @@ $(document).ready(function() {
 			alert("完善用户资料失败");
 			return;
 		}
+
+		window.location.href ="";
+
 	}
 	$('.add-info').on('click', function() {
 		var identify = $('input[type="radio"]:checked').val(),

@@ -44,4 +44,4 @@ flower remove_flower_img fid img(url图片名)
 15.modify 名字 在上面 
 16.footer脚注
 17.找回密码跳转jump_url
-18.完善资料时候，存储url（session），跳转
+18.完善资料时候，存储url（session），跳转(暂时还没做)
