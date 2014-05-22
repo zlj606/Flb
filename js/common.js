@@ -72,13 +72,13 @@
 		$('.logout').text('注册');
 		$('.ac>a').attr('href', 'login.html');
 		$('.logout').attr('href', 'register.html');
-		window.location.href = "index.html";
+		window.location.href = "login.html";
 	}
 
 	//注销回调处理
 	$('.logout').on('click', function(e) {
-		e.preventDefault();
 		if ('注销' == $(this).text()) {
+			e.preventDefault();
 			Util.get(actionPhp,{"controller":"user", "action":"quit","uid":userId},
 			logoutCallBack);	
 		}
