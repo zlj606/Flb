@@ -3,6 +3,15 @@ $(function(){
         var html = '<div class="col-xs-12 col-sm-6 col-lg-3 text-center"><h3>' + 
                    name + '</h3><img class="img-border" src="' + url + '" name="' + name + '" fid="' + fid + '"><p><a class="btn btn-default btn-detail" href="update.html" role="button">详情</a></p></div>';
         $('.show-field').append(html);
+
+        $('.btn-detail').on('click', function(e) {
+            e.preventDefault();
+            sessionStorage.setItem("fid", $(this).parent().find('img').attr("fid"));
+            //sessionStorage.setItem("name", $(this).attr("name"));
+            //sessionStorage.setItem("url", $(this).attr("url"));
+
+            window.location.href = $(this).attr('href');
+        });
     }
 
     function pageCallBack(jData) {
@@ -42,14 +51,7 @@ $(function(){
                 fArray.record[i].name, fArray.record[i].fid);
         }
 
-        $('.btn-detail').on('click', function(e) {
-            e.preventDefault();
-            sessionStorage.setItem("fid", $(this).parent().find('img').attr("fid"));
-            //sessionStorage.setItem("name", $(this).attr("name"));
-            //sessionStorage.setItem("url", $(this).attr("url"));
-
-            window.location.href = $(this).attr('href');
-        });
+        
     }
 
     var data = {
