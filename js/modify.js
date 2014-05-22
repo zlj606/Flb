@@ -142,7 +142,7 @@ $(function(){
 
         var data = {
             "controller" : "flower",
-            "action" : "query_flower_list",
+            "action" : "query_flower_list_admin",
             "breed_id" : breed,
             "series_id" : series,
             "color_id" : color,
