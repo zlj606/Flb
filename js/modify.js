@@ -120,7 +120,7 @@ $(function(){
 
         var data = {
             "controller" : "flower",
-            "action" : "query_flower_list",
+            "action" : "query_flower_list_admin",
             "breed_name" : breed,
             "series_name" : series,
             "color_name" : color,

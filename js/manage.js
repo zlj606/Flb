@@ -15,7 +15,8 @@ $(document).ready(function () {
             console.log('提交信息失败！');
             return;
         }
-        if ('' != jData.res.fid) {
+        alert('提交信息成功！');
+        if (undefined != jData.res.fid) {
             sessionStorage.setItem('fid', jData.res.fid);
             addFid(jData.res.fid);
         }
