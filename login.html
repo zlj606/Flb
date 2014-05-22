@@ -94,7 +94,7 @@
 	    		var account = $.cookie('flr_phone'),
 	    			password = $.cookie('flr_pwd');
 
-	    		if ('' != account && '' != password) {
+	    		if (undefined != account && undefined != password) {
 	    			$('#user_name').val(account);
 	    			$('#user_password').val(password);
 	    			$('.auto-login').attr('checked',true);
