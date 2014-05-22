@@ -101,10 +101,10 @@ $(document).ready(function() {
 
     	for (var i = 0 ; i < arr.length ; ++i) {
     		$('.thumbnail-' + (i + 1)).attr('src', Util.flowerurl + arr[i]);
-    		$('.thumbnail-' + (i + 1)).parent().find('.btn-del').remove();
-    		addFloatDel($('.thumbnail-' + (i + 1)).parent());
+    		$('.thumbnaila-' + (i + 1)).find('.btn-del').remove();
+    		addFloatDel($('.thumbnaila-' + (i + 1)));
     	}
-    	$('#QRCode').attr('src', jData.res.code_url + Util.codeurl);
+    	$('#QRCode').attr('src', Util.codeurl + jData.res.code_url);
 
     	if ($('#QRCode').attr('src') != '' ) {
     		$('.gen-code').hide();
@@ -291,6 +291,4 @@ $(document).ready(function() {
 	    	Util.get('index.php', delData, delCallBack);
 	    });
     }
-
-    //addFloatDel('a[class="thumbnail-1"]');
 });
