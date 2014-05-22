@@ -21,19 +21,19 @@
 			<div class="col-xs-12 col-xs-6">
 				<div class="panel panel-default">
 	                <div class="panel-heading">
-	                    <h3>密码找回</h3>
+	                    <h3>找回密码</h3>
 	                </div>
 	                <div class="panel-body">
 	                    <div class="list-group">
 		    				<ul>
 	    						<li class="list-group-item">
-	    							<label>手机号(*)</label>
+	    							<label>手机号</label>
 	    							<input type="text" class="phone" required>
 	    						</li>
 	    						<li class="list-group-item">
-	    							<label>请输入验证码(*)</label>
+	    							<label>验证码</label>
 	    							<input type="text" class="check-code" required>
-	    							<button type="button" class="btn btn-check btn-warning">获取验证码</button>
+	    							<button type="button" class="btn btn-check btn-warning">免费获取验证码</button>
 	    						</li>
 	    					</ul>
 	    					<button type="button" class="btn btn-success btn-pwd">找回密码</button>
@@ -51,6 +51,23 @@
 			
 			$(function() {
 
+				var countdown=60; 
+				function settime(val) { 
+					if (countdown == 0) { 
+							val.attr("disabled", false);	
+							val.val("免费获取验证码"); 
+							countdown = 60; 
+						} else { 
+							val.attr("disabled", true); 
+							val.val("重新发送(" + countdown + ")"); 
+							countdown--; 
+						} 
+						setTimeout(function() { 
+							settime(val) 
+						},1000); 
+				} 
+
+
 				function checkCode(jData) {
 					if("1" == jData.ret) {
 						alert("获取失败！");
@@ -60,12 +77,13 @@
 
 				}
 
-				$('.check-code').on('click', function() {
+				$('.btn-check').on('click', function() {
 					var phone = $('.phone').val();
 					if ('' == phone || false == Util.isPhone(phone)) {
 						alert('请输入有效的手机号！');
 						return;
 					}
+					settime($(this));
 					//调用发送验证码
 					Util.get("index.php", {"controller": "user","action" : "send_authnum",
 							"phone": phone},checkCode);

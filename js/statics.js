@@ -1,4 +1,4 @@
-$(function() {
+$(document).ready(function() {
 	$('.static-table').dataTable({
 		"bPaginate": true, //翻页功能
 		"bLengthChange": true, //改变每页显示数据数量

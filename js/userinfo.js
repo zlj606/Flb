@@ -1,4 +1,4 @@
-$(function() {
+$(document).ready(function() {
 
 	$('.mod-info').on('click', function(){
 

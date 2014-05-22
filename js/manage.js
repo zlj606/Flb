@@ -1,4 +1,4 @@
-$(function () {
+$(document).ready(function () {
     
     function addFid(fid) {
         if ($('.action-info').has('.fid').length > 0) {

@@ -38,8 +38,10 @@ footer {
 }
 /*species page*/
 .img-border {
-	border-radius: 5%;
-	box-shadow: 0px 0px 8px #f00;
+	/*border-radius: 5%;
+	box-shadow: 0px 0px 8px #f00;*/
+	width: 90%;
+	padding: 5%;
 	text-align: center;
 }
 
@@ -91,7 +93,8 @@ footer {
 }
 
 .create-new {
-	float: left;
+	float: right;
+	margin-right: 60px;
 }
 
 .area {
@@ -101,7 +104,7 @@ footer {
 
 .update-info {
 	float: right;
-	margin-right: 60px;
+	margin-right: 20px;	
 }
 
 .list-group-item input {

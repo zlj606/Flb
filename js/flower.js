@@ -1,4 +1,4 @@
-$(function() {
+$(document).ready(function() {
 	$('.preview').on('click', function() {
 		$('.whole-img').attr('src', $(this).attr('src'));
 	});

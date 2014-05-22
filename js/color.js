@@ -10,7 +10,7 @@ $(function() {
 
 	function addColor(fname, url, detail,cid, fid) {
 		var html = '<div class="col-6 col-sm-6 col-lg-3"><h2>'
-				   + fname + '</h2><img src="'
+				   + fname + '</h2><img class="img-border" src="'
 				   + Util.flowerurl + url + '"color_id="' + cid + '"flower_id="' 
 				   + fid + '"></img><p><a class="btn btn-default btn-detail" href="'
 				   + detail + '" role="button">详情</a></p></div>';

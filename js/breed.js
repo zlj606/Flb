@@ -1,10 +1,10 @@
-$(function() {
+$(document).ready(function() {
 
 	function addBreed(fname, url, detail, bid) {
 		var html = '<div class="col-6 col-sm-6 col-lg-3 img-border"><h2>'
-				   + fname + '</h2><img src="'
+				   + fname + '</h2><img class="img-border" src="'
 				   + Util.flowerurl + url + '" breed_id="' + bid + '"></img><p><a class="btn btn-default btn-detail" href="'
-				   + detail + '" role="button">View details &raquo;</a></p></div>';
+				   + detail + '" role="button">详情</a></p></div>';
 		$('.row-breed').append(html);
 
         $('.btn-detail').on('click', function() {

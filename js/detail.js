@@ -1,4 +1,4 @@
-$(function() {
+$(document).ready(function() {
 	function addPlant() {
 		$('.id-info').html('');
 

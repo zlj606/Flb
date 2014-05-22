@@ -26,9 +26,9 @@ $(function() {
 
 	function addSeries(fname, url, detail, sId) {
 		var html = '<div class="col-6 col-sm-6 col-lg-3"><h2>'
-				   + fname + '</h2><img src="'
+				   + fname + '</h2><img class="img-border" src="'
 				   + Util.flowerurl + url + '"series_id="' + sId + '"></img><p><a class="btn btn-default btn-detail" href="'
-				   + detail + '" role="button">View details &raquo;</a></p></div>';
+				   + detail + '" role="button">详情</a></p></div>';
 		$('.row-series').append(html);
 		//图片下的查看详细信息按钮处理
 	    $('.btn-detail').on('click', function() {
