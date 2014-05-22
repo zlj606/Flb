@@ -238,3 +238,8 @@ textarea:focus {
 	padding-left: 3%;
 	padding-right: 3%;
 }
+
+.update-para {
+	float: right;
+	margin-right: 80px;
+}
