@@ -31,7 +31,7 @@
 		        +        '<a href="breed.html" >花种资料</a>'
 		        +      '</li>'
 		        +    '<li class="dropdown">'
-		        +        '<a href="#" class="dropdown-toggle" data-toggle="dropdown">电商平台 <b class="caret"></b></a>'
+		        +        '<a href="manage.html" class="dropdown-toggle" data-toggle="dropdown">电商平台 <b class="caret"></b></a>'
 		        +        '<ul class="dropdown-menu">'
 		        +          '<li><a href="#">APP应用指南</a></li>'
 		        +          '<li><a href="#">产品分级机制详述</a></li>'
@@ -60,9 +60,9 @@
 		if ('管理员' == displayName || '超级管理员' == displayName) {
 			$('.man-plaft').show();
 		} 
-	} 
-	
-	$('.man-plaft').hide();
+	} else {
+		$('.man-plaft').hide();
+	} 	
 
 
 	function logoutCallBack(jData) {
