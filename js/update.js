@@ -90,6 +90,7 @@ $(document).ready(function() {
     		return;
     	}
 
+    	$('.flbname').val(jData.res.fname);
     	$('.in-series').val(jData.res.series_name);
     	$('.in-color').val(jData.res.color_name);
     	$('.in-breed').val(jData.res.breed_name);
