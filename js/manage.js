@@ -16,10 +16,16 @@ $(document).ready(function () {
             return;
         }
         alert('提交信息成功！');
-        if (undefined != jData.res.fid) {
-            sessionStorage.setItem('fid', jData.res.fid);
-            addFid(jData.res.fid);
+        try {
+            if (undefined != jData.res.fid) {
+                    sessionStorage.setItem('fid', jData.res.fid);
+                    addFid(jData.res.fid);
+                }
         }
+        catch(e) {
+            
+        } 
+        
     }
 
     $('.update-info').on('click', function() {
