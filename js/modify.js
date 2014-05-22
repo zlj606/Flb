@@ -1,7 +1,7 @@
 $(function(){ 
     function addFlower(url, name, fid) {
-        var html = '<div class="col-sm-3 col-lg-3"><h3>' + 
-                   name + '</h3><img src="' + url + '" name="' + name + '" fid="' + fid + '"><p><a class="btn btn-default btn-detail" href="update.html" role="button">详情</a></p></div>';
+        var html = '<div class="col-xs-12 col-sm-6 col-lg-3 text-center"><h3>' + 
+                   name + '</h3><img class="img-border" src="' + url + '" name="' + name + '" fid="' + fid + '"><p><a class="btn btn-default btn-detail" href="update.html" role="button">详情</a></p></div>';
         $('.show-field').append(html);
     }
 
@@ -141,9 +141,9 @@ $(function(){
         var data = {
             "controller" : "flower",
             "action" : "query_flower_list",
-            "breed_name" : breed,
-            "series_name" : series,
-            "color_name" : color,
+            "breed_id" : breed,
+            "series_id" : series,
+            "color_id" : color,
             "page" : 1
         }
 

@@ -96,7 +96,7 @@ $(document).ready(function () {
         $('.sInfo').val('');
         $('#big-pic').attr('src', '');
         $('#QRCode').attr('src', '');
-        sessionStroge.removeItem('fid');
+        sessionStorage.removeItem('fid');
 
         Util.get("index.php", tData, bscCallBack);
     });
