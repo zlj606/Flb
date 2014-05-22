@@ -247,3 +247,7 @@ textarea:focus {
 .text-center {
 	text-align: center;
 }
+
+.wid3 {
+	width: 30%!important;
+}
