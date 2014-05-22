@@ -27,7 +27,7 @@ $(document).ready(function() {
 
 	$('.sel-series').on('blur', function() {
 		if ('' != $(this).val()) {
-			$('.in-series').val()
+			$('.in-series').val($(this).val());
 		}
 
 		$('.series-field').hide();
@@ -35,14 +35,14 @@ $(document).ready(function() {
 
     $('.sel-breed').on('blur', function() {
 		if ('' != $(this).val()) {
-			$('.in-breed').val()
+			$('.in-breed').val($(this).val());
 		}
 		$('.breed-field').hide();	
 	});
 
 	$('.sel-color').on('blur', function() {
 		if ('' != $(this).val()) {
-			$('.in-color').val()
+			$('.in-color').val($(this).val());
 		}
 
 		$('.color-field').hide();	
