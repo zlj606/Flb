@@ -57,7 +57,7 @@
 		$('.ac>a').text(displayName);
 		$('.logout').text('注销');
 
-		if ('管理员' == displayName) {
+		if ('管理员' == displayName || '超级管理员' == displayName) {
 			$('.man-plaft').show();
 		} 
 	} 
