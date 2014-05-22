@@ -37,7 +37,8 @@ $(function(){
     }
     function callBack(jData) {
         if ("1" != jData.ret) {
-            alert("暂无花种数据！");
+            alert("jData.res.err");
+            $('.show-field').html('');
             return;
         }
 

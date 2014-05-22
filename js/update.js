@@ -104,6 +104,10 @@ $(document).ready(function() {
     		addFloatDel($('.thumbnail-' + (i + 1)).parent());
     	}
     	$('.QRCode').attr('src', jData.res.code_url + Util.codeurl);
+
+    	if ($('.QRCode').attr('src') != '' ) {
+    		$('.gen-code').hide();
+    	}
     }
 
     controller = 'flower',
@@ -129,6 +133,23 @@ $(document).ready(function() {
 	$('.btn-para').on('click', function() {
 
 	});
+
+	//生成二维码
+    function genQRCode(jData) {
+        
+        if ("1" != jData.ret) {
+            alert("生成失败!");
+            return;
+        }
+
+        $('#QRCode').attr('src', Util.baseurl + 'photos/code/'+ jData.res.code_url); 
+    }
+    
+    $('.gen-code').on('click', function() {
+
+        Util.post("index.php", {"controller": "flower","action": "create_code", "fid" : fid}, genQRCode);
+    });
+
 
 	$('.btn-one').on('click', function() {
 		var para = $('.pContent').val().trim();
@@ -270,5 +291,5 @@ $(document).ready(function() {
 	    });
     }
 
-    addFloatDel('a.thumbnail-1');
+    //addFloatDel('a[class="thumbnail-1"]');
 });
