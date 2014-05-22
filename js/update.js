@@ -27,7 +27,7 @@ $(document).ready(function() {
 
 	$('.sel-series').on('blur', function() {
 		if ('' != $('option:selected',this).text()) {
-			$('.in-series').val($(this).val());
+			$('.in-series').val($('option:selected',this).text());
 		}
 
 		$('.series-field').hide();
@@ -35,14 +35,14 @@ $(document).ready(function() {
 
     $('.sel-breed').on('blur', function() {
 		if ('' != $('option:selected',this).text()) {
-			$('.in-breed').val($(this).val());
+			$('.in-breed').val($('option:selected',this).text());
 		}
 		$('.breed-field').hide();	
 	});
 
 	$('.sel-color').on('blur', function() {
 		if ('' != $('option:selected',this).text()) {
-			$('.in-color').val($(this).val());
+			$('.in-color').val($('option:selected',this).text());
 		}
 
 		$('.color-field').hide();	
@@ -101,6 +101,7 @@ $(document).ready(function() {
 
     	for (var i = 0 ; i < arr.length ; ++i) {
     		$('.thumbnail-' + (i + 1)).attr('src', Util.flowerurl + arr[i]);
+    		$('.thumbnail-' + (i + 1)).parent().find('.btn-del').remove();
     		addFloatDel($('.thumbnail-' + (i + 1)).parent());
     	}
     	$('#QRCode').attr('src', jData.res.code_url + Util.codeurl);
