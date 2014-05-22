@@ -192,12 +192,7 @@ footer {
 }
 
 .btn-del {
-	display: none;
-	position: relative;
-	z-index: 999;
 	color: red;
-	top: -65px;
-	left: -170px;
 }
 
 textarea {  

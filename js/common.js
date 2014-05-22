@@ -7,7 +7,7 @@
 		actionPhp = "index.php",
 		//登录成功后，返回的用户标识
 		userId = $.cookie('flr_uid'),//sessionStorage.getItem('user_id'),
-		displayName = sessionStorage.getItem('display_name'),
+		displayName = $.cookie('flr_display'),//sessionStorage.getItem('display_name'),
 		sid = sessionStorage.getItem('sid')
 		cid = sessionStorage.getItem('cid'),
 		bid = sessionStorage.getItem('bid');
