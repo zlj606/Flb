@@ -242,9 +242,9 @@ $(document).ready(function() {
     		"action" : "modify_flower",
     		"fname" : $('.flbname').val(),
     		"fid" : fid,
-    		"bid" : $('.in-breed').val(),
-    		"sid" : $('.in-series').val(),
-    		"cid" : $('.in-color').val(),
+    		"breed_name" : $('.in-breed').val(),
+    		"series_name" : $('.in-series').val(),
+    		"color_name" : $('.in-color').val(),
     		"attr" : $('.pContent').val(),
     		"cult" : $('.cContent').val(),
     		"story" : $('.sContent').val()
