@@ -196,7 +196,7 @@ $(document).ready(function () {
         }
         var fid = sessionStorage.getItem('fid');
         if (null != fid) {
-            addFid(jData.res.fid);
+            addFid(fid);
         }
         $('#fileupload').ajaxSubmit(options);
     });
