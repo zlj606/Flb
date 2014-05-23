@@ -178,6 +178,11 @@ $(document).ready(function () {
         Util.post("index.php", {"controller": "flower","action": "create_code", "fid" : fid}, genQRCode);
     });
 
+    var fid = sessionStorage.getItem('fid');
+    if (null != fid) {
+        addFid(fid);
+    }
+
     $('.btn-submit').on('click', function() {
         var options = {
             url : Util.baseurl + 'index.php',
@@ -193,11 +198,7 @@ $(document).ready(function () {
                 sessionStorage.setItem('fid', jData.res.fid);
                 $('#big-pic').attr('src', Util.flowerurl + jData.res.flower_url);
             }
-        }
-        var fid = sessionStorage.getItem('fid');
-        if (null != fid) {
-            addFid(fid);
-        }
+        } 
         $('#fileupload').ajaxSubmit(options);
     });
 
