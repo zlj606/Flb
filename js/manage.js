@@ -188,11 +188,15 @@ $(document).ready(function () {
                     alert("上传图片回调失败");
                     return;
                 }
-                alert("上传图片回调成功！");
+               // alert("上传图片回调成功！");
 
                 sessionStorage.setItem('fid', jData.res.fid);
                 $('#big-pic').attr('src', Util.flowerurl + jData.res.flower_url);
             }
+        }
+        var fid = sessionStorage.getItem('fid');
+        if (null != fid) {
+            addFid(jData.res.fid);
         }
         $('#fileupload').ajaxSubmit(options);
     });
