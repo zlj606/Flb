@@ -63,7 +63,10 @@
 	    			sessionStorage.setItem('user_id', jData.res.uid);
 					sessionStorage.setItem('display_name', jData.res.display);
 	    			if (jData.res.jump_url != '') {
-	    				window.location.href = jData.res.jump_url;
+	    				var url = jData.res.jump_url;
+	    				var begin = url.lastIndexOf('/');
+	    					url = url.substring(begin + 1, url.length);
+	    				window.location.href = url;
 	    			} else {
 	    				window.location.href = "index.html";
 	    			}
@@ -74,7 +77,7 @@
 	    			var usrName = $('#user_name').val(),
 	    				pwd = $('#user_password').val(),
 	    				auto = $('.auto-login:checked').val() == "true"? "true" : "false";
-	    			window.location.href = "index.html";
+	    			//window.location.href = "index.html";
 	    			if ('' == usrName || '' == pwd) {
 	    				alert("请输入账号和密码");
 	    				return;
