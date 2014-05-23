@@ -51,8 +51,14 @@ $(document).ready(function() {
 			alert("完善用户资料失败");
 			return;
 		}
+		try {
+			if ('' != jData.res.jump_url) {
+				window.location.href = jData.res.jump_url;
+			}
 
-		window.location.href ="";
+		} catch (e) {
+
+		}	
 
 	}
 	$('.add-info').on('click', function() {
@@ -63,8 +69,18 @@ $(document).ready(function() {
 
 		var data = {
 			"controller" : "user",
-			"action" : "",
-
+			"action" : "append_user",
+			"uid" : userId,
+			"type_name" :,
+			"name" : ,
+			"sex" :,
+			"income" :,
+			"age":,
+			"scale":,
+			"shop_name": ,
+			"plant_base":,
+			"grow_unit":
 		}
+		Util.get('index.php', data, callBack);
 	});
 });
