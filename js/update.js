@@ -287,7 +287,8 @@ $(document).ready(function() {
 	    		"fid" : fid,
 	    		"img" : picName
 	    	};
-
+	    	$(this).parent().find('img').attr('src', '');
+	    	$(this).remove();
 	    	Util.get('index.php', delData, delCallBack);
 	    });
     }

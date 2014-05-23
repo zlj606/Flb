@@ -178,10 +178,6 @@ $(document).ready(function () {
         Util.post("index.php", {"controller": "flower","action": "create_code", "fid" : fid}, genQRCode);
     });
 
-    var fid = sessionStorage.getItem('fid');
-    if (null != fid) {
-        addFid(fid);
-    }
 
     $('.btn-submit').on('click', function() {
         var options = {
