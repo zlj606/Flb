@@ -56,6 +56,7 @@
 
 	if (null != displayName && '' != displayName) {
 		$('.ac>a').text(displayName);
+		$('.ac>a').attr('href', "detail.html")
 		$('.logout').text('注销');
 
 		if ('管理员' == displayName || '超级管理员' == displayName) {
