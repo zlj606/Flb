@@ -4,7 +4,7 @@ $(document).ready(function () {
         if ($('.action-info').has('.fid').length > 0) {
             $('.fid').val(fid);
         } else {
-           $('.action-info').append('<input type="password" name="fid" class="fid" value="' 
+           $('.action-info').append('<input type="text" name="fid" class="fid" value="' 
             + fid + '">'); 
         }
         

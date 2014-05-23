@@ -1,6 +1,12 @@
 $(document).ready(function() {
 	
 	fid = sessionStorage.getItem('fid');
+
+	if ($('.hide-info').has('.fid').length > 0) {
+		$('.fid').val(fid);
+	} else {
+		$('.hide-info').append('<input class="fid" name="fid" type="text" value="' + fid + '">');
+	}
     
 	$('.series-field').hide();
 	$('.color-field').hide();
@@ -198,7 +204,7 @@ $(document).ready(function() {
                 }
                 alert("上传图片回调成功！");
 
-                sessionStorage.setItem('fid', jData.res.fid);
+                //sessionStorage.setItem('fid', jData.res.fid);
                 $('#big-pic').attr('src', Util.flowerurl + jData.res.flower_url);
             }
         }
