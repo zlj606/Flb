@@ -137,9 +137,6 @@ $(document).ready(function() {
 	//获取数据库的种类，品种，颜色信息
 	Util.get("index.php", tData, bscCallBack);
 
-	$('.btn-para').on('click', function() {
-
-	});
 
 	//生成二维码
     function genQRCode(jData) {
@@ -205,7 +202,13 @@ $(document).ready(function() {
                 alert("上传图片回调成功！");
 
                 //sessionStorage.setItem('fid', jData.res.fid);
-                $('#big-pic').attr('src', Util.flowerurl + jData.res.flower_url);
+                //$('#big-pic').attr('src', Util.flowerurl + jData.res.flower_url);
+
+                for (var i = 0; i < 5; ++i) {
+                	if($('.thumbnail-' + (i+1)).attr('src') == '') {
+                		$('.thumbnail-' + (i+1)).attr('src', Util.flowerurl + jData.res.flowerurl); 
+                	} 
+                }
             }
         }
         $('#fileupload').ajaxSubmit(options);

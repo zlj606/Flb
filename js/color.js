@@ -9,6 +9,9 @@ $(function() {
 
 
 	function addColor(fname, url, detail,cid, fid) {
+		if ('' == fname) {
+			fname = "未命名";
+		}
 		var html = '<div class="col-xs-12 col-sm-6 col-lg-3 text-center"><h2>'
 				   + fname + '</h2><img class="img-border" src="'
 				   + Util.flowerurl + url + '"color_id="' + cid + '"flower_id="' 
