@@ -27,7 +27,7 @@ $(document).ready(function() {
 		var flb_arr = jData.res.flower_url.split(',');
 
 		$('.slider-flower').empty();
-		var html = '';
+		html = '';
 		for (var i = 0; i < flb_arr.length; ++i) {
 			addImage(html, Util.flowerurl +flb_arr[i]);
 		}
@@ -38,7 +38,7 @@ $(document).ready(function() {
 
 		$('.u-name').html(jData.res.fname);
 		$('.u-breed').html(jData.res.breed_name);
-		$('.u-spe').html(jData.res.series_name);
+		$('.u-series').html(jData.res.series_name);
 		$('.u-color').html(jData.res.color_name);
 		$('.attr').html(jData.res.attr);
 		$('.cult').html(jData.res.cult);
