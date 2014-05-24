@@ -192,6 +192,7 @@ $(document).ready(function () {
                // alert("上传图片回调成功！");
 
                 sessionStorage.setItem('fid', jData.res.fid);
+                addFid(jData.res.fid);
                 $('#big-pic').attr('src', Util.flowerurl + jData.res.flower_url);
             }
         } 
