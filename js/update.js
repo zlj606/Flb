@@ -108,7 +108,9 @@ $(document).ready(function() {
     	for (var i = 0 ; i < arr.length ; ++i) {
     		$('.thumbnail-' + (i + 1)).attr('src', Util.flowerurl + arr[i]);
     		$('.thumbnaila-' + (i + 1)).find('.btn-del').remove();
-    		addFloatDel($('.thumbnaila-' + (i + 1)));
+    		if('flr_no_img.jpg' != arr[i]) {
+    			addFloatDel($('.thumbnaila-' + (i + 1)));
+    		}		
     	}
     	$('#QRCode').attr('src', Util.codeurl + jData.res.code_url);
 
