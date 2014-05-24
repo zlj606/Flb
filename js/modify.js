@@ -146,9 +146,9 @@ $(function(){
             onPageClick: function(pageNum, events) {
                  var ctr = 'flower',
                     action = 'query_flower_list',
-                    breed = bid,
-                    series = sid,
-                    color = cid,
+                    breed = '',
+                    series = '',
+                    color = '',
                     jData = '',
                     flag_id = sessionStorage.getItem('flag');
                 switch(flag_id) {
@@ -163,7 +163,8 @@ $(function(){
                         color = $('.sel-color').val();
                         break;
                 }
-                if ('2' != flag_id) {
+
+                if ('3' != flag_id) {
                     jData = {
                         "controller" : ctr,
                         "action" : action,
@@ -172,7 +173,7 @@ $(function(){
                         "color_id" : color,
                         "page" : pageNum
                     }  
-                } else {
+                } else if('2' == flag_id) {
                     jData = {
                         "controller" : "flower",
                         "action" : "query_flower_list_admin",
@@ -181,7 +182,14 @@ $(function(){
                         "color_name" : color,
                         "page" : pageNum
                     }
+                } else {
+                    jData = {
+                        "controller" : ctr,
+                        "action" : action,
+                        "page" : pageNum
+                    }
                 }
+
                 
 
                 Util.get("index.php", jData, pageCallBack);
