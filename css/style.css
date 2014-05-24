@@ -257,7 +257,9 @@ textarea:focus {
 	text-align: center;
 }
 
-
+.vote-chance {
+	color: #00f;
+}
 /* Breadcrumb Styles
  ---------------------------------------------------------------------*/
 #breadCrumb3>ul {

@@ -209,6 +209,7 @@ $(document).ready(function() {
                 for (var i = 0; i < 5; ++i) {
                 	if($('.thumbnail-' + (i+1)).attr('src') == '') {
                 		$('.thumbnail-' + (i+1)).attr('src', Util.flowerurl + jData.res.flower_url); 
+                		break;
                 	} 
                 }
             }
