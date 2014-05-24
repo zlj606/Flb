@@ -1,7 +1,4 @@
 $(document).ready(function() {
-	$('.preview').on('click', function() {
-		$('.whole-img').attr('src', $(this).attr('src'));
-	});
 
 	fid = sessionStorage.getItem('fid');
 	if (null == fid || typeof(fid) == 'undefined') {
@@ -14,6 +11,11 @@ $(document).ready(function() {
 		userId = '';
 	}
 
+	//实现滑动预览大图
+	function addImage(html, url) {
+		html += '<img src="' + url +'">';
+	}
+
 	//获取花的详细信息
 	function callBack(jData) {
 		if ("1" != jData.ret) {
@@ -23,10 +25,15 @@ $(document).ready(function() {
 
 		var flb_arr = jData.res.flower_url.split(',');
 
+		$('.slider-flower').empty();
+		var html = '';
 		for (var i = 0; i < flb_arr.length; ++i) {
-			$('.thumbnail-' + (i + 1)).attr('src', Util.flowerurl +flb_arr[i]);
+			addImage(html, Util.flowerurl +flb_arr[i]);
 		}
-		$('.whole-img').attr('src', Util.flowerurl + flb_arr[0]);
+
+		$('.slider-flower').append(html);
+
+		$('.slider-flower').bxSlider();
 
 		$('.u-name').html(jData.res.fname);
 		$('.u-breed').html(jData.res.breed_name);

@@ -30,13 +30,13 @@ $(document).ready(function() {
 		var val = $(this).val();
 
 		switch(val) {
-			case "plant":
+			case "种植户":
 			     addPlant();
 			     break;
-			case "shop":
+			case "花店":
 				 addShop();
 				 break;
-			case "customer":
+			case "游客":
 				 addCustomer();
 				 break;
 			default:
@@ -65,21 +65,47 @@ $(document).ready(function() {
 		var identify = $('input[type="radio"]:checked').val(),
 			info1 = $('.info1').val(),
 			info2 = $('.info2').val(),
-			info3 = $('.info3').val();
+			info3 = $('.info3').val(),
+			sex = '',
+			name = $('.customer-name').val(),
+			income = '',
+			age = '',
+			scale = '',
+			shopName = '',
+			plantBase = '',
+			growUnit = '';
 
+		switch($('.customer-id:checked').val()) {
+			case '种植户':
+				growUnit = info1;
+				scale = info2;
+				plantBase = info3;
+				break;
+			case '游客':
+				age = info2;
+				sex = info1;
+				income = info3;
+				break;
+			case '花店':
+				growUnit = info1;
+				scale = info2;
+				shopName = info3;
+				break;
+		}
+            
 		var data = {
 			"controller" : "user",
 			"action" : "append_user",
 			"uid" : userId,
-			"type_name" :,
-			"name" : ,
-			"sex" :,
-			"income" :,
-			"age":,
-			"scale":,
-			"shop_name": ,
-			"plant_base":,
-			"grow_unit":
+			"type_name" : identify,
+			"name" : name,
+			"sex" : sex,
+			"income" : income,
+			"age": age,
+			"scale": scale,
+			"shop_name": shopName,
+			"plant_base": plantBase,
+			"grow_unit": growUnit
 		}
 		Util.get('index.php', data, callBack);
 	});

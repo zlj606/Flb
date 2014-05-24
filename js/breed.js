@@ -76,7 +76,7 @@ $(document).ready(function() {
         var html = '<li>';
         for (var i = 0; i < jData.res.record.length ; ++i) {
             addSlider(jData.res.record[i].fname, "flower.html", 
-                jData.res.record[i].flower_url,html);
+                Util.flowerurl + jData.res.record[i].flower_url,html);
             if ((i + 1 ) % 4 == 0) {
                 html += '</li>'
                 $('.bxslider').append(html);
