@@ -40,9 +40,33 @@ $(function() {
 		$('.row-series').html('');
 		var arr = jData.res;
 		for (var i = 0; i < arr.record.length; ++i) {
-			addSeries(arr.record[i].series_name, arr.record[i].url,'color.html', arr.record[i].sid);
+			addSeries(arr.record[i].fname, arr.record[i].url,'color.html', arr.record[i].sid);
 		}
 	}
+    
+    function showPage(items, itemsOnPage) {
+        $("#page").pagination({
+            displayedPages: 10,
+            edges: 1,
+            items: items,
+            itemsOnPage: itemsOnPage,
+            onPageClick: function(pageNum, events) {
+                    
+               var jData = {
+			    	"controller" : "flower",
+			    	"action" : "query_series",
+			    	"bid" : bid,
+			    	"page" : pageNum
+			    }
+                    
+
+                Util.get("index.php", jData, pageCallBack);
+            },
+            onInit: function() {
+               
+            }
+        });
+    }
 
 	function callBack(jData) {
 		if ("1" != jData.ret) {
@@ -52,7 +76,7 @@ $(function() {
 
 		var arr = jData.res;
 
-		Util.showPage(arr.record.total, 20, pageCallBack);
+		showPage(arr.record.total, 20);
 
 		$('.row-series').html('');
 		for (var i = 0; i < arr.record.length; ++i) {

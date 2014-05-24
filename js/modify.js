@@ -124,7 +124,7 @@ $(function(){
         $('.show-field').html('');
         var fArray =jData.res;
         for (var i = 0; i < fArray.record.length; ++i) {
-            addFlower(fArray.record[i].url, fArray.record[i].fname, fArray.record[i].fid);
+            addFlower(Util.flowerurl + fArray.record[i].url, fArray.record[i].fname, fArray.record[i].fid);
         }
 
         $('.btn-detail').on('click', function(e) {

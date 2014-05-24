@@ -63,6 +63,31 @@ $(function() {
 		}
 	}
 
+    function showPage(items, itemsOnPage) {
+        $("#page").pagination({
+            displayedPages: 10,
+            edges: 1,
+            items: items,
+            itemsOnPage: itemsOnPage,
+            onPageClick: function(pageNum, events) {
+                    
+			    var jData = {
+			    	"controller" : "flower",
+			    	"action" : "query_flower_list",
+			    	"bid" : bid,
+			    	"sid" : sid,
+			    	"page" : pageNum
+			    }
+                    
+
+                Util.get("index.php", jData, pageCallBack);
+            },
+            onInit: function() {
+               
+            }
+        });
+    }
+
 	function callBack(jData) {
 		if ("1" != jData.ret) {
 			alert(jData.res.err);
@@ -71,7 +96,7 @@ $(function() {
 
 		var arr = jData.res;
 
-		Util.showPage(arr.record.total, 20, pageCallBack);
+		showPage(arr.record.total, 20);
 
 		$('.row-color').html('');
 		for (var i = 0; i < arr.record.length; ++i) {

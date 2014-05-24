@@ -36,8 +36,31 @@ $(document).ready(function() {
         $('.row-breed').html('');
         var arr = jData.res;
         for (var i = 0; i < arr.record.length; ++i) {
-            addBreed(arr.record[i].breed_name, arr.record[i].url, 'series.html',  arr.record[i].bid);
+            addBreed(arr.record[i].fname, arr.record[i].url, 'series.html',  arr.record[i].bid);
         }
+    }
+
+    function showPage(items, itemsOnPage) {
+        $("#page").pagination({
+            displayedPages: 10,
+            edges: 1,
+            items: items,
+            itemsOnPage: itemsOnPage,
+            onPageClick: function(pageNum, events) {
+                    
+               var jData = {
+                    "controller" : "flower",
+                    "action" : "query_breed",
+                    "page" : pageNum
+                }  
+                    
+
+                Util.get("index.php", jData, pageCallBack);
+            },
+            onInit: function() {
+               
+            }
+        });
     }
 
 	function callBack(jData) {
@@ -48,7 +71,7 @@ $(document).ready(function() {
 
 		var arr = jData.res;
 
-		Util.showPage(arr.record.total, 20, pageCallBack);
+		showPage(arr.record.total, 20);
 
         $('.row-breed').html('');
 		for (var i = 0; i < arr.record.length; ++i) {
@@ -82,7 +105,14 @@ $(document).ready(function() {
 			alert(jData.res.err);
 			return;
 		}
-
+        try {
+            if (0 == jData.res.record.length) {
+                return;
+            }
+        } catch(e) {
+            return;
+        }
+        
         $('.bxslider').html('');
 
         var html = '<li>';

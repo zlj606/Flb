@@ -114,7 +114,7 @@ $(document).ready(function() {
     	}
     	$('#QRCode').attr('src', Util.codeurl + jData.res.code_url);
 
-    	if ($('#QRCode').attr('src') != '' ) {
+    	if (jData.res.code_url != '' ) {
     		$('.gen-code').hide();
     	}
     }
