@@ -3,7 +3,7 @@ $(document).ready(function() {
 		$('.id-info').html('');
 
 		var html = '<div class="magin-dis"><label class="label-left">客户产区&nbsp;</label><input type="text" class="info1"></div>'
-				   + '<div class="magin-dis"><label class="label-left">规模&nbsp;</label><select class="info2"><option value="">100</option></select></div>'
+				   + '<div class="magin-dis"><label class="label-left">规模&nbsp;</label><select class="info2"><option value="100">100</option></select></div>'
 				   + '<div class="magin-dis"><label class="label-left">种植基地名称&nbsp;</label><input type="text" class="info3"></div>';
 		$('.id-info').append(html);
 	}
@@ -12,7 +12,7 @@ $(document).ready(function() {
 		$('.id-info').html('');
 
 		var html = '<div class="magin-dis"><label class="label-left">客户产区&nbsp;</label><input type="text" class="info1"></div>'
-				   + '<div class="magin-dis"><label class="label-left">规模&nbsp;</label><select><option value="" class="info2">100</option></select></div>'
+				   + '<div class="magin-dis"><label class="label-left">规模&nbsp;</label><select><option value="100" class="info2">100</option></select></div>'
 				   + '<div class="magin-dis"><label class="label-left">花店名称&nbsp;</label><input type="text" class="info3"></div>';
 		$('.id-info').append(html);
 	}
@@ -21,8 +21,8 @@ $(document).ready(function() {
 		$('.id-info').html('');
 
 		var html = '<div class="magin-dis"><label class="label-left">性别&nbsp;</label><select class="info1"><option value="男">男</option><option value="女">女</option></select></div>'
-				   + '<div class="magin-dis"><label class="label-left">年龄段&nbsp;</label><select class="info2"><option value="">100</option></select></div>'
-				   + '<div class="magin-dis"><label class="label-left">收入层次&nbsp;</label><select class="info3"><option value="">100</option></select></div>';
+				   + '<div class="magin-dis"><label class="label-left">年龄段&nbsp;</label><select class="info2"><option value="100">100</option></select></div>'
+				   + '<div class="magin-dis"><label class="label-left">收入层次&nbsp;</label><select class="info3"><option value="100">100</option></select></div>';
 		$('.id-info').append(html);
 	}
 
