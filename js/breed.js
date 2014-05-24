@@ -89,7 +89,7 @@ $(document).ready(function() {
         for (var i = 0; i < jData.res.record.length ; ++i) {
              html += '<div class="col-xs-12 col-lg-3"><label>'
                    + jData.res.record[i].fname + '</label><a href="'
-                   + "flower.html" + '"><img src="'
+                   + "flower.html" + '" class="history"><img src="'
                    + Util.flowerurl + jData.res.record[i].flower_url + '" /></a></div>';
             if ((i + 1 ) % 4 == 0) {
                 html += '</li>'
