@@ -80,7 +80,7 @@ $(function() {
     $('.btn-search').on('click', function() {
     	var cData = {
     		"controller" : "flower",
-    		"action" : "query_flower",
+    		"action" : "query_flower_list",
     		"series_id" : sid,
     		"color_id" : $('.sel-color').val()
     	};

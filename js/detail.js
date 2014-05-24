@@ -20,7 +20,7 @@ $(document).ready(function() {
 	function addCustomer() {
 		$('.id-info').html('');
 
-		var html = '<div class="magin-dis"><label class="label-left">性别&nbsp;</label><select class="info1"><option value="male">男</option><option value="female">女</option></select></div>'
+		var html = '<div class="magin-dis"><label class="label-left">性别&nbsp;</label><select class="info1"><option value="男">男</option><option value="女">女</option></select></div>'
 				   + '<div class="magin-dis"><label class="label-left">年龄段&nbsp;</label><select class="info2"><option value="">100</option></select></div>'
 				   + '<div class="magin-dis"><label class="label-left">收入层次&nbsp;</label><select class="info3"><option value="">100</option></select></div>';
 		$('.id-info').append(html);
@@ -53,7 +53,10 @@ $(document).ready(function() {
 		}
 		try {
 			if ('' != jData.res.jump_url) {
-				window.location.href = jData.res.jump_url;
+				var url = jData.res.jump_url;
+				var begin = url.lastIndexOf('/');
+					url = url.substring(begin + 1, url.length);
+				window.location.href = url;
 			}
 
 		} catch (e) {
@@ -74,6 +77,11 @@ $(document).ready(function() {
 			shopName = '',
 			plantBase = '',
 			growUnit = '';
+
+		if ('' == info1 || '' == info2 || '' == info3 || '' == name) {
+			alert('请补全客户信息！');
+			return;
+		}
 
 		switch($('.customer-id:checked').val()) {
 			case '种植户':
@@ -107,6 +115,6 @@ $(document).ready(function() {
 			"plant_base": plantBase,
 			"grow_unit": growUnit
 		}
-		Util.get('index.php', data, callBack);
+		Util.post('index.php', data, callBack);
 	});
 });

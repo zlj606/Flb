@@ -5,6 +5,7 @@ $(document).ready(function() {
 		fid = Util.getPara('fid');
 	}
 	
+	$('.slider-flower').bxSlider();
 
 	//alert(fid);
 	if (typeof(userId) == 'undefined' || null == userId) {

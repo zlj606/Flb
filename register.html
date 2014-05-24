@@ -79,7 +79,10 @@
 					sessionStorage.setItem('display_name', jData.res.display);
 
 					if (jData.res.jump_url != '') {
-	    				window.location.href = jData.res.jump_url;
+	    				var url = jData.res.jump_url;
+	    				var begin = url.lastIndexOf('/');
+	    					url = url.substring(begin + 1, url.length);
+	    				window.location.href = url;
 	    			} else {
 	    				window.location.href = "index.html";
 	    			}
