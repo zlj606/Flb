@@ -117,4 +117,31 @@ $(document).ready(function() {
 		}
 		Util.post('index.php', data, callBack);
 	});
+
+
+	function pCallBack(jData) {
+		if("1" != jData.ret) {
+			return;
+		}
+		alert('密码修改成功！');
+		window.location.href = "login.html";
+	}
+	$('.modify-pwd').on('click', function() {
+		var oldPwd = $('.old-pwd').val(),
+			new1 = $('.new-pwd1').val(),
+			new2 =$('.new-pwd2').val();
+
+		if ('' == oldPwd || '' == new1 || '' == new2) {
+			alert('密码不能为空');
+			return;
+		}
+
+		if (new1 != new2) {
+			alert('两次输入的密码应该相同！');
+			return;
+		}
+
+		Util.post('index.php', {"controller":"user", "action":"reset_password", "uid":userId, "old_pwd": oldPwd, 
+				"new_pwd": new1}, pCallBack);
+	})
 });
