@@ -22,7 +22,12 @@ $(document).ready(function() {
 				},
 				"sZeroRecords": "没有检索到数据"
 			},
-			"aaData": data
+			"aaData": data,
+			"aoColumns": [{
+				"sTitle": "名称"
+			},
+			{"sTitle": "票数"}
+			]
 		});
 	}
 
@@ -31,7 +36,7 @@ $(document).ready(function() {
 			return;
 		}
 		$('.static-table').empty();
-		$('.static-table').append('<tr><th>名称</th><th>票数</th></tr>');
+		//$('.static-table').append('<tr><th>名称</th><th>票数</th></tr>');
 		addTable('.static-table',jData.res.record);
 	}
 

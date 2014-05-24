@@ -76,15 +76,6 @@ $(function() {
     }
     Util.get(actionPhp, data, callBack);
 
-    //搜索按钮处理
-    $('.btn-search').on('click', function() {
-    	var cData = {
-    		"controller" : "flower",
-    		"action" : "query_flower_list",
-    		"series_id" : sid,
-    		"color_id" : $('.sel-color').val()
-    	};
-    	Util.get("index.php", cData, callBack);
-    });
+   
     
 });

@@ -64,4 +64,34 @@ $(function() {
     	"page" : 1
     }
     Util.get(actionPhp, data, callBack);
+
+    function fCallBack(jData) {
+		if ("1" != jData.ret) {
+			alert(jData.res.err);
+			return;
+		}
+
+		var arr = jData.res;
+
+		Util.showPage(arr.record.total, 20, pageCallBack);
+
+		$('.row-series').html('');
+		for (var i = 0; i < arr.record.length; ++i) {
+			addColor(arr.record[i].fname, Util.flowerurl + arr.record[i].url, 'flower.html', arr.record[i].sid);
+		}
+
+	}
+
+     //搜索按钮处理
+    $('.btn-search').on('click', function() {
+    	var cData = {
+    		"controller" : "flower",
+    		"action" : "query_flower_list",
+    		"series_id" : sid,
+    		"bid": bid,
+    		"color_id" : $('.sel-color').val(),
+    		"uid" : userId
+    	};
+    	Util.get("index.php", cData, fCallBack);
+    });
 });
