@@ -67,8 +67,8 @@ $(document).ready(function() {
 	
 	$('.add-user').on('click', function() {
 		var data = {	
-			"controller": "",
-			"action": ,
+			"controller": "user",
+			"action": "create_user",
 			"phone": $('.phone').val(),
 			"name" : $('.name').val(),
 			"sex" : $('.sex').val(),
