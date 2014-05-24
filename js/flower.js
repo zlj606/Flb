@@ -45,7 +45,7 @@ $(document).ready(function() {
 		shtml = '';
 		for (var i = 0; i < flb_arr.length; ++i) {
 			/*addImage(shtml, Util.flowerurl +flb_arr[i]);*/
-			shtml += '<img src="' + url +'">';
+			shtml += '<img src="' + Util.flowerurl +flb_arr[i] +'">';
 		}
 
 		$('.slider-flower').append(shtml);
