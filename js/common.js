@@ -43,7 +43,8 @@
 		        +        '<ul class="dropdown-menu">'
 		        +		   '<li><a href="manage.html">新建品种</a></li>'	
 		        +          '<li><a href="modify.html">修改品种</a></li>'
-		        +         '<li><a href="statics.html">票数统计</a></li>'
+		        +          '<li><a href="statics.html">票数统计</a></li>'
+		        +          '<li><a href="accountmanage.html">账号管理</a></li>'
 		        +       '</ul>'
 		        +      '</li>' 
 		        +  '</ul>'
@@ -61,6 +62,8 @@
 
 		if ('管理员' == displayName || '超级管理员' == displayName) {
 			$('.man-plaft').show();
+		} else {
+			$('.man-plaft').hide();
 		} 
 	} else {
 		$('.man-plaft').hide();
