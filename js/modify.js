@@ -135,7 +135,7 @@ $(function(){
 
             window.location.href = $(this).attr('href');
         });
-    },
+    }
 
     function showPage(items, itemsOnPage) {
         $("#page").pagination({
