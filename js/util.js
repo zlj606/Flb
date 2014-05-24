@@ -1,7 +1,7 @@
 Util = {
-    baseurl: 'http://192.168.1.134:8080/flower/',
-    flowerurl: 'http://192.168.1.134:8080/flower/photos/flower/',
-    codeurl: 'http://192.168.1.134:8080/flower/photos/code/',    
+    baseurl: 'http://192.168.0.104:8080/flower/',
+    flowerurl: 'http://192.168.0.104:8080/flower/photos/flower/',
+    codeurl: 'http://192.168.0.104:8080/flower/photos/code/',    
     //baseurl: 'http://127.0.0.1:8080/flower/',
     //flowerurl: 'http://127.0.0.1:8080/flower/photos/flower/',
     //codeurl: 'http://127.0.0.1:8080/flower/photos/code/',    
