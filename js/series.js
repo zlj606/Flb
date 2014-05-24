@@ -9,12 +9,12 @@ $(function() {
 	}
 	
 	//面包屑导航处理
-    $('.breadCrumb').empty();
+    $('#breadCrumb3').empty();
     var bname = sessionStorage.getItem('bname');
-    var ele = '<li><a href="breed.html">花品资料</a></li>'
-    	    + '<li><a href="#">' + bname + '</a></li>';
-    $('.breadCrumb').append(ele);
-    $('.breadCrumb').jBreadCrumb();
+    var ele = '<ul><li><a href="breed.html">花品资料</a></li>'
+    	    + '<li><a href="#">' + bname + '</a></li></ul>';
+    $('#breadCrumb3').append(ele);
+    $('#breadCrumb3').jBreadCrumb();
 
 	function addSeries(fname, url, detail, sId) {
 		if ('' == fname) {

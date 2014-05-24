@@ -1,10 +1,13 @@
 $(document).ready(function() {
 
     //面包屑导航处理
-    $('.breadCrumb').empty();
-    var ele = '<li><a href="#">花品资料</a></li>';
-    $('.breadCrumb').append(ele);
-    $('.breadCrumb').jBreadCrumb();
+    $('#breadCrumb3').empty();
+    var ele = '<ul>'
+            + '<li><a href="#">Home</a></li>'
+            + '<li><a href="#">花品资料</a></li>'
+            + '<ul>';
+    $('#breadCrumb3').append(ele);
+    $('#breadCrumb3').jBreadCrumb();
 
 
 	function addBreed(fname, url, detail, bid) {

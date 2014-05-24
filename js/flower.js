@@ -14,17 +14,17 @@ $(document).ready(function() {
 
 	//面包屑导航处理
 
-    $('.breadCrumb').empty();
+    $('#breadCrumb3').empty();
     var bname = sessionStorage.getItem('bname'),
     	sname = sessionStorage.getItem('sname'),
     	cname = sessionStorage.getItem('cname');
     if (undefined != bname && undefined != sname && cname != undefined) {
-    	var ele = '<li><a href="breed.html">花品资料</a></li>'
+    	var ele = '<ul><li><a href="breed.html">花品资料</a></li>'
     	    + '<li><a href="series.html">' + bname + '</a></li>'
-    	    + '<li><a href="color.html">' + sname + '</a></li>'
+    	    + '<li><a href="color.html">' + sname + '</a></li></ul>'
     	    + '<li><a href="#">' + cname + '</a></li>';
-    	$('.breadCrumb').append(ele);
-    	$('.breadCrumb').jBreadCrumb();
+    	$('#breadCrumb3').append(ele);
+    	$('#breadCrumb3').jBreadCrumb();
     }
     
 	//实现滑动预览大图
