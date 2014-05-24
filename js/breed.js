@@ -1,5 +1,9 @@
 $(document).ready(function() {
 
+    //面包屑导航处理
+    
+
+
 	function addBreed(fname, url, detail, bid) {
         if ('' == fname) {
             fname = "未命名";

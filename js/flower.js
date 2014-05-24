@@ -13,8 +13,8 @@ $(document).ready(function() {
 	}
 
 	//实现滑动预览大图
-	function addImage(html, url) {
-		html += '<img src="' + url +'">';
+	function addImage(shtml, url) {
+		shtml += '<img src="' + url +'">';
 	}
 
 	//获取花的详细信息
@@ -27,12 +27,12 @@ $(document).ready(function() {
 		var flb_arr = jData.res.flower_url.split(',');
 
 		$('.slider-flower').empty();
-		html = '';
+		shtml = '';
 		for (var i = 0; i < flb_arr.length; ++i) {
-			addImage(html, Util.flowerurl +flb_arr[i]);
+			addImage(shtml, Util.flowerurl +flb_arr[i]);
 		}
 
-		$('.slider-flower').append(html);
+		$('.slider-flower').append(shtml);
 
 		$('.slider-flower').bxSlider();
 
