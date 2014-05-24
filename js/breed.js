@@ -1,21 +1,26 @@
 $(document).ready(function() {
 
     //面包屑导航处理
-    
+    $('.breadCrumb').empty();
+    var ele = '<li><a href="#">花品资料</a></li>';
+    $('.breadCrumb').append(ele);
+    $('.breadCrumb').jBreadCrumb();
 
 
 	function addBreed(fname, url, detail, bid) {
         if ('' == fname) {
             fname = "未命名";
         }
-		var html = '<div class="col-xs-12 col-sm-6 col-lg-3 text-center"><h2>'
+		var html = '<div class="col-xs-12 col-sm-6 col-lg-3 text-center"><h2 class="fname">'
 				   + fname + '</h2><img class="img-border" src="'
-				   + Util.flowerurl + url + '" breed_id="' + bid + '"></img><p><a class="btn btn-default btn-detail" href="'
+				   + Util.flowerurl + url + '" breed_id="' + bid 
+                   + '"></img><p><a class="btn btn-default btn-detail" href="'
 				   + detail + '" role="button">详情</a></p></div>';
 		$('.row-breed').append(html);
 
         $('.btn-detail').on('click', function() {
             sessionStorage.setItem('bid',$(this).parent().parent().find('img').attr('breed_id'));
+            sessionStorage.setItem('bname',$(this).parent().parent().find('.fname').text());
         });
 	}
 

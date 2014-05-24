@@ -7,6 +7,16 @@ $(function() {
 		sid = Util.getPara('sid');
 	}
 
+	//面包屑导航处理
+    $('.breadCrumb').empty();
+    var bname = sessionStorage.getItem('bname'),
+    	sname = sessionStorage.getItem('sname');
+    var ele = '<li><a href="">花品资料</a></li>'
+    	    + '<li><a href="breed.html">' + bname + '</a></li>'
+    	    + '<li><a href="series.html">' + sname + '</a></li>';
+    $('.breadCrumb').append(ele);
+    $('.breadCrumb').jBreadCrumb();
+
 	function bscCallBack(jData) {
 		var html = '<option value="">请选择颜色</option>';
 		 for (var i = 0; i < jData.res.color.length; ++i) {
@@ -26,7 +36,7 @@ $(function() {
 		if ('' == fname) {
 			fname = "未命名";
 		}
-		var html = '<div class="col-xs-12 col-sm-6 col-lg-3 text-center"><h2>'
+		var html = '<div class="col-xs-12 col-sm-6 col-lg-3 text-center"><h2 class="fname">'
 				   + fname + '</h2><img class="img-border" src="'
 				   + Util.flowerurl + url + '"color_id="' + cid + '"flower_id="' 
 				   + fid + '"></img><p><a class="btn btn-default btn-detail" href="'
@@ -36,6 +46,7 @@ $(function() {
 	    $('.btn-detail').on('click', function() {
 	        sessionStorage.setItem('cid',$(this).parent().parent().find('img').attr('color_id'));
 	        sessionStorage.setItem('fid',$(this).parent().parent().find('img').attr('flower_id'));
+	        sessionStorage.setItem('cname',$(this).parent().parent().find('.fname').text());
 	    });
 	}
 

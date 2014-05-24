@@ -23,10 +23,10 @@ $(document).ready(function() {
 				"sZeroRecords": "没有检索到数据"
 			},
 			"aaData": data,
-			"aoColumns": [{
-				"sTitle": "名称"
-			},
-			{"sTitle": "票数"}
+			"aoColumns": [
+				{"sTitle": "ID"},
+				{"sTitle": "名称"},
+				{"sTitle": "票数"}
 			]
 		});
 	}

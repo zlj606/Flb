@@ -8,12 +8,19 @@ $(function() {
 		sid = Util.getPara('sid');
 	}
 	
+	//面包屑导航处理
+    $('.breadCrumb').empty();
+    var bname = sessionStorage.getItem('bname');
+    var ele = '<li><a href="">花品资料</a></li>'
+    	    + '<li><a href="breed.html">' + bname + '</a></li>';
+    $('.breadCrumb').append(ele);
+    $('.breadCrumb').jBreadCrumb();
 
 	function addSeries(fname, url, detail, sId) {
 		if ('' == fname) {
 			fname = "未命名";
 		}
-		var html = '<div class="col-xs-12 col-sm-6 col-lg-3 text-center"><h2>'
+		var html = '<div class="col-xs-12 col-sm-6 col-lg-3 text-center"><h2 class="fname">'
 				   + fname + '</h2><img class="img-border" src="'
 				   + Util.flowerurl + url + '"series_id="' + sId + '"></img><p><a class="btn btn-default btn-detail" href="'
 				   + detail + '" role="button">详情</a></p></div>';
@@ -21,6 +28,7 @@ $(function() {
 		//图片下的查看详细信息按钮处理
 	    $('.btn-detail').on('click', function() {
 	        sessionStorage.setItem('sid',$(this).parent().parent().find('img').attr('series_id'));
+	        sessionStorage.setItem('sname',$(this).parent().parent().find('.fname').text());
 	    });
 	}
 

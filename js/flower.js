@@ -12,6 +12,21 @@ $(document).ready(function() {
 		userId = '';
 	}
 
+	//面包屑导航处理
+
+    $('.breadCrumb').empty();
+    var bname = sessionStorage.getItem('bname'),
+    	sname = sessionStorage.getItem('sname'),
+    	cname = sessionStorage.getItem('cname');
+    if (undefined != bname && undefined != sname && cname != undefined) {
+    	var ele = '<li><a href="">花品资料</a></li>'
+    	    + '<li><a href="breed.html">' + bname + '</a></li>'
+    	    + '<li><a href="series.html">' + sname + '</a></li>'
+    	    + '<li><a href="color.html">' + cname + '</a></li>';
+    	$('.breadCrumb').append(ele);
+    	$('.breadCrumb').jBreadCrumb();
+    }
+    
 	//实现滑动预览大图
 	function addImage(shtml, url) {
 		shtml += '<img src="' + url +'">';
