@@ -164,7 +164,7 @@ $(function(){
                         break;
                 }
 
-                if ('3' != flag_id) {
+                if ('3' == flag_id) {
                     jData = {
                         "controller" : ctr,
                         "action" : action,
