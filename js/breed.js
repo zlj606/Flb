@@ -5,7 +5,7 @@ $(document).ready(function() {
     var ele = '<ul>'
             + '<li><a href="#">Home</a></li>'
             + '<li><a href="#">花品资料</a></li>'
-            + '<ul>';
+            + '</ul>';
     $('#breadCrumb3').append(ele);
     $('#breadCrumb3').jBreadCrumb();
 
