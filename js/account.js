@@ -22,7 +22,20 @@ $(document).ready(function() {
 				},
 				"sZeroRecords": "没有检索到数据"
 			},
-			"aaData": data
+			"aaData": data,
+			"aoColumns": [
+				{"sTitle":"姓名"},
+				{"sTitle":"手机号"},
+				{"sTitle":"身份"},
+				{"sTitle":"性别"},
+				{"sTitle":"年龄"},
+				{"sTitle":"收入"},
+				{"sTitle":"客户产区"},
+				{"sTitle":"种植基地"},
+				{"sTitle":"花店名称"},
+				{"sTitle":"规模"}，
+				{"sTitle":"编辑"}
+			]
 		});
 	}
 

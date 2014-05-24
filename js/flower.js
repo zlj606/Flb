@@ -19,10 +19,10 @@ $(document).ready(function() {
     	sname = sessionStorage.getItem('sname'),
     	cname = sessionStorage.getItem('cname');
     if (undefined != bname && undefined != sname && cname != undefined) {
-    	var ele = '<li><a href="">花品资料</a></li>'
-    	    + '<li><a href="breed.html">' + bname + '</a></li>'
-    	    + '<li><a href="series.html">' + sname + '</a></li>'
-    	    + '<li><a href="color.html">' + cname + '</a></li>';
+    	var ele = '<li><a href="breed.html">花品资料</a></li>'
+    	    + '<li><a href="series.html">' + bname + '</a></li>'
+    	    + '<li><a href="color.html">' + sname + '</a></li>'
+    	    + '<li><a href="#">' + cname + '</a></li>';
     	$('.breadCrumb').append(ele);
     	$('.breadCrumb').jBreadCrumb();
     }

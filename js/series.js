@@ -11,8 +11,8 @@ $(function() {
 	//面包屑导航处理
     $('.breadCrumb').empty();
     var bname = sessionStorage.getItem('bname');
-    var ele = '<li><a href="">花品资料</a></li>'
-    	    + '<li><a href="breed.html">' + bname + '</a></li>';
+    var ele = '<li><a href="breed.html">花品资料</a></li>'
+    	    + '<li><a href="#">' + bname + '</a></li>';
     $('.breadCrumb').append(ele);
     $('.breadCrumb').jBreadCrumb();
 

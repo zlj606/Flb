@@ -68,7 +68,7 @@ $(document).ready(function() {
     }
 
     //获取历史记录
-    data = {
+    hisData = {
     	"controller" : "user",
     	"action" : "query_browse_history",
     	"uid" : userId
@@ -84,8 +84,10 @@ $(document).ready(function() {
 
         var html = '<li>';
         for (var i = 0; i < jData.res.record.length ; ++i) {
-            addSlider(jData.res.record[i].fname, "flower.html", 
-                Util.flowerurl + jData.res.record[i].flower_url,html);
+             html += '<div class="col-xs-12 col-lg-3"><label>'
+                   + jData.res.record[i].fname + '</label><a href="'
+                   + "flower.html" + '"><img src="'
+                   + Util.flowerurl + jData.res.record[i].flower_url + '" /></a></div>';
             if ((i + 1 ) % 4 == 0) {
                 html += '</li>'
                 $('.bxslider').append(html);
@@ -103,7 +105,7 @@ $(document).ready(function() {
         $('.bxslider').bxSlider(); 
     }
 
-    Util.get('index.php', data, sliderCallBack);
+    Util.get('index.php', hisData, sliderCallBack);
 
     
 }); 

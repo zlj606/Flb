@@ -11,9 +11,9 @@ $(function() {
     $('.breadCrumb').empty();
     var bname = sessionStorage.getItem('bname'),
     	sname = sessionStorage.getItem('sname');
-    var ele = '<li><a href="">花品资料</a></li>'
-    	    + '<li><a href="breed.html">' + bname + '</a></li>'
-    	    + '<li><a href="series.html">' + sname + '</a></li>';
+    var ele = '<li><a href="breed.html">花品资料</a></li>'
+    	    + '<li><a href="series.html">' + bname + '</a></li>'
+    	    + '<li><a href="#">' + sname + '</a></li>';
     $('.breadCrumb').append(ele);
     $('.breadCrumb').jBreadCrumb();
 
@@ -100,9 +100,10 @@ $(function() {
 
 		Util.showPage(arr.record.total, 20, pageCallBack);
 
-		$('.row-series').html('');
+		$('.row-color').html('');
 		for (var i = 0; i < arr.record.length; ++i) {
-			addColor(arr.record[i].fname, Util.flowerurl + arr.record[i].url, 'flower.html', arr.record[i].sid);
+			addColor(arr.record[i].fname, arr.record[i].url, 'flower.html', 
+				arr.record[i].cid, arr.record[i].fid);
 		}
 
 	}
