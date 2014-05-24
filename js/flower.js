@@ -45,7 +45,7 @@ $(document).ready(function() {
 		$('.story').html(jData.res.story);
 	}
 
-	Util.get(actionPhp, {"controller":"flower", "action":"query_flower", "fid": parseInt(fid)}, callBack);
+	Util.get(actionPhp, {"controller":"flower", "action":"query_flower", "fid": parseInt(fid), "uid", userId}, callBack);
 
 	function voteCallBack(jData) {
 		if ('1' != jData.ret) {

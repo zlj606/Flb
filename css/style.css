@@ -251,3 +251,8 @@ textarea:focus {
 	margin-left: 0px!important;
 	padding-left: 0!important;
 }
+
+
+.align-center {
+	text-align: center;
+}

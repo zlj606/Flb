@@ -15,6 +15,9 @@
 				    "ERROR"	
 				    ];
     
+    if (null == userId || '' == userId || undefined == userId) {
+    	userId = sessionStorage.getItem('user_id');
+    }
     //添加导航条
     var navBar = '<div class="container">' 
                 +'<div class="navbar-header">'

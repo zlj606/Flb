@@ -87,10 +87,9 @@ $(function() {
     	var cData = {
     		"controller" : "flower",
     		"action" : "query_flower_list",
-    		"series_id" : sid,
+    		"sid" : sid,
     		"bid": bid,
-    		"color_id" : $('.sel-color').val(),
-    		"uid" : userId
+    		"cid" : $('.sel-color').val()
     	};
     	Util.get("index.php", cData, fCallBack);
     });
