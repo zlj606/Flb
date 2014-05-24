@@ -149,18 +149,21 @@ $(function(){
                     breed = bid,
                     series = sid,
                     color = cid,
+                    jData = '',
                     flag_id = sessionStorage.getItem('flag');
-                if ('2' == flag) {
-                    breed = $('.hand-breed').val().trim();
-                    series = $('.hand-series').val().trim();
-                    color = $('.hand-color').val().trim();
-                } else ('3' == flag) {
-                    breed = $('.sel-breed').val().trim();
-                    series = $('.sel-series').val().trim();
-                    color = $('.sel-color').val().trim();
+                switch(flag_id) {
+                    case '2':
+                        breed = $('.hand-breed').val().trim();
+                        series = $('.hand-series').val().trim();
+                        color = $('.hand-color').val().trim();
+                        break;
+                    case '3':
+                        breed = $('.sel-breed').val();
+                        series = $('.sel-series').val();
+                        color = $('.sel-color').val();
+                        break;
                 }
-                var jData = '';
-                if ('2' != flag) {
+                if ('2' != flag_id) {
                     jData = {
                         "controller" : ctr,
                         "action" : action,
