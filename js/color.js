@@ -7,7 +7,21 @@ $(function() {
 		sid = Util.getPara('sid');
 	}
 
+	function bscCallBack(jData) {
+		var html = '<option value="">请选择颜色</option>';
+		 for (var i = 0; i < jData.res.color.length; ++i) {
+            html += '<option value="' 
+                 + jData.res.color[i].color_id  + '">' 
+                 + jData.res.color[i].color_name  + '</option>';
+        }
 
+        $('.sel-color').html('');
+        $('.sel-color').append(html);
+	}
+
+	 //获取数据库的种类，品种，颜色信息
+    Util.get("index.php", detailData, bscCallBack);
+    
 	function addColor(fname, url, detail,cid, fid) {
 		if ('' == fname) {
 			fname = "未命名";
