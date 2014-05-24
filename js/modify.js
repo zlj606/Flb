@@ -21,7 +21,11 @@ $(function(){
     
     function callBack(jData) {
         if ("1" != jData.ret) {
-            alert("jData.res.err");
+            try {
+                alert(jData.res.err);
+            } catch(e) {
+                
+            }
             $('.show-field').html('');
             return;
         }
@@ -52,7 +56,7 @@ $(function(){
             console.log("暂无数据!");
             return;
         }
-        var html = '';
+        var html = '<option value="">请选择</option>';
         for (var i = 0; i < jData.res.series.length; ++i) {
             html += '<option value="' 
                  +  jData.res.series[i].series_id + '">' 
@@ -62,7 +66,7 @@ $(function(){
         $('.sel-series').html('');
         $('.sel-series').append(html);
 
-        html = '';
+        html = '<option value="">请选择</option>';
         for (var i = 0; i < jData.res.breed.length; ++i) {
             html += '<option value="' 
                  + jData.res.breed[i].breed_id + '">' 
@@ -72,7 +76,7 @@ $(function(){
         $('.sel-breed').html('');
         $('.sel-breed').append(html);
 
-        html = '';
+        html = '<option value="">请选择</option>';
         for (var i = 0; i < jData.res.color.length; ++i) {
             html += '<option value="' 
                  + jData.res.color[i].color_id  + '">' 
