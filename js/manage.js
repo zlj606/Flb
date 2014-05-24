@@ -105,7 +105,9 @@ $(document).ready(function () {
         $('#QRCode').attr('src', '');
         sessionStorage.removeItem('fid');
 
-        Util.get("index.php", tData, bscCallBack);
+        window.location.reload();
+
+        //Util.get("index.php", tData, bscCallBack);
     });
 
     function bscCallBack(jData) {

@@ -43,6 +43,8 @@ $(document).ready(function() {
 	Util.get('index.php', {"controller": "user", "action": "count_vote", "type": 2}, dataCallBack);
 	//导出投票结果
 	$('.btn-export').on('click', function() {
-		Util.get('index.php',{"controller": "user", "action":"export_vote","type":2}, null);
+		$('.btn-export').attr('target', '_blank');
+		$('.btn-export').attr('href','index.php?controller=user&action=export_vote&type=2');
+		//Util.get('index.php',{"controller": "user", "action":"export_vote","type":2}, null);
 	});
 });
