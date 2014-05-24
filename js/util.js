@@ -70,34 +70,6 @@ Util = {
         }
         return false;
     },
-    showPage: function(items, itemsOnPage, callBack) {
-        $("#page").pagination({
-            displayedPages: 10,
-            edges: 1,
-            items: items,
-            itemsOnPage: itemsOnPage,
-            onPageClick: function(pageNum, events) {
-                 var ctr = 'flower',
-                    action = 'query_flower_list',
-                    breed = 1,
-                    series = 1,
-                    color = 1;
-                var jData = {
-                    "controller" : ctr,
-                    "action" : action,
-                    "breed_id" : breed,
-                    "series_id" : series,
-                    "color_id" : color,
-                    "page" : pageNum
-                } 
-
-                Util.get("index.php", jData, callBack);
-            },
-            onInit: function() {
-               
-            }
-        });
-    },
     getPara: function(paras) {
         var url = location.href;
         var paraString = url.substring(url.indexOf("?")+1,url.length).split("&");
