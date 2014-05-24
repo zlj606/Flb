@@ -126,14 +126,14 @@
                 {
                     background: 'none'
                 });
-                if (isIE6OrLess()) 
+                /*if (isIE6OrLess()) 
                 {
                     fixPNG(jQuery(listElement).find('.' + _options.overlayClass).css(
                     {
                         width: '20px',
                         right: "-1px"
                     }));
-                }
+                }*/
                 var options = 
                 {
                     id: i,
@@ -193,11 +193,11 @@
         return false;
     };
     
-    function isIE6OrLess()
+    /*function isIE6OrLess()
     {
         var isIE6 = $.browser.msie && /MSIE\s(5\.5|6\.)/.test(navigator.userAgent);
         return isIE6;
-    };
+    };*/
     // Fix The Overlay for IE6
     function fixPNG(element)
     {
