@@ -78,7 +78,7 @@
 	    				pwd = $('#user_password').val(),
 	    				auto = $('.auto-login:checked').val() == "true"? "true" : "false";
 	    			//window.location.href = "index.html";
-	    			if ('' == usrName || 'admin' != usrName || '' == pwd) {
+	    			if ('' == usrName || '' == pwd) {
 	    				alert("请输入账号和密码");
 	    				return;
 	    			}
