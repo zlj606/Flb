@@ -29,7 +29,8 @@ $(document).ready(function() {
 		$('.slider-flower').empty();
 		shtml = '';
 		for (var i = 0; i < flb_arr.length; ++i) {
-			addImage(shtml, Util.flowerurl +flb_arr[i]);
+			/*addImage(shtml, Util.flowerurl +flb_arr[i]);*/
+			shtml += '<img src="' + url +'">';
 		}
 
 		$('.slider-flower').append(shtml);
