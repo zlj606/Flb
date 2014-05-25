@@ -129,9 +129,7 @@ $(document).ready(function() {
 
 		$('.customer-name').val(jData.res.user_name);
 		var identify = jData.res.type_name;
-		if ($('.identify').val() == identify) {
-			$('.identify[value="' + identify + '"]').attr('checked', true);
-		}
+		$('.customer-id[value="' + identify + '"]').attr('checked', 'true');
 
 		switch(identify) {
 			case "种植户":
@@ -148,8 +146,8 @@ $(document).ready(function() {
 				 break;
 			case "游客":
 				 addCustomer();
-				 $('.info1').val(jData.res.age);
-			     $('.info2').val(jData.res.sex);
+				 $('.info1').val(jData.res.sex);
+			     $('.info2').val(jData.res.age);
 			     $('.info3').val(jData.res.income);
 				 break;
 			default:

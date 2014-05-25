@@ -1,8 +1,9 @@
 $(document).ready(function() {
 
-	fid = sessionStorage.getItem('fid');
-	if (null == fid || typeof(fid) == 'undefined') {
-		fid = Util.getPara('fid');
+	
+	fid = Util.getPara('fid');
+	if ('' == fid || fid == null) {
+		fid = sessionStorage.getItem('fid');
 	}
 	
 	$('.slider-flower').bxSlider();
