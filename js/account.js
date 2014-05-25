@@ -194,7 +194,8 @@ $(document).ready(function() {
 				"income": $('.cincome').val(),
 				"plant_base": $('.cbase').val(),
 				"grow_unit": $('.carea').val(),
-				"scale": $('.cscale').val()			
+				"scale": $('.cscale').val(),
+				"shop_name": $('.cshop').val()			
 			}
 
 			Util.post('index.php', jData, editCallBack);

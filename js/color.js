@@ -123,7 +123,7 @@ $(function() {
 
 		var arr = jData.res;
 
-		Util.showPage(arr.record.total, 20, pageCallBack);
+		showPage(arr.record.total, 20);
 
 		$('.row-color').html('');
 		for (var i = 0; i < arr.record.length; ++i) {
