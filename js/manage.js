@@ -19,7 +19,7 @@ $(document).ready(function () {
         }
         Util.bubbleTip('提交信息成功！');
         try {
-            if (undefined != jData.res.fid) {
+            if (null != jData.res.fid || undefined != jData.res.fid || '' != jData.res.fid) {
                     sessionStorage.setItem('fid', jData.res.fid);
                     addFid(jData.res.fid);
                     $('.btn-flower').show();
@@ -200,9 +200,17 @@ $(document).ready(function () {
                 }
                Util.bubbleTip("上传图片成功！");
 
-                $('.picture').val(''); 
-                sessionStorage.setItem('fid', jData.res.fid);
-                addFid(jData.res.fid);
+                $('.picture').val('');
+                try {
+                    if (null != jData.res.fid || undefined != jData.res.fid || '' != jData.res.fid) {
+                       sessionStorage.setItem('fid', jData.res.fid);
+                       addFid(jData.res.fid); 
+                    } 
+                } catch(e) {
+                    
+                }
+                
+                
                 $('.btn-flower').show();
                 $('#big-pic').attr('src', Util.flowerurl + jData.res.flower_url);
             }
