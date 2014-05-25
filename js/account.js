@@ -44,10 +44,10 @@ $(document).ready(function() {
 			return;
 		}
 		$('.account-table').empty();
-		$('.account-table').append('<thead><tr><th>姓名</th><th>手机号</th><th>身份</th>'
+		/*$('.account-table').append('<thead><tr><th>姓名</th><th>手机号</th><th>身份</th>'
                     			  + '<th>性别</th><th>年龄</th><th>收入层次</th><th>客户产区</th><th>种植基地</th><th>花店名称</th>'
                     			  +	'<th>规模</th><th>编辑</th></tr></thead>');
-		addTable('.account-table',jData.res.record);
+		addTable('.account-table',jData.res.record);*/
 	}
 
 	Util.get('index.php', {"controller": "user", "action":"query_all_user"}, dataCallBack);
@@ -56,13 +56,13 @@ $(document).ready(function() {
 	function callBack(jData) {
 		if ("1" != jData.ret) {
 			if (null == jData.ret.err || 'undefined' == typeof(jData.ret.err)) {
-				alert("新增用户失败!");
+				Util.bubbleTip("新增用户失败!");
 				return;
 			}	
-			alert(jData.ret.err);
+			Util.bubbleTip(jData.ret.err);
 			return;
 		}
-		//alert("新增用户成功!");
+		Util.bubbleTip("新增用户成功!");
 	}
 	
 	$('.add-user-info').on('click', function() {
@@ -107,13 +107,84 @@ $(document).ready(function() {
 		$(this).parent().remove();
 	});
 
+	function editCallBack(jData) {
+		
+		if("1" != jData.ret) {
+			Util.bubbleTip(jData.res.err);
+			return;
+		}
+
+		$('.edit-field').hide();
+		Util.bubbleTip('修改客户信息成功！');
+	}
+
 	//编辑按钮处理
 	$('table').on('click', '.btn-edit', function() {
 		var html = '',
 			trObj = $(this).parent();
-
+		$('.edit-field').show();	
 		$('.info-body').empty();
-		html += '<div class="col-xs-12 col-lg-12">'
-			 + '<label>' ;
+		html += '<div class="col-xs-12 col-lg-6">'
+			 + '<label class="label-left">客户姓名</label>' 
+			 + '<input type="text" class="cname" value="' + $(':nth-child(1)', trObj).html() + '">' 
+			 + '</div>'
+			 + '<div class="col-xs-12 col-lg-6">'
+			 + '<label class="label-left">手机号</label>' 
+			 + '<label class="cphone">' + $(':nth-child(2)', trObj).html() + '</label>' 
+			 + '</div>'
+			 + '<div class="col-xs-12 col-lg-6">'
+			 + '<label class="label-left">客户身份</label>' 
+			 + '<input type="text" class="cidentify" value="' + $(':nth-child(3)', trObj).html() + '">' 
+			 + '</div>'
+			 + '<div class="col-xs-12 col-lg-6">'
+			 + '<label class="label-left">性别</label>' 
+			 + '<input type="text" class="csex" value="' + $(':nth-child(4)', trObj).html() + '">' 
+			 + '</div>'
+			 + '<div class="col-xs-12 col-lg-6">'
+			 + '<label class="label-left">年龄</label>' 
+			 + '<input type="text" class="cage" value="' + $(':nth-child(5)', trObj).html() + '">' 
+			 + '</div>'
+			 + '<div class="col-xs-12 col-lg-6">'
+			 + '<label class="label-left">收入层次</label>' 
+			 + '<input type="text" class="cincome" value="' + $(':nth-child(6)', trObj).html() + '">' 
+			 + '</div>'
+			 + '<div class="col-xs-12 col-lg-6">'
+			 + '<label class="label-left">客户产区</label>' 
+			 + '<input type="text" class="carea" value="' + $(':nth-child(7)', trObj).html() + '">' 
+			 + '</div>'
+			 + '<div class="col-xs-12 col-lg-6">'
+			 + '<label class="label-left">种植基地</label>' 
+			 + '<input type="text" class="cbase" value="' + $(':nth-child(8)', trObj).html() + '">' 
+			 + '</div>'
+			 + '<div class="col-xs-12 col-lg-6">'
+			 + '<label class="label-left">花店名称</label>' 
+			 + '<input type="text" class="cshop" value="' + $(':nth-child(9)', trObj).html() + '">' 
+			 + '</div>'
+			 + '<div class="col-xs-12 col-lg-6">'
+			 + '<label class="label-left">规模</label>' 
+			 + '<input type="text" class="cscale" value="' + $(':nth-child(10)', trObj).html() + '">' 
+			 + '</div>';
+		$('.info-body').append(html);
+
+		html = '<div class="row"><button type="button" class="btn btn-primary btn-update">修改</button></div>'
+		$('.info-body').append(html);
+
+		$('.btn-update').on('click', function() {
+			var jData = {
+				"controller": "user",
+				"action" : "modify_user",
+				"phone": $('.cphone').text(),
+				"user_name": $('.cname').val(),
+				"type_name": $('.cidentify').val(),
+				"sex": $('.csex').val(),
+				"age": $('.cage').val(),
+				"income": $('.cincome').val(),
+				"plant_base": $('.cbase').val(),
+				"grow_unit": $('.carea').val(),
+				"scale": $('.cscale').val()			
+			}
+
+			Util.post('index.php', jData, editCallBack);
+		});
 	});
 });
