@@ -127,8 +127,8 @@ $(document).ready(function() {
 
 		$('.id-info').empty();
 
-		$('.customer-name').val(jData.res.name);
-		var identify = jData.res.type;
+		$('.customer-name').val(jData.res.user_name);
+		var identify = jData.res.type_name;
 		if ($('.identify').val() == identify) {
 			$('.identify[value="' + identify + '"]').attr('checked', true);
 		}
