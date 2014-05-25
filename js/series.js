@@ -122,9 +122,9 @@ $(function() {
         for (var i = 0; i < jData.res.record.length ; ++i) {
              html += '<div class="col-xs-12 col-lg-3 align-center"><label>'
                    + jData.res.record[i].fname + '</label><a href="'
-                   + "flower.html" + '" class="history"><img src="'
-                   + Util.flowerurl + jData.res.record[i].flower_url + '"?fid='
-                   + jData.res.record[i].fid + ' /></a></div>';
+                   + Util.baseurl +  'web/flower.html' + '?fid='
+                   + jData.res.record[i].fid + '" class="history"><img src="'
+                   + Util.flowerurl + jData.res.record[i].flower_url +  '" /></a></div>';
             if ((i + 1 ) % 4 == 0) {
                 html += '</li>'
                 $('.bxslider').append(html);
