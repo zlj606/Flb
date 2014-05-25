@@ -65,7 +65,7 @@ $(document).ready(function() {
 		//alert("新增用户成功!");
 	}
 	
-	$('.add-user').on('click', function() {
+	$('.add-user-info').on('click', function() {
 		var data = {	
 			"controller": "user",
 			"action": "create_user",
@@ -97,7 +97,7 @@ $(document).ready(function() {
 	});
 
 	//删除账号信息
-	$('.btn-del').on('click', function() {
+	$('table').on('click','.btn-del' ,function() {
 		var trObj = $(this).parent();
 		var phone = $(':nth-child(2)', trObj).html();
 
@@ -105,5 +105,10 @@ $(document).ready(function() {
 
 		//表格删除
 		$(this).parent().remove();
+	});
+
+	//编辑按钮处理
+	$('table').on('click', '.btn-edit', function() {
+
 	});
 });

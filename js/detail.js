@@ -118,12 +118,60 @@ $(document).ready(function() {
 		Util.post('index.php', data, callBack);
 	});
 
+	//进入页面的时候首先判断是否有信息
+	function infoCallBack(jData) {
+		if ("1" != jData.ret) {
+			Util.bubbleTip(jData.res.err);
+			return;
+		}
+
+		$('.id-info').empty();
+
+		$('.customer-name').val(jData.res.name);
+		var identify = jData.res.type;
+		if ($('.identify').val() == identify) {
+			$('.identify[value="' + identify + '"]').attr('checked', true);
+		}
+
+		switch(identify) {
+			case "种植户":
+			     addPlant();
+			     $('.info1').val(jData.res.grow_unit);
+			     $('.info2').val(jData.res.scale);
+			     $('.info3').val(jData.res.plant_base);
+			     break;
+			case "花店":
+				 addShop();
+				 $('.info1').val(jData.res.grow_unit);
+			     $('.info2').val(jData.res.scale);
+			     $('.info3').val(jData.res.shop_name);
+				 break;
+			case "游客":
+				 addCustomer();
+				 $('.info1').val(jData.res.age);
+			     $('.info2').val(jData.res.sex);
+			     $('.info3').val(jData.res.income);
+				 break;
+			default:
+				 //alert("radio error!");
+				 break;
+		}
+
+
+	}
+	var jData = {
+		"controller": "user",
+		"action": "query_user",
+		"uid": userId
+	}
+	Util.get('index.php', jData,infoCallBack);
+
 
 	function pCallBack(jData) {
 		if("1" != jData.ret) {
 			return;
 		}
-		alert('密码修改成功！');
+		Util.bubbleTip('密码修改成功！');
 		window.location.href = "login.html";
 	}
 	$('.modify-pwd').on('click', function() {
