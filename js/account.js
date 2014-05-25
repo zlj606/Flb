@@ -33,7 +33,7 @@ $(document).ready(function() {
 				{"sTitle":"客户产区"},
 				{"sTitle":"种植基地"},
 				{"sTitle":"花店名称"},
-				{"sTitle":"规模"}，
+				{"sTitle":"规模"},
 				{"sTitle":"编辑"}
 			]
 		});
@@ -93,7 +93,7 @@ $(document).ready(function() {
 
 	$('.export-account').on('click', function(){
 		$(this).attr('target', '_blank');
-		$(this).attr('href',);
+		$(this).attr('href',Util.baseurl+ 'index.php?controller=user&action=export_user');
 	});
 
 	//删除账号信息

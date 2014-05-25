@@ -173,7 +173,7 @@ $(document).ready(function () {
             fid = Util.getPara('fid');
         }
         if (typeof(fid) == 'undefined' || '' == fid || null == fid) {
-            Util.bubbleTip("请先上传！");
+            Util.bubbleTip("请先上传图片！");
             return;
         }
 
@@ -193,6 +193,10 @@ $(document).ready(function () {
                 }
                // alert("上传图片回调成功！");
 
+                if('' == $('.picture').val()) {
+                    Util.bubbleTip('请先选择图片，再进行提交！');
+                    return;
+                }
                 sessionStorage.setItem('fid', jData.res.fid);
                 addFid(jData.res.fid);
                 $('#big-pic').attr('src', Util.flowerurl + jData.res.flower_url);

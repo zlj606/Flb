@@ -214,6 +214,10 @@ $(document).ready(function() {
                 }
             }
         }
+        if ('' == $('.picture').val()) {
+        	Util.bubbleTip('请先选择图片，再进行提交！');
+        	return;
+        }
         $('#fileupload').ajaxSubmit(options);
     });
 
