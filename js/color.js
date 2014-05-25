@@ -144,4 +144,52 @@ $(function() {
     	};
     	Util.get("index.php", cData, fCallBack);
     });
+
+    //获取历史记录
+    hisData = {
+    	"controller" : "user",
+    	"action" : "query_browse_history",
+    	"uid" : userId
+    }
+
+    function sliderCallBack(jData) {
+    	if ("1" != jData.ret) {
+			alert(jData.res.err);
+			return;
+		}
+        try {
+            if (0 == jData.res.record.length) {
+                return;
+            }
+        } catch(e) {
+            return;
+        }
+        
+        $('.bxslider').html('');
+
+        var html = '<li>';
+        for (var i = 0; i < jData.res.record.length ; ++i) {
+             html += '<div class="col-xs-12 col-lg-3"><label>'
+                   + jData.res.record[i].fname + '</label><a href="'
+                   + "flower.html" + '" class="history"><img src="'
+                   + Util.flowerurl + jData.res.record[i].flower_url + '"?fid='
+                   + jData.res.fid + ' /></a></div>';
+            if ((i + 1 ) % 4 == 0) {
+                html += '</li>'
+                $('.bxslider').append(html);
+                if (i + 1 < jData.res.record.length) {
+                    html = '<li>';   
+                }     
+            }
+        }
+
+        if ( (i % 4 > 0) && (i % 4 < 4) ) {
+            html += '</li>';
+            $('.bxslider').append(html);
+        }
+
+        $('.bxslider').bxSlider(); 
+    }
+
+    Util.get('index.php', hisData, sliderCallBack);
 });

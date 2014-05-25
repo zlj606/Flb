@@ -120,7 +120,8 @@ $(document).ready(function() {
              html += '<div class="col-xs-12 col-lg-3"><label>'
                    + jData.res.record[i].fname + '</label><a href="'
                    + "flower.html" + '" class="history"><img src="'
-                   + Util.flowerurl + jData.res.record[i].flower_url + '" /></a></div>';
+                   + Util.flowerurl + jData.res.record[i].flower_url + '"?fid='
+                   + jData.res.fid + ' /></a></div>';
             if ((i + 1 ) % 4 == 0) {
                 html += '</li>'
                 $('.bxslider').append(html);

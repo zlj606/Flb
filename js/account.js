@@ -90,4 +90,20 @@ $(document).ready(function() {
 		$('.plant_base').val('');
 		$('.shop-name').val('');
 	});
+
+	$('.export-account').on('click', function(){
+		$(this).attr('target', '_blank');
+		$(this).attr('href',);
+	});
+
+	//删除账号信息
+	$('.btn-del').on('click', function() {
+		var trObj = $(this).parent();
+		var phone = $(':nth-child(2)', trObj).html();
+
+		//发送到服务器删除此phone对应信息
+
+		//表格删除
+		$(this).parent().remove();
+	});
 });

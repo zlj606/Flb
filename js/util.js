@@ -94,6 +94,19 @@ Util = {
             url = window.webkitURL.createObjectURL(file) ;
         }
         return url ;
+    },
+    out: function() {
+        $('#note').animate({top:'0'}, 500, function(){ 
+            $(this).css({display:'none', top:'-100px'}); 
+         }); 
+    },
+    bubbleTip: function(msg) {
+        $('#note>label').html(msg);
+        if(!$('#note').is(':visible')){ 
+            $('#note').css({display:'block', top:'-100px'}).animate({top: '+100'}, 500, function(){ 
+                setTimeout(Util.out, 2000); 
+            }); 
+        } 
     }
 
 

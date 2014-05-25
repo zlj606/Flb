@@ -173,7 +173,7 @@ $(document).ready(function () {
             fid = Util.getPara('fid');
         }
         if (typeof(fid) == 'undefined' || '' == fid || null == fid) {
-            alert("请先上传！");
+            Util.bubbleTip("请先上传！");
             return;
         }
 
