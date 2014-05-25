@@ -19,7 +19,8 @@ $(document).ready(function () {
         }
         Util.bubbleTip('提交信息成功！');
         try {
-            if (null != jData.res.fid || undefined != jData.res.fid || '' != jData.res.fid) {
+            var fid = sessionStorage.getItem('fid');
+            if (null == fid || undefined == fid || '' == fid) {
                     sessionStorage.setItem('fid', jData.res.fid);
                     addFid(jData.res.fid);
                     $('.btn-flower').show();
@@ -201,13 +202,14 @@ $(document).ready(function () {
                Util.bubbleTip("上传图片成功！");
 
                 $('.picture').val('');
+                var fid = sessionStorage.getItem('fid');
                 try {
-                    if (null != jData.res.fid || undefined != jData.res.fid || '' != jData.res.fid) {
+                    if (null == fid || undefined == fid || '' == fid) {
                        sessionStorage.setItem('fid', jData.res.fid);
                        addFid(jData.res.fid); 
                     } 
                 } catch(e) {
-                    
+
                 }
                 
                 
@@ -226,6 +228,6 @@ $(document).ready(function () {
         }
     });*/
     $('.btn-flower').on('click', function() {
-        $('.btn-flower').attr('href', Util.baseurl + 'flower.html?fid=' + $('.fid').val());
+        $('.btn-flower').attr('href', Util.baseurl + 'web/flower.html?fid=' + $('.fid').val());
     });
 });
