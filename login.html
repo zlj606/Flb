@@ -11,6 +11,9 @@
 	<body id="login">
 		<div id="wrappertop"></div>
 			<div id="wrapper">
+				<div id="note">
+		    		<label></label>
+		    	</div> 
 				<div id="content">
 					<div id="header">
 						<h1></h1>
@@ -56,7 +59,7 @@
 	    		
 	    		function callBack(jData) {
 	    			if ("1" != jData.ret) {
-	    				alert('failed');
+	    				Util.bubbleTip(jData.res.err);
 	    				return;
 	    			}
 	    			//将用户标识存储到sessionStorage中
@@ -79,7 +82,7 @@
 	    				auto = $('.auto-login:checked').val() == "true"? "true" : "false";
 	    			//window.location.href = "index.html";
 	    			if ('' == usrName || '' == pwd) {
-	    				alert("请输入账号和密码");
+	    				Util.bubbleTip("请输入账号和密码");
 	    				return;
 	    			}
 	    			var data = {

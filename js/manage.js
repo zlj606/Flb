@@ -204,7 +204,7 @@ $(document).ready(function () {
                 sessionStorage.setItem('fid', jData.res.fid);
                 addFid(jData.res.fid);
                 $('.btn-flower').show();
-                $('#big-pic').attr('src', Util.baseurl + jData.res.flower_url);
+                $('#big-pic').attr('src', Util.flowerurl + jData.res.flower_url);
             }
         } 
         $('#fileupload').ajaxSubmit(options);
@@ -218,6 +218,6 @@ $(document).ready(function () {
         }
     });*/
     $('.btn-flower').on('click', function() {
-        $('.btn-flower').attr('href', Util.flowerurl + 'flower.html?fid=' + $('.fid').val());
+        $('.btn-flower').attr('href', Util.baseurl + 'flower.html?fid=' + $('.fid').val());
     });
 });

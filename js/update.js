@@ -213,7 +213,7 @@ $(document).ready(function() {
                 //$('#big-pic').attr('src', Util.flowerurl + jData.res.flower_url);
 
                 for (var i = 0; i < 5; ++i) {
-                	if($('.thumbnail-' + (i+1)).attr('src') == '' || $('.thumbnail-' + (i+1)).attr('src') == Util.flowerurl + 'fl_no_img.jpg') {
+                	if($('.thumbnail-' + (i+1)).attr('src') == '' || $('.thumbnail-' + (i+1)).attr('src') == Util.flowerurl + 'flr_no_img.jpg') {
                 		$('.thumbnail-' + (i+1)).attr('src', Util.flowerurl + jData.res.flower_url); 
                 		break;
                 	} 

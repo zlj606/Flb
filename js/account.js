@@ -144,7 +144,7 @@ $(document).ready(function() {
 			 + '<div class="col-xs-12 col-lg-6">'
 			 + '<label class="label-left">客户身份</label>' 
 			 + '<select class="cidentify"><option value="种植户">种植户</option><option value="花店">花店</option>'
-			 + '<option value="游客">游客</option><option value="黑名单">黑名单</option></select>'
+			 + '<option value="游客">游客</option><option value="黑户">黑户</option></select>'
 			 + '</div>'
 			 + '<div class="col-xs-12 col-lg-6">'
 			 + '<label class="label-left">性别</label>' 
