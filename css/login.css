@@ -293,3 +293,20 @@ a.register {
 	padding-top: 2px!important;
 	width: 80px!important;
 }
+
+#note{
+	position:absolute;
+	width:180px;
+	text-align: center!important;
+	background-color:#dfffff;
+	border:1px solid #d4ffff;
+	border-radius: 5px;
+	left:40%;
+	z-index:9999;
+	display:none;
+	color: #1f9c9c;
+}
+
+#note>label {
+	width: 150px!important;
+} 

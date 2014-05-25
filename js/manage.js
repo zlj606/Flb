@@ -108,6 +108,7 @@ $(document).ready(function () {
         $('#big-pic').attr('src', '');
         $('#QRCode').attr('src', '');
         //sessionStorage.removeItem('fid');
+        $('.fid').remove();
 
         window.location.reload();
 
@@ -228,6 +229,7 @@ $(document).ready(function () {
         }
     });*/
     $('.btn-flower').on('click', function() {
+        $('.btn-flower').attr('target', '_blank');
         $('.btn-flower').attr('href', Util.baseurl + 'web/flower.html?fid=' + $('.fid').val());
     });
 });
