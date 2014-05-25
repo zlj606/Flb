@@ -7,7 +7,7 @@ $(document).ready(function() {
 	
 	$('.slider-flower').bxSlider();
 
-	//alert(fid);
+	//Util.bubbleTip(fid);
 	if (typeof(userId) == 'undefined' || null == userId) {
 		userId = '';
 	}
@@ -36,7 +36,7 @@ $(document).ready(function() {
 	//获取花的详细信息
 	function callBack(jData) {
 		if ("1" != jData.ret) {
-			alert("失败！");
+			Util.bubbleTip("失败！");
 			return;
 		}
 
@@ -67,14 +67,14 @@ $(document).ready(function() {
 	function voteCallBack(jData) {
 		if ('1' != jData.ret) {
 			if (null != jData.res.err) {
-				alert(jData.res.err);
+				Util.bubbleTip(jData.res.err);
 				return;
 			} else {
 				console.log('投票失败!');
 				return;
 			}
 		}
-		alert("投票成功，感谢您的参与!");
+		Util.bubbleTip("投票成功，感谢您的参与!");
 		$('.vote-chance').html(jData.res.vote_rest + '');
 	}
 
@@ -89,7 +89,7 @@ $(document).ready(function() {
 				"uid" : userId
 			};
 		} else {
-			alert("请您先登录后，再进行投票！");
+			Util.bubbleTip("请您先登录后，再进行投票！");
 			return;
 		}	
 
@@ -99,7 +99,7 @@ $(document).ready(function() {
 
 	function restCallBack(jData) {
 		if ("1" != jData.ret) {
-			alert("获取投票余额失败!");
+			Util.bubbleTip("获取投票余额失败!");
 			return;
 		}
 		$('.vote-chance').html(jData.res.vote_rest + '');
@@ -124,7 +124,7 @@ $(document).ready(function() {
 
     function sliderCallBack(jData) {
     	if ("1" != jData.ret) {
-			alert(jData.res.err);
+			Util.bubbleTip(jData.res.err);
 			return;
 		}
         try {

@@ -70,17 +70,17 @@
 
 				function checkCode(jData) {
 					if("1" != jData.ret) {
-						alert("获取失败！");
+						Util.bubbleTip("获取失败！");
 						return;
 					}
-					alert('验证码发送成功，请查收！');
+					Util.bubbleTip('验证码发送成功，请查收！');
 
 				}
 
 				$('.btn-check').on('click', function() {
 					var phone = $('.phone').val();
 					if ('' == phone || false == Util.isPhone(phone)) {
-						alert('请输入有效的手机号！');
+						Util.bubbleTip('请输入有效的手机号！');
 						return;
 					}
 					settime($(this));
@@ -91,10 +91,10 @@
 				
 				function callBack(jData) {
 					if("1" != jData.ret) {
-						alert("改密失败！");
+						Util.bubbleTip("改密失败！");
 						return;
 					}
-					alert('重置的密码已发送到您的手机，请查收！');
+					Util.bubbleTip('重置的密码已发送到您的手机，请查收！');
 					try {
 						if (jData.res.jump_url != '') {
 		    				var url = jData.res.jump_url;
@@ -113,11 +113,11 @@
 					var phone = $('.phone').val(),
 						checkCode = $('.check-code').val();
 					if ('' == phone || false == Util.isPhone(phone)) {
-						alert('请输入有效的手机号！');
+						Util.bubbleTip('请输入有效的手机号！');
 						return;
 					}
 					if (checkCode == '') {
-						alert('请输入验证码！');
+						Util.bubbleTip('请输入验证码！');
 						return;
 					}
 					//找回密码

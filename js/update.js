@@ -144,7 +144,7 @@ $(document).ready(function() {
     function genQRCode(jData) {
         
         if ("1" != jData.ret) {
-            alert("生成失败!");
+            Util.bubbleTip("生成失败!");
             return;
         }
 
@@ -192,13 +192,19 @@ $(document).ready(function() {
 	});
 
 	$('.btn-submit').on('click', function() {
+
+		if ('' == $('.picture').val()) {
+        	Util.bubbleTip('请先选择图片，再进行提交！');
+        	return;
+        }
+        
         var options = {
             url : Util.baseurl + 'index.php',
             type: 'post',
             success : function(jData) {
                 jData = eval("(" + jData + ")");
                 if ("1" != jData.ret) {
-                    alert("上传图片回调失败");
+                    Util.bubbleTip("上传图片回调失败");
                     return;
                 }
                 //alert("上传图片回调成功！");
@@ -214,10 +220,7 @@ $(document).ready(function() {
                 }
             }
         }
-        if ('' == $('.picture').val()) {
-        	Util.bubbleTip('请先选择图片，再进行提交！');
-        	return;
-        }
+        
         $('#fileupload').ajaxSubmit(options);
     });
 
@@ -232,7 +235,7 @@ $(document).ready(function() {
 			}
 		}
 
-		alert('删除图片成功！');
+		Util.bubbleTip('删除图片成功！');
 	}
 
     
@@ -249,7 +252,7 @@ $(document).ready(function() {
 			}
 		}
 
-		alert('更新数据成功！');
+		Util.bubbleTip('更新数据成功！');
     }
 
     $('.btn-para').on('click', function() {

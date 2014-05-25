@@ -275,9 +275,11 @@ textarea:focus {
 	width:150px;
 	padding:5px;
 	text-align: center;
-	background:#eee;
-	border:1px solid #ccc;
+	background-color:#dfffff;
+	border:1px solid #d4ffff;
+	border-radius: 5px;
 	left:40%;
 	z-index:9999;
 	display:none;
+	color: #1f9c9c;
 } 

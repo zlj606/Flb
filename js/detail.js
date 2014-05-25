@@ -40,7 +40,7 @@ $(document).ready(function() {
 				 addCustomer();
 				 break;
 			default:
-				 alert("radio error!");
+				 Util.bubbleTip("radio error!");
 				 break;
 		}
 	});
@@ -48,7 +48,7 @@ $(document).ready(function() {
 
 	function callBack(jData) {
 		if ("1" != jData.ret) {
-			alert("完善用户资料失败");
+			Util.bubbleTip("完善用户资料失败");
 			return;
 		}
 		try {
@@ -79,7 +79,7 @@ $(document).ready(function() {
 			growUnit = '';
 
 		if ('' == info1 || '' == info2 || '' == info3 || '' == name) {
-			alert('请补全客户信息！');
+			Util.bubbleTip('请补全客户信息！');
 			return;
 		}
 
@@ -180,12 +180,12 @@ $(document).ready(function() {
 			new2 =$('.new-pwd2').val();
 
 		if ('' == oldPwd || '' == new1 || '' == new2) {
-			alert('密码不能为空');
+			Util.bubbleTip('密码不能为空');
 			return;
 		}
 
 		if (new1 != new2) {
-			alert('两次输入的密码应该相同！');
+			Util.bubbleTip('两次输入的密码应该相同！');
 			return;
 		}
 

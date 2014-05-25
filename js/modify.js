@@ -22,7 +22,7 @@ $(function(){
     function callBack(jData) {
         if ("1" != jData.ret) {
             try {
-                alert(jData.res.err);
+                Util.bubbleTip(jData.res.err);
             } catch(e) {
                 
             }
@@ -103,7 +103,7 @@ $(function(){
             series = $('.hand-series').val().trim(),
             color = $('.hand-color').val().trim();
         if ('' == breed && '' == series && '' == color) {
-            alert("请输入检索域!");
+            Util.bubbleTip("请输入检索域!");
             return;
         }
 
@@ -121,7 +121,7 @@ $(function(){
     
     function pageCallBack(jData) {
         if ("1" != jData.ret) {
-            alert("暂无花种数据！");
+            Util.bubbleTip("暂无花种数据！");
             return;
         }
 
@@ -209,7 +209,7 @@ $(function(){
             series = $('.sel-series').val().trim(),
             color = $('.sel-color').val().trim();
         if ('' == breed && '' == series && '' == color) {
-            alert("请输入检索域!");
+            Util.bubbleTip("请输入检索域!");
             return;
         }
 

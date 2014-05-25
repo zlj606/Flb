@@ -15,7 +15,7 @@ $(document).ready(function () {
             console.log('提交信息失败！');
             return;
         }
-        alert('提交信息成功！');
+        Util.bubbleTip('提交信息成功！');
         try {
             if (undefined != jData.res.fid) {
                     sessionStorage.setItem('fid', jData.res.fid);
@@ -34,7 +34,7 @@ $(document).ready(function () {
             fcolor = $('.flbcolor').val(),
             fbreed = $('.flbbreed').val();
         if ('' == fname) {
-            alert('请输入花的名称！');
+            Util.bubbleTip('请输入花的名称！');
             return;
         }
         var para = $('.pInfo').val(),
@@ -159,7 +159,7 @@ $(document).ready(function () {
     function genQRCode(jData) {
         
         if ("1" != jData.ret) {
-            alert("生成失败!");
+            Util.bubbleTip("生成失败!");
             return;
         }
 
@@ -182,21 +182,22 @@ $(document).ready(function () {
 
 
     $('.btn-submit').on('click', function() {
+        if('' == $('.picture').val()) {
+            Util.bubbleTip('请先选择图片，再进行提交！');
+            return;
+        }
         var options = {
             url : Util.baseurl + 'index.php',
             type: 'post',
             success : function(jData) {
                 jData = eval("(" + jData + ")");
                 if ("1" != jData.ret) {
-                    alert("上传图片回调失败");
+                    Util.bubbleTip("上传图片回调失败");
                     return;
                 }
                // alert("上传图片回调成功！");
 
-                if('' == $('.picture').val()) {
-                    Util.bubbleTip('请先选择图片，再进行提交！');
-                    return;
-                }
+                
                 sessionStorage.setItem('fid', jData.res.fid);
                 addFid(jData.res.fid);
                 $('#big-pic').attr('src', Util.flowerurl + jData.res.flower_url);

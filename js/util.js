@@ -19,7 +19,7 @@ Util = {
                 if(data && data.ret != "1"){
                     //Common.showError(data);
                     //错误处理code转换成文字提示给用户
-                    alert("error");
+                    Util.bubbleTip("error");
                     return;
                 };  
                 success && success(data);
@@ -104,7 +104,7 @@ Util = {
         $('#note>label').html(msg);
         if(!$('#note').is(':visible')){ 
             $('#note').css({display:'block', top:'-100px'}).animate({top: '+100'}, 500, function(){ 
-                setTimeout(Util.out, 2000); 
+                setTimeout(Util.out, 1000); 
             }); 
         } 
     }

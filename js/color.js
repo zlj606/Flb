@@ -52,7 +52,7 @@ $(function() {
 
 	function pageCallBack(jData) {
 		if ("1" != jData.ret) {
-			alert(jData.res.err);
+			Util.bubbleTip(jData.res.err);
 			return;
 		}
 		$('.row-color').html('');
@@ -90,7 +90,7 @@ $(function() {
 
 	function callBack(jData) {
 		if ("1" != jData.ret) {
-			alert(jData.res.err);
+			Util.bubbleTip(jData.res.err);
 			return;
 		}
 
@@ -117,7 +117,7 @@ $(function() {
 
     function fCallBack(jData) {
 		if ("1" != jData.ret) {
-			alert(jData.res.err);
+			Util.bubbleTip(jData.res.err);
 			return;
 		}
 
@@ -154,7 +154,7 @@ $(function() {
 
     function sliderCallBack(jData) {
     	if ("1" != jData.ret) {
-			alert(jData.res.err);
+			Util.bubbleTip(jData.res.err);
 			return;
 		}
         try {

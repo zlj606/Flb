@@ -30,7 +30,7 @@ $(document).ready(function() {
 
     function pageCallBack(jData) {
         if ("1" != jData.ret) {
-            alert(jData.res.err);
+            Util.bubbleTip(jData.res.err);
             return;
         }
         $('.row-breed').html('');
@@ -65,7 +65,7 @@ $(document).ready(function() {
 
 	function callBack(jData) {
 		if ("1" != jData.ret) {
-			alert(jData.res.err);
+			Util.bubbleTip(jData.res.err);
 			return;
 		}
 
@@ -102,7 +102,7 @@ $(document).ready(function() {
 
     function sliderCallBack(jData) {
     	if ("1" != jData.ret) {
-			alert(jData.res.err);
+			Util.bubbleTip(jData.res.err);
 			return;
 		}
         try {

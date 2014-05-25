@@ -98,7 +98,7 @@ $(document).ready(function() {
 
 	//删除账号信息
 	$('table').on('click','.btn-del' ,function() {
-		var trObj = $(this).parent();
+		var trObj = $(this).parent().parent();
 		var phone = $(':nth-child(2)', trObj).html();
 
 		//发送到服务器删除此phone对应信息
@@ -121,24 +121,25 @@ $(document).ready(function() {
 	//编辑按钮处理
 	$('table').on('click', '.btn-edit', function() {
 		var html = '',
-			trObj = $(this).parent();
+			trObj = $(this).parent().parent();
 		$('.edit-field').show();	
 		$('.info-body').empty();
-		html += '<div class="col-xs-12 col-lg-6">'
+		html +=  '<div class="col-xs-12 col-lg-6">'
+			 + '<label class="label-left">手机号</label>' 
+			 + '<label class="cphone">' + $(':nth-child(2)', trObj).html()+ '</label>' 
+			 + '</div>'
+		     + '<div class="col-xs-12 col-lg-6">'
 			 + '<label class="label-left">客户姓名</label>' 
 			 + '<input type="text" class="cname" value="' + $(':nth-child(1)', trObj).html() + '">' 
 			 + '</div>'
 			 + '<div class="col-xs-12 col-lg-6">'
-			 + '<label class="label-left">手机号</label>' 
-			 + '<label class="cphone">' + $(':nth-child(2)', trObj).html() + '</label>' 
-			 + '</div>'
-			 + '<div class="col-xs-12 col-lg-6">'
 			 + '<label class="label-left">客户身份</label>' 
-			 + '<input type="text" class="cidentify" value="' + $(':nth-child(3)', trObj).html() + '">' 
+			 + '<select class="cidentify"><option value="种植户">种植户</option><option value="花店">花店</option>'
+			 + '<option value="游客">游客</option><option value="黑名单">黑名单</option></select>'
 			 + '</div>'
 			 + '<div class="col-xs-12 col-lg-6">'
 			 + '<label class="label-left">性别</label>' 
-			 + '<input type="text" class="csex" value="' + $(':nth-child(4)', trObj).html() + '">' 
+			 + '<select class="csex"><option value="男">男</option><option value="女">女</option></select>'
 			 + '</div>'
 			 + '<div class="col-xs-12 col-lg-6">'
 			 + '<label class="label-left">年龄</label>' 
@@ -166,7 +167,10 @@ $(document).ready(function() {
 			 + '</div>';
 		$('.info-body').append(html);
 
-		html = '<div class="row"><button type="button" class="btn btn-primary btn-update">修改</button></div>'
+		$('.cidentify').val($(':nth-child(3)', trObj).html());
+		$('.csex').val($(':nth-child(4)', trObj).html());
+
+		html = '<div class="row row-clear"><button type="button" class="btn btn-primary btn-update">修改</button></div>'
 		$('.info-body').append(html);
 
 		$('.btn-update').on('click', function() {
