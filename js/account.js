@@ -46,8 +46,8 @@ $(document).ready(function() {
 		$('.account-table').empty();
 		/*$('.account-table').append('<thead><tr><th>姓名</th><th>手机号</th><th>身份</th>'
                     			  + '<th>性别</th><th>年龄</th><th>收入层次</th><th>客户产区</th><th>种植基地</th><th>花店名称</th>'
-                    			  +	'<th>规模</th><th>编辑</th></tr></thead>');
-		addTable('.account-table',jData.res.record);*/
+                    			  +	'<th>规模</th><th>编辑</th></tr></thead>');*/
+		addTable('.account-table',jData.res.record);
 	}
 
 	Util.get('index.php', {"controller": "user", "action":"query_all_user"}, dataCallBack);
