@@ -19,9 +19,9 @@ $(document).ready(function () {
         }
         Util.bubbleTip('提交信息成功！');
         try {
-            var fid = sessionStorage.getItem('fid');
+            var fid = $('.fid').val();//sessionStorage.getItem('fid');
             if (null == fid || undefined == fid || '' == fid) {
-                    sessionStorage.setItem('fid', jData.res.fid);
+                    //sessionStorage.setItem('fid', jData.res.fid);
                     addFid(jData.res.fid);
                     $('.btn-flower').show();
                 }
@@ -45,9 +45,9 @@ $(document).ready(function () {
             cult = $('.cInfo').val(),
             story = $('.sInfo').val();
 
-        var fid = sessionStorage.getItem('fid');
+        var fid = $('.fid').val();//sessionStorage.getItem('fid');
         
-        if ( null == fid ) {
+        if ( null == fid || undefined == fid) {
             var data = {
                 "controller": "flower",
                 "action": "create_flower",
@@ -107,7 +107,7 @@ $(document).ready(function () {
         $('.sInfo').val('');
         $('#big-pic').attr('src', '');
         $('#QRCode').attr('src', '');
-        sessionStorage.removeItem('fid');
+        //sessionStorage.removeItem('fid');
 
         window.location.reload();
 
@@ -172,11 +172,11 @@ $(document).ready(function () {
     
     $('.gen-code').on('click', function() {
 
-        var fid = sessionStorage.getItem('fid');
-        if (null == fid) {
+        var fid = $('.fid').val();//sessionStorage.getItem('fid');
+        if (null == fid || undefined == fid) {
             fid = Util.getPara('fid');
         }
-        if (typeof(fid) == 'undefined' || '' == fid || null == fid) {
+        if (fid == undefined || '' == fid || null == fid) {
             Util.bubbleTip("请先上传图片！");
             return;
         }
@@ -202,10 +202,10 @@ $(document).ready(function () {
                Util.bubbleTip("上传图片成功！");
 
                 $('.picture').val('');
-                var fid = sessionStorage.getItem('fid');
+                var fid = $('.fid').val();//sessionStorage.getItem('fid');
                 try {
                     if (null == fid || undefined == fid || '' == fid) {
-                       sessionStorage.setItem('fid', jData.res.fid);
+                       //sessionStorage.setItem('fid', jData.res.fid);
                        addFid(jData.res.fid); 
                     } 
                 } catch(e) {
