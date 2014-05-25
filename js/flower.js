@@ -135,11 +135,12 @@ $(document).ready(function() {
             return;
         }
         
+        $('.his-title').show();
         $('.bxslider').html('');
 
         var html = '<li>';
         for (var i = 0; i < jData.res.record.length ; ++i) {
-             html += '<div class="col-xs-12 col-lg-3"><label>'
+             html += '<div class="col-xs-12 col-lg-3 align-center"><label>'
                    + jData.res.record[i].fname + '</label><a href="'
                    + "flower.html" + '" class="history"><img src="'
                    + Util.flowerurl + jData.res.record[i].flower_url + '"?fid='

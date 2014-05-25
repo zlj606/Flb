@@ -94,7 +94,8 @@ footer {
 
 .create-new {
 	float: right;
-	margin-right: 60px;
+	margin-right: 70px;
+	margin-left: 20px;
 }
 
 .area {
@@ -105,6 +106,12 @@ footer {
 .update-info {
 	float: right;
 	margin-right: 20px;	
+}
+
+.btn-flower {
+	float: right;
+	margin-left: 20px;
+	margin-right: 20px;
 }
 
 .list-group-item input {
@@ -283,3 +290,7 @@ textarea:focus {
 	display:none;
 	color: #1f9c9c;
 } 
+
+.btn-flower {
+	margin-left: 10px;
+}

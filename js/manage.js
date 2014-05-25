@@ -1,5 +1,7 @@
 $(document).ready(function () {
     
+    $('.btn-flower').hide();
+
     function addFid(fid) {
         if ($('.action-info').has('.fid').length > 0) {
             $('.fid').val(fid);
@@ -20,6 +22,7 @@ $(document).ready(function () {
             if (undefined != jData.res.fid) {
                     sessionStorage.setItem('fid', jData.res.fid);
                     addFid(jData.res.fid);
+                    $('.btn-flower').show();
                 }
         }
         catch(e) {
@@ -162,7 +165,7 @@ $(document).ready(function () {
             Util.bubbleTip("生成失败!");
             return;
         }
-
+        Util.bubbleTip('生成二维码成功!');
         $('#QRCode').attr('src', Util.baseurl + 'photos/code/'+ jData.res.code_url); 
     }
     
@@ -195,11 +198,12 @@ $(document).ready(function () {
                     Util.bubbleTip("上传图片回调失败");
                     return;
                 }
-               // alert("上传图片回调成功！");
+               Util.bubbleTip("上传图片成功！");
 
-                
+                $('.picture').val(''); 
                 sessionStorage.setItem('fid', jData.res.fid);
                 addFid(jData.res.fid);
+                $('.btn-flower').show();
                 $('#big-pic').attr('src', Util.flowerurl + jData.res.flower_url);
             }
         } 
@@ -213,5 +217,7 @@ $(document).ready(function () {
             $(".submit-preview").attr("src", objUrl);
         }
     });*/
-
+    $('.btn-flower').on('click', function() {
+        $('.btn-flower').attr('href', Util.flowerurl + 'flower.html?fid=' + $('.fid').val());
+    });
 });
