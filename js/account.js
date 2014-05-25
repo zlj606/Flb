@@ -70,9 +70,9 @@ $(document).ready(function() {
 			"controller": "user",
 			"action": "create_user",
 			"phone": $('.phone').val(),
-			"name" : $('.name').val(),
+			"user_name" : $('.name').val(),
 			"sex" : $('.sex').val(),
-			"user_type_name" : $('.identify').val(),
+			"type_name" : $('.identify').val(),
 			"age" : $('.age').val(),
 			"scale" : $('.scale').val(),
 			"shop-name" : $('.shop-name').val(),
@@ -109,6 +109,11 @@ $(document).ready(function() {
 
 	//编辑按钮处理
 	$('table').on('click', '.btn-edit', function() {
+		var html = '',
+			trObj = $(this).parent();
 
+		$('.info-body').empty();
+		html += '<div class="col-xs-12 col-lg-12">'
+			 + '<label>' ;
 	});
 });
