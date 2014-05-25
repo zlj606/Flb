@@ -96,13 +96,22 @@ $(document).ready(function() {
 		$(this).attr('href',Util.baseurl+ 'index.php?controller=user&action=export_user');
 	});
 
+	function delCallBack(jData) {
+		if("1" != jData.ret) {
+			Util.bubbleTip(jData.res.err);
+			return;
+		}
+
+		Util.bubbleTip('删除客户信息成功！');
+	}
+
 	//删除账号信息
 	$('table').on('click','.btn-del' ,function() {
 		var trObj = $(this).parent().parent();
 		var phone = $(':nth-child(2)', trObj).html();
 
 		//发送到服务器删除此phone对应信息
-
+		Util.get('index.php', {"controller":"user", "action":"delete_user", "phone":phoen},delCallBack);
 		//表格删除
 		$(this).parent().remove();
 	});
