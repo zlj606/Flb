@@ -79,7 +79,7 @@ $(document).ready(function() {
 			"income" : $('.income').val(),
 			"plant_base" : $('.plant_base').val()
 		};
-		Util.get('index.php', data, callBack);
+		Util.post('index.php', data, callBack);
 	});
 
 	//继续添加处理
