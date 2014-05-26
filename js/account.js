@@ -111,7 +111,7 @@ $(document).ready(function() {
 		var phone = $(':nth-child(2)', trObj).html();
 
 		//发送到服务器删除此phone对应信息
-		Util.get('index.php', {"controller":"user", "action":"delete_user", "phone":phoen},delCallBack);
+		Util.get('index.php', {"controller":"user", "action":"delete_user", "phone":phone},delCallBack);
 		//表格删除
 		$(this).parent().remove();
 	});
@@ -134,7 +134,7 @@ $(document).ready(function() {
 		$('.edit-field').show();	
 		$('.info-body').empty();
 		html +=  '<div class="col-xs-12 col-lg-6">'
-			 + '<label class="label-left">手机号</label>' 
+			 + '<label class="label-left">手机号码</label>' 
 			 + '<label class="cphone">' + $(':nth-child(2)', trObj).html()+ '</label>' 
 			 + '</div>'
 		     + '<div class="col-xs-12 col-lg-6">'
