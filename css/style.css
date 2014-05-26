@@ -339,3 +339,8 @@ hr {
 .his-title {
 	border: 1px solid #dedede;
 }
+
+.export-account {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
