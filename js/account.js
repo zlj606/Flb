@@ -66,6 +66,11 @@ $(document).ready(function() {
 	}
 	
 	$('.add-user-info').on('click', function() {
+		if ('' == $('.phone').val() || false == Util.isPhone($('.phone').val())) {
+			Util.bubbleTip("手机号码错误");
+			return;
+		}
+
 		var data = {	
 			"controller": "user",
 			"action": "create_user",
