@@ -16,9 +16,7 @@ footer {
 
 /*register page*/
 
-.top-margin {
-	margin-top: 50px;
-}
+/*
 
 .top-margin label {
 	width: 30%;
@@ -28,14 +26,44 @@ footer {
 .top-margin input {
 	width: 30%!important;
 }
+*/
+/*.btn-register, .btn-pwd {
+	margin-left: 40px;
+}*/
+.top-margin {
+	margin-top: 35px;
+}
 
-.btn-register, .btn-pwd {
+.register-margin {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.left20 {
+	margin-left: 20px;
+}
+.left40 {
 	margin-left: 40px;
 }
 
-.user-register {
-	background: ;
+.topbottom10 {
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
+
+.w310 {
+	width: 180px;
+	font-size: 15px;
+}
+
+.h30 {
+	line-height: 30px;
+}
+
+
+/*.user-register {
+	background: ;
+}*/
 /*species page*/
 .img-border {
 	/*border-radius: 5%;
@@ -114,10 +142,10 @@ footer {
 	margin-right: 20px;
 }
 
-.list-group-item input {
+/*.list-group-item input {
 	width: 50%;
 	margin-bottom: 5px;
-}
+}*/
 
 /*modiy page*/
 .row-margin {
@@ -293,4 +321,21 @@ textarea:focus {
 
 .btn-flower {
 	margin-left: 10px;
+}
+
+input,select {
+	border: 1px solid #bebebe;
+}
+
+.ver-center {
+	line-height: 30px;
+}
+
+hr {
+	border-top: 1px solid #A5C7C1;
+	opacity: 0.5;
+}
+
+.his-title {
+	border: 1px solid #dedede;
 }

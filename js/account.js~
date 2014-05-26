@@ -75,7 +75,7 @@ $(document).ready(function() {
 			"type_name" : $('.identify').val(),
 			"age" : $('.age').val(),
 			"scale" : $('.scale').val(),
-			"shop_name" : $('.shop-name').val(),
+			"shop-name" : $('.shop-name').val(),
 			"income" : $('.income').val(),
 			"plant_base" : $('.plant_base').val()
 		};
