@@ -82,7 +82,8 @@ $(document).ready(function() {
 			"scale" : $('.scale').val(),
 			"shop_name" : $('.shop-name').val(),
 			"income" : $('.income').val(),
-			"plant_base" : $('.plant_base').val()
+			"plant_base" : $('.plant-base').val(),
+			"grow_unit": $('.customer-area').val()
 		};
 		Util.post('index.php', data, callBack);
 	});
