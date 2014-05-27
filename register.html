@@ -112,7 +112,7 @@
 
 				function checkCode(jData) {
 					if("1" != jData.ret) {
-						Util.bubbleTip("获取失败！");
+						Util.bubbleTip(jData.res.err);
 						return;
 					}
 

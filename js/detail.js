@@ -45,7 +45,10 @@ $(document).ready(function() {
 		}
 	});
 
-
+    function sleep(milliSeconds){    
+    	var startTime = new Date().getTime();  // get the current time   
+   		while (new Date().getTime() < startTime + milliSeconds);  // hog cpu
+    }
 	function callBack(jData) {
 		if ("1" != jData.ret) {
 			Util.bubbleTip("完善用户资料失败");
@@ -53,6 +56,7 @@ $(document).ready(function() {
 		}
 		try {
 			Util.bubbleTip('完善客户资料成功！');
+			sleep(1000);
 			if ('' != jData.res.jump_url) {
 				var url = jData.res.jump_url;
 				var begin = url.lastIndexOf('/');
