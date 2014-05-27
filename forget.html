@@ -64,9 +64,11 @@
 							val.val("重新发送(" + countdown + ")"); 
 							countdown--; 
 						} 
-						setTimeout(function() { 
-							settime(val) 
-						},1000); 
+						if (60 != countdown) {
+							setTimeout(function() { 
+								settime(val) 
+							},1000);
+						} 
 				} 
 
 

@@ -52,6 +52,7 @@ $(document).ready(function() {
 			return;
 		}
 		try {
+			Util.bubbleTip('完善客户资料成功！');
 			if ('' != jData.res.jump_url) {
 				var url = jData.res.jump_url;
 				var begin = url.lastIndexOf('/');

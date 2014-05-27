@@ -36,7 +36,7 @@
 			                			<input type="text" class="check-code w310 h30" maxlength="6" placeholder="&nbsp;&nbsp;验证码" required>
 			                		</div>
 			                		<div class="col-xs-12 col-lg-12 topbottom10">
-			                			<button type="button" class="btn btn-check btn-warning w310 h30">免费获取验证码</button>
+			                			<input type="button" class="btn btn-check btn-warning w310 h30" value="免费获取验证码">
 			                		</div>
 			                		<div class="col-xs-12 col-lg-12 topbottom10">
 			                			<button type="button" class="btn btn-success btn-register w310 h30">注册</button>
@@ -66,9 +66,12 @@
 							val.val("重新发送(" + countdown + ")"); 
 							countdown--; 
 						} 
-						setTimeout(function() { 
-							settime(val) 
-						},1000); 
+						if (60 != countdown) {
+							setTimeout(function() { 
+								settime(val) 
+							},1000);
+						}
+						 
 				} 
 
 				function callBack(jData) {
@@ -109,7 +112,7 @@
 
 				function checkCode(jData) {
 					if("1" != jData.ret) {
-						alert("获取失败！");
+						Util.bubbleTip("获取失败！");
 						return;
 					}
 
