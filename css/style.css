@@ -214,9 +214,6 @@ footer {
 	margin-bottom: 20px
 } 
 
-.add-info, .modiy-pwd {
-	margin-left: 30%;
-}
 
 .row-padding {
 	padding-left: 40px;
@@ -343,4 +340,17 @@ hr {
 .export-account {
 	margin-top: 10px;
 	margin-bottom: 10px;
+}
+
+.width83 {
+	width: 83%;
+}
+
+.margintb {
+	
+	margin-bottom: 15px;
+}
+
+label {
+	font-weight: normal!important;
 }
