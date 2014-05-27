@@ -36,11 +36,11 @@ $(function() {
 		if ('' == fname) {
 			fname = "未命名";
 		}
-		var html = '<div class="col-xs-12 col-sm-6 col-lg-3 text-center"><h2 class="fname">'
-				   + fname + '</h2><img class="img-border" src="'
+		var html = '<div class="col-xs-12 col-sm-6 col-lg-3 text-center"><h3 class="fname">'
+				   + fname + '</h3><img class="img-border" src="'
 				   + Util.flowerurl + url + '"color_id="' + cid + '"flower_id="' 
 				   + fid + '"></img><p><a class="btn btn-default btn-detail" href="'
-				   + detail + '" role="button">详情</a></p></div>';
+				   + detail + '" role="button">详情&raquo;</a></p></div>';
 		$('.row-color').append(html);
 		//图片下的查看详细信息按钮处理
 	    $('.btn-detail').on('click', function() {
